@@ -1,0 +1,50 @@
+<div id="mobile-container">
+	<div id="mobile-s">
+		<div class="up">
+		<button class="goleft" onclick="left()" style="height: 100%;"><i class="fas fa-arrow-left"></i></button>
+		</div>
+		<div class="middle">
+		<button class="goup" onclick="up()"><i class="fas fa-arrow-up"></i></button>
+		<button class="goselect" onclick="canvas.tokens.ownedTokens.map(token => token.control({releaseOthers: false}))" ><i class="far fa-object-ungroup"></i></button>
+		<button class="godown" onclick="down()"><i class="fas fa-arrow-down"></i></button>
+		</div>
+		<div class="down">
+		<button class="goright" onclick="right()" style="height: 100%;"><i class="fas fa-arrow-right"></i></button>
+		</div>
+		<script>
+			function up(){
+			let tokens = canvas.tokens.controlled;
+			tokens[0].shiftPosition(0, -1);
+			let x = tokens[0].x;
+			let y = tokens[0].y - canvas.grid.h;
+			let view = canvas.scene._viewPosition;
+			canvas.animatePan({duration: 250, x: x, y: y, scale: view.scale});
+			}
+			function down(){
+			let tokens = canvas.tokens.controlled;
+			tokens[0].shiftPosition(0, 1);
+			let x = tokens[0].x;
+			let y = tokens[0].y + canvas.grid.h;
+			let view = canvas.scene._viewPosition;
+			canvas.animatePan({duration: 250, x: x, y: y, scale: view.scale});
+			}
+			function left(){
+			let tokens = canvas.tokens.controlled;
+			tokens[0].shiftPosition(-1, 0);
+			let x = tokens[0].x - canvas.grid.h;
+			let y = tokens[0].y;
+			let view = canvas.scene._viewPosition;
+			canvas.animatePan({duration: 250, x: x, y: y, scale: view.scale});
+			}
+			function right(){
+			let tokens = canvas.tokens.controlled;
+			tokens[0].shiftPosition(+1, 0);
+			let x = tokens[0].x + canvas.grid.h;
+			let y = tokens[0].y;
+			let view = canvas.scene._viewPosition;
+			canvas.animatePan({duration: 250, x: x, y: y, scale: view.scale});
+			}
+
+		</script>
+	</div>
+</div>

@@ -1,0 +1,15 @@
+{
+	"name": "simplemobile",
+	"title": "Simple-Mobile",
+	"description": "Add somewhat support for mobile",
+	"version": "0.0.1",
+	"author": "Handyfon#8390",
+	"esmodules": ["mobile.js"],
+	"styles": ["mobile.css"],
+	 "socket": true,
+    "url": "https://github.com/Handyfon/simplemobile/tree/master",
+    "manifest": "https://raw.githubusercontent.com/Handyfon/simplemobile/master/module.json",
+    "download": "https://github.com/Handyfon/simplemobile/raw/master/simplemobile.zip",
+	"minimumCoreVersion": "0.5.5",
+	"compatibleCoreVersion": "0.6.0"
+}
