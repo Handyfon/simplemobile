@@ -1,7 +1,3 @@
-/*Hooks.on("updateToken", (scene, token, updateData, options, userId) => {
-  if ( userId === game.user._id ) {
-  }
-});*/
 
 Hooks.on('canvasReady', function(){
     function opencontrols() {
@@ -10,8 +6,6 @@ Hooks.on('canvasReady', function(){
 	}
   opencontrols();
   let charname = game.user.charname
-	
-	
   console.log("mobile initialised");
   document.getElementById('board').ontouchstart = function (event) {
   console.log("Touchstart");
@@ -38,8 +32,9 @@ Hooks.on('canvasReady', function(){
   }
   canvas.animatePan({duration: 50, x: view.x, y: view.y, scale: view.scale});
   console.log("canvas moved");
-}
 
+}
+	canvas.tokens.ownedTokens.length
 });
 export class Controls extends Application {
     openDialog() {

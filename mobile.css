@@ -1,7 +1,10 @@
 div#mobile-controls {
     display: none !important;
 }
-@media only screen and (max-width: 800px) {
+h4.entity-name {
+    text-align: center;
+}
+@media only screen and (max-width: 1000px) {
 img#logo {
     display: none;
 }
@@ -26,7 +29,7 @@ div#players {
     bottom: unset !important;
     left: unset !important;
     width: 600px;
-    height: 54px;
+    height: 2vh;
     pointer-events: none;
     display: inline-grid;
 }
@@ -39,10 +42,9 @@ div#players {
     padding: 0;
     border: 1px solid #000;
     border-radius: 3px;
-    margin-top: 10px;
     border: 0;
     left: 5%;
-    bottom: -204%;
+    bottom: -17vh;
     position: absolute;
     width: 200px;
 }
@@ -53,9 +55,10 @@ div#players {
 }
 #hotbar #hotbar-directory-controls {
     pointer-events: all;
-    width: 35vw;
-    height: 7vw;
-    margin-top: -1vw;
+    width: 20vw;
+    height: 4vw;
+    /* margin-top: -1vw; */
+    margin-bottom: 3vh !important;
 }
 #hotbar #action-bar {
     flex: 1;
@@ -80,11 +83,32 @@ div#players {
 }
 #sidebar-tabs > .item {
     position: relative;
-    flex: 0 0 54px;
+    flex: 0 0 14vw;
     line-height: 32px;
     border: 1px solid transparent;
     border-radius: 5px 5px 0 0;
-    /* width: 100px !important; */
+}
+#sidebar-tabs > .collapse {
+    position: relative;
+    flex: 0 0 27px;
+    line-height: 32px;
+    color: #ffffff;
+    /* font-size: 29px; */
+    text-align: center;
+    background: #ff6400bf;
+    /* padding: 0 20vw 0 20vw !important; */
+    box-shadow: 0 0 6px inset #4b4a44;
+    /* max-width: 20px !important; */
+    padding: 23px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+#sidebar-tabs > .item.active {
+    color: #4b4a44;
+    border: 1px solid red;
+    border-bottom: none;
+    box-shadow: 0 0 6px inset #4b4a44;
+    background: #bf4b00 !important;
 }
 
 a#macro-directory {
@@ -115,19 +139,34 @@ a#macro-directory {
     z-index: 99;
     background-size: cover;
     background: 0;
-    /* width: 20%; */
-    width: 97vw;
-    margin-top: 30px;
+    max-height: 95vh;
+    margin-top: 3vh;
 }
 
+::before {
+    font-size: 20px;
+}
 
 //*ACTOR SHEETS*/
+.dnd5e.sheet.actor .spell-slots input, .dnd5e.sheet.actor .spell-slots span.sep {
+    display: inline;
+    max-width: 20px;
+    text-align: center;
+    transform: scale(1.5);
+}
 .dnd5e.sheet.actor.character {
     min-width: 100% !important;
-    min-height: 100% !important;
+    min-height: unset;
     max-width: 100% !important;
     max-height: 100% !important;
     width: 100px !important;
+    padding: 5px;
+}
+.dnd5e.sheet.actor.character ul.skills-list li.skill {
+    padding: 2vw;
+    height: 3vh;
+    border: 1px groove #b5b3a473;
+    align-content: center;
 }
 .dnd5e.sheet.actor.character .sheet-header img.profile {
     flex: 0 0 10px;
@@ -146,6 +185,7 @@ a#macro-directory {
 }
 .dnd5e.sheet.actor.character ul.skills-list {
     flex: 100%;
+    flex: 1;
 }
 .section1 {
     display: contents;
@@ -183,7 +223,7 @@ a#macro-directory {
 /*Mobile controls*/
 div#mobile-controls {
     position: fixed !important;
-    top: 80vh !important;
+    top: 75vh !important;
     left: 10vw !important;
     width: 200px !important;
     margin: 0 !important;
@@ -198,11 +238,61 @@ div#mobile-controls {
 
 /*Style*/
 #hotbar #hotbar-directory-controls a {
-    background: #dad8cc;
-    color: black;
+    background: #424141;
+    color: white;
+    box-shadow: 0px 2px 0px 2px #4a4949;
+    background-image: url(/static/assets/ui/denim.png);
+    background-repeat: repeat;
+    background-size: auto;
+}
+button.goselect {
+    width: 100%;
+    margin: 0 1px;
+    background: rgba(66, 65, 65, 0.85);
+    /* border: 1px solid #b5b3a4; */
+    border-radius: 3px;
+    font-size: 14px;
+    line-height: 28px;
+    font-family: "Signika", sans-serif;
+    color: white;
+}
+button.goselect {
+    width: 100%;
+    margin: 0 1px;
+    background: rgba(80, 72, 146, 0.55);
+    /* border: 1px solid #b5b3a4; */
+    border-radius: 3px;
+    font-size: 14px;
+    line-height: 28px;
+    font-family: "Signika", sans-serif;
+    color: white;
+}
+.controlbutton{
+	width: 100%;
+    margin: 0 1px;
+    background: rgba(39, 39, 39, 0.62);
+    /* border: 1px solid #b5b3a4; */
+    border-radius: 3px;
+    font-size: 14px;
+    line-height: 28px;
+    font-family: "Signika", sans-serif;
+    /* border: 0; */
+    color: white;
+    box-shadow: 0 0 6px inset #a2a2a2;
+}
+.window-app .window-header {
+    flex: 0 0 30px;
+    overflow: hidden;
+    padding: 0 8px;
+    line-height: 30px;
+    border-bottom: 1px solid #000;
+    /* box-shadow: 0 0 5px inset white; */
+    background: #bf4b00;
+    border: 1px solid red;
+    border-radius: 5px;
 }
 #hotbar .macro.inactive {
-    background: #c4c2b7;
+    background: #37363685;
 }
 #hotbar .macro .macro-icon {
     width: 48px;
@@ -210,24 +300,52 @@ div#mobile-controls {
     object-fit: cover;
     object-position: 50% 50%;
     border: none;
-    background: #dad8cc;
+    background: #000000;
+    box-shadow: 0 0 5px inset whitesmoke;
 }
 #hotbar .bar-controls {
     background: url(/ui/parchment.jpg) repeat;
-    color: black;
-	filter: drop-shadow(2px 4px 6px black);
+    /* color: black; */
+    filter: drop-shadow(2px 4px 6px black);
+    background: #bf4b009c;
 }
 #sidebar-tabs {
     background: black;
 }
 #sidebar-tabs > .item {
-    border: 1px solid #4b4a44;
+    position: relative;
+    flex: 0 0 14vw;
+    max-width: 53px;
+    line-height: 32px;
+    border: 1px solid transparent;
+    border-radius: 5px 5px 0 0;
+    background: #383737 !important;
+    margin: 1px;
+    box-shadow: 0 0 6px inset #000000;
+}
+i.fas.fa-caret-down {
+    margin: 2vh;
+}
+.fa-caret-up:before {
+    content: "\f0d8";
+    margin: 2vh;
 }
 #sidebar > * {
     background: black;
 }
 .dice-tray {
     margin-bottom: 5vh;
+}
+#playlists .global-volume {
+    flex: 0 0 152px;
+    transform: scaleY(2.5);
+}
+#playlists li.sound {
+    margin: 13px 0 0;
+    padding: 0;
+}
+li.directory-item.entity.playlist.flexrow.collapsed {
+    width: 100%!important;
 }
 .sheet .sheet-header > * {
     flex: 1;
@@ -264,7 +382,40 @@ div#mobile-controls > section.window-content {
 
 div#mobile-s {
     display: flex;
+    box-shadow: 0 0 20px #000;
 }
 .collapsed {
     height: fit-content !important;
+}
+@media only screen and (max-width: 600px) {/* UNDER 600 PIXEL*/
+.item-image {
+    width: 30vw;
+}
+.dnd5e.sheet.actor.character ul.skills-list {
+    flex: 100% !important;
+}
+.dnd5e.sheet.actor .inventory-filters .currency {
+    list-style: none;
+    margin: 4px 0 8px;
+    padding: 0;
+    font-size: 14px;
+}
+#hotbar #hotbar-directory-controls {
+    pointer-events: all;
+    width: 20vw;
+    height: 8vw;
+    /* margin-top: -1vw; */
+    margin-bottom: 3vh !important;
+}
+#sidebar {
+    border: 1px solid #000;
+    background: url(http://i.imgur.com/5Hoxo0s.png) 80%;
+    background-repeat: no-repeat;
+    z-index: 99;
+    background-size: cover;
+    background: 0;
+    /* width: 20%; */
+    max-height: 95vh;
+    margin-top: 3vh;
+}
 }

@@ -1,50 +1,83 @@
 <div id="mobile-container">
 	<div id="mobile-s">
 		<div class="up">
-		<button class="goleft" onclick="left()" style="height: 100%;"><i class="fas fa-arrow-left"></i></button>
+		<button class="goleft controlbutton" onclick="left()" style="height: 100%;"><i class="fas fa-arrow-left"></i></button>
 		</div>
 		<div class="middle">
-		<button class="goup" onclick="up()"><i class="fas fa-arrow-up"></i></button>
-		<button class="goselect" onclick="canvas.tokens.ownedTokens.map(token => token.control({releaseOthers: false}))" ><i class="far fa-object-ungroup"></i></button>
-		<button class="godown" onclick="down()"><i class="fas fa-arrow-down"></i></button>
+		<button class="goup controlbutton" onclick="up()"><i class="fas fa-arrow-up"></i></button>
+		<button class="goselect controlbutton" onclick="select()" ><i class="far fa-object-ungroup"></i></button>
+		<button class="godown controlbutton" onclick="down()"><i class="fas fa-arrow-down"></i></button>
 		</div>
 		<div class="down">
-		<button class="goright" onclick="right()" style="height: 100%;"><i class="fas fa-arrow-right"></i></button>
+		<button class="goright controlbutton" onclick="right()" style="height: 100%;"><i class="fas fa-arrow-right"></i></button>
+		</div>
+		<div class="zoom">
+		<button class="zoomin controlbutton" onclick="zoomin()" style="height: 50%;"><i class="fas fa-search-plus"></i></i></button>
+		<button class="zoomout controlbutton" onclick="zoomout()" style="height: 50%;"><i class="fas fa-search-minus"></i></i></button>
 		</div>
 		<script>
+			function select(){
+			canvas.tokens.ownedTokens.map(token => token.control({releaseOthers: false}))
+			let tokens = canvas.tokens.controlled;
+			let x = tokens[0].x;
+			let y = tokens[0].y;
+			document.getElementById("sidebar");
+			let twidth = tokens[0].w / 2;
+			let theight = tokens[0].h / 2;
+			let view = canvas.scene._viewPosition;
+			canvas.animatePan({duration: 250, x: x+twidth, y: y+theight, scale: view.scale});
+			}
 			function up(){
 			let tokens = canvas.tokens.controlled;
 			tokens[0].shiftPosition(0, -1);
 			let x = tokens[0].x;
 			let y = tokens[0].y - canvas.grid.h;
+			document.getElementById("sidebar");
+			let twidth = tokens[0].w / 2;
+			let theight = tokens[0].h / 2;
 			let view = canvas.scene._viewPosition;
-			canvas.animatePan({duration: 250, x: x, y: y, scale: view.scale});
+			canvas.animatePan({duration: 250, x: x+twidth, y: y+theight, scale: view.scale});
 			}
 			function down(){
 			let tokens = canvas.tokens.controlled;
 			tokens[0].shiftPosition(0, 1);
 			let x = tokens[0].x;
 			let y = tokens[0].y + canvas.grid.h;
+			let twidth = tokens[0].w / 2;
+			let theight = tokens[0].h / 2;
 			let view = canvas.scene._viewPosition;
-			canvas.animatePan({duration: 250, x: x, y: y, scale: view.scale});
+			canvas.animatePan({duration: 250, x: x+twidth, y: y+theight, scale: view.scale});
 			}
 			function left(){
 			let tokens = canvas.tokens.controlled;
 			tokens[0].shiftPosition(-1, 0);
 			let x = tokens[0].x - canvas.grid.h;
 			let y = tokens[0].y;
+			let twidth = tokens[0].w / 2;
+			let theight = tokens[0].h / 2;
 			let view = canvas.scene._viewPosition;
-			canvas.animatePan({duration: 250, x: x, y: y, scale: view.scale});
+			canvas.animatePan({duration: 250, x: x+twidth, y: y+theight, scale: view.scale});
 			}
 			function right(){
 			let tokens = canvas.tokens.controlled;
 			tokens[0].shiftPosition(+1, 0);
 			let x = tokens[0].x + canvas.grid.h;
 			let y = tokens[0].y;
+			let twidth = tokens[0].w / 2;
+			let theight = tokens[0].h / 2;
 			let view = canvas.scene._viewPosition;
-			canvas.animatePan({duration: 250, x: x, y: y, scale: view.scale});
+			canvas.animatePan({duration: 250, x: x+twidth, y: y+theight, scale: view.scale});
 			}
-
+			function zoomin(){
+			let view = canvas.scene._viewPosition;
+			view.scale += 0.25;
+			canvas.animatePan({duration: 250, x: view.x, y: view.y, scale: view.scale});
+			}
+			function zoomout(){
+			let view = canvas.scene._viewPosition;
+			view.scale -= 0.25;
+			canvas.animatePan({duration: 250, x: view.x, y: view.y, scale: view.scale});
+			}
 		</script>
 	</div>
 </div>
