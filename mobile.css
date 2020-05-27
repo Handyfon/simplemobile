@@ -5,6 +5,12 @@ div#mobile-controls {
 h4.entity-name {
     text-align: center;
 }
+#combat li.combatant.active {
+    background: rgba(255, 100, 0, 0.61);
+    box-shadow: 0 0 5px inset #040404;
+    border: 1px solid #c04c01;
+    display: flex;
+}
 li.folder > .folder-header {
     padding: 6px;
     line-height: 24px;
@@ -16,6 +22,15 @@ li.folder > .folder-header {
 .sidebar-tab .directory-list .directory-item {
     line-height: 48px;
     display: contents;
+}
+li.combatant.actor.directory-item.flexrow {
+    display: flex;
+}
+#settings button {
+    position: relative;
+    margin: 0.5em 0;
+    background: #bf4b00;
+    border: 1px solid red;
 }
 .fa-play:before {
     content: "\f04b";
@@ -48,6 +63,10 @@ h3, .sidebar-tab .directory-list .directory-item h4 {
 }
 img#logo {
     display: none;
+}
+#combat li.combatant .token-image {
+    margin: 0;
+    display: none !important;
 }
 nav#navigation {
 	display: none;
@@ -327,7 +346,6 @@ button.goselect {
 #combat #combat-tracker {
     height: calc(100% - 94px);
     padding: 1px 0;
-    display: flex;
 }
 .window-app .window-header {
     flex: 0 0 30px;
@@ -382,7 +400,7 @@ i.fas.fa-caret-down {
 }
 #sidebar > * {
     background: #000000b8;
-    margin-top: -5px;
+    /* margin-top: -5px; */
 }
 .dice-tray {
     margin-bottom: 5vh;
@@ -468,5 +486,9 @@ div#mobile-s {
     /* width: 20%; */
     max-height: 95vh;
     margin-top: 3vh;
+}
+#combat li.combatant .token-image {
+    margin: 0;
+    display: none !important;
 }
 }
