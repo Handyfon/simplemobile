@@ -1,10 +1,51 @@
 div#mobile-controls {
     display: none !important;
 }
+@media only screen and (max-width: 1000px) {
 h4.entity-name {
     text-align: center;
 }
-@media only screen and (max-width: 1000px) {
+li.folder > .folder-header {
+    padding: 6px;
+    line-height: 24px;
+    background: rgba(255, 255, 255, 0.2) !important;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #fff;
+    /* width: 60vw; */
+}
+.sidebar-tab .directory-list .directory-item {
+    line-height: 48px;
+    display: contents;
+}
+.fa-play:before {
+    content: "\f04b";
+    margin-left: 20px;
+    color: #38de38;
+}
+.playlist-name {
+    cursor: pointer;
+    max-width: 180px;
+}
+#playlists li.playlist .playlist-header {
+    flex: 0 0 100%;
+    justify-content: space-between;
+    text-decoration: underline;
+    margin-top: 10px;
+}
+.playlist-controls {
+    flex: 0 0 141px !important;
+    justify-content: flex-end;
+}
+#journal li.journal .entity-name {
+    margin: 0 0.25em;
+    border-bottom: 1px groove;
+}
+h3, .sidebar-tab .directory-list .directory-item h4 {
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    margin: 0 0.25em;
+}
 img#logo {
     display: none;
 }
@@ -267,8 +308,8 @@ button.goselect {
     font-family: "Signika", sans-serif;
     color: white;
 }
-.controlbutton{
-	width: 100%;
+.controlbutton {
+    width: 100%;
     margin: 0 1px;
     background: rgba(39, 39, 39, 0.62);
     /* border: 1px solid #b5b3a4; */
@@ -278,7 +319,15 @@ button.goselect {
     font-family: "Signika", sans-serif;
     /* border: 0; */
     color: white;
-    box-shadow: 0 0 6px inset #a2a2a2;
+    /* box-shadow: 0 0 6px inset #a2a2a2; */
+}
+.sidebar-tab .directory-list .directory-item img[data-src] {
+    visibility: unset !important;
+}
+#combat #combat-tracker {
+    height: calc(100% - 94px);
+    padding: 1px 0;
+    display: flex;
 }
 .window-app .window-header {
     flex: 0 0 30px;
@@ -323,6 +372,7 @@ button.goselect {
     margin: 1px;
     box-shadow: 0 0 6px inset #000000;
 }
+
 i.fas.fa-caret-down {
     margin: 2vh;
 }
@@ -331,7 +381,8 @@ i.fas.fa-caret-down {
     margin: 2vh;
 }
 #sidebar > * {
-    background: black;
+    background: #000000b8;
+    margin-top: -5px;
 }
 .dice-tray {
     margin-bottom: 5vh;

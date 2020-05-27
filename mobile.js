@@ -1,3 +1,45 @@
+//Hooks.on("init", () => {CONFIG.debug.hooks = true})
+Hooks.once('init', function() {
+
+	game.settings.register('simplemobile', 'lasttoken', {
+        name: 'Last Token',
+        hint: 'This is the value where the last selected token will be saved',
+        scope: 'client',
+        config: false,
+        default: "0",
+		type: String,
+    }); 
+	game.settings.register('simplemobile', 'movementdirection', {
+        name: 'Movement Swich',
+        hint: 'This is the value the movement values is saved',
+        scope: 'client',
+        config: false,
+        default: "",
+        type: String,
+    }); 
+	game.settings.register('simplemobile', 'autorotation', {
+        name: 'Auto Rotate',
+        hint: 'Automatically Rotate tokens based on where they are going',
+        scope: 'world',
+        config: true,
+        default: true,
+        type: Boolean,
+    });
+ 	game.settings.register('simplemobile', 'invertrotation', {
+        name: 'Invert Rotation',
+        hint: 'Inverts the rotation of the token',
+        scope: 'client',
+        config: true,
+        default: true,
+        type: Boolean,
+    }); 
+
+});
+Hooks.on('preRenderActorSheet5eCharacter ', () => {
+	const container = document.querySelector('. container')
+	container.scrollTop
+	container.scrollLeft
+});
 
 Hooks.on('canvasReady', function(){
     function opencontrols() {
