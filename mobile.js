@@ -1,4 +1,4 @@
-Hooks.on("init", () => {CONFIG.debug.hooks = true})
+//Hooks.on("init", () => {CONFIG.debug.hooks = true})
 Hooks.once('init', function() {
 
 	game.settings.register('simplemobile', 'lasttoken', {

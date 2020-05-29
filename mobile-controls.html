@@ -17,154 +17,139 @@
 		</div>
 		<script>
 			function rotate(value){
-			let lasttoken = parseInt(game.settings.get('simplemobile', 'lasttoken'));
-			let rotation = canvas.tokens.controlled[lasttoken].rotation;
-			let newrotation = rotation + value;
-			if(game.settings.get('simplemobile', 'invertrotation')){
-				switch(newrotation) {
-				  case -180:
-					newrotation = 0;
-					break;
-				  case 90:
-					newrotation = -90;
-					break;
-				  case -90:
-					newrotation = 90;
-					break;
-				  case 0:
-					newrotation = -180;
-					break;
-				  default:
-					// code block
-				}
-				
+				let lasttoken = parseInt(game.settings.get('simplemobile', 'lasttoken'));
+				let rotation = canvas.tokens.controlled[lasttoken].rotation;
+				let newrotation = rotation + value;
+				if(game.settings.get('simplemobile', 'invertrotation')){
+					switch(newrotation) {
+					  case -180:
+						newrotation = 0;
+						break;
+					  case 90:
+						newrotation = -90;
+						break;
+					  case -90:
+						newrotation = 90;
+						break;
+					  case 0:
+						newrotation = -180;
+						break;
+					  default:
+						// code block
+					}
+					
 			}
 			
 			canvas.tokens.controlled[lasttoken].rotate(newrotation);
 			}
 			
 			function select(){
-			canvas.tokens.ownedTokens.map(token => token.control({releaseOthers: false}));
-			let tokens = canvas.tokens.controlled;
-			lasttoken = parseInt(game.settings.get('simplemobile', 'lasttoken'));
-			if(tokens.length === 1){
-			lasttoken = 0;
+				canvas.tokens.ownedTokens.map(token => token.control({releaseOthers: false}));
+				let tokens = canvas.tokens.controlled;
+				lasttoken = parseInt(game.settings.get('simplemobile', 'lasttoken'));
+				if(tokens.length === 1){
+				lasttoken = 0;
+				}
+				else if( tokens.length -1 <= lasttoken){
+				lasttoken = 0;
+				}
+				else{
+				lasttoken += 1;
+				}
+				game.settings.set('simplemobile', 'lasttoken', lasttoken);
+				//console.log(lasttoken);
+				let x = tokens[lasttoken].x;
+				let y = tokens[lasttoken].y;
+				document.getElementById("sidebar");
+				let twidth = tokens[lasttoken].w / 2;
+				let theight = tokens[lasttoken].h / 2;
+				let view = canvas.scene._viewPosition;
+				canvas.animatePan({duration: 250, x: x+twidth, y: y+theight, scale: view.scale});
 			}
-			else if( tokens.length -1 <= lasttoken){
-			lasttoken = 0;
-			}
-			else{
-			lasttoken += 1;
-			}
-			game.settings.set('simplemobile', 'lasttoken', lasttoken);
-			console.log(lasttoken);
-			let x = tokens[lasttoken].x;
-			let y = tokens[lasttoken].y;
-			document.getElementById("sidebar");
-			let twidth = tokens[lasttoken].w / 2;
-			let theight = tokens[lasttoken].h / 2;
-			let view = canvas.scene._viewPosition;
-			canvas.animatePan({duration: 250, x: x+twidth, y: y+theight, scale: view.scale});
-			}
-			function up(){
-				if(game.settings.get('simplemobile', 'movementdirection') === "up"){
-					if(game.paused === false){
+			function move(x, y){
+						document.getElementById("sidebar");
 						let tokens = canvas.tokens.controlled;
 						lasttoken = parseInt(game.settings.get('simplemobile', 'lasttoken'));
 						// TOKEN SELECTION END
-						console.log(lasttoken);
-						tokens[lasttoken].shiftPosition(0, -1);
-						let x = tokens[lasttoken].x;
-						let y = tokens[lasttoken].y - canvas.grid.h;
+						//console.log(lasttoken);
+						tokens[lasttoken].shiftPosition(x, y);
+						if(y === -1){//move up
+							x = tokens[lasttoken].x;
+							y = tokens[lasttoken].y - canvas.grid.h;
+							if(game.settings.get('simplemobile', 'autorotation')){rotate(-180)}
+						}
+						else if(y === +1){//move down
+							x = tokens[lasttoken].x;
+							y = tokens[lasttoken].y + canvas.grid.h;
+							if(game.settings.get('simplemobile', 'autorotation')){rotate(0)}
+						}
+						else if(x === -1){//move left
+							x = tokens[lasttoken].x - canvas.grid.h;
+							y = tokens[lasttoken].y;
+							if(game.settings.get('simplemobile', 'autorotation')){rotate(90)}
+						}
+						else if(x === +1){//move right
+							x = tokens[lasttoken].x + canvas.grid.h;
+							y = tokens[lasttoken].y;
+						if(game.settings.get('simplemobile', 'autorotation')){rotate(-90)}
+						}
 						document.getElementById("sidebar");
 						let twidth = tokens[lasttoken].w / 2;
 						let theight = tokens[lasttoken].h / 2;
 						let view = canvas.scene._viewPosition;
-						if(game.settings.get('simplemobile', 'autorotation')){rotate(-180)}
 						canvas.animatePan({duration: 250, x: x+twidth, y: y+theight, scale: view.scale});
+			}
+			function up(){
+				if(game.settings.get('simplemobile', 'movementdirection') === "up" && game.settings.get('simplemobile', 'autorotation')){
+					if(game.paused === false){
+						move(0, -1);
 					}
 					else{warn();}
 				}
 				else{
-					if(game.settings.get('simplemobile', 'autorotation')){
-					rotate(-180);
+					if(game.settings.get('simplemobile', 'autorotation')){rotate(-180)}
 					newMovementDirection("up");
-					}
+					if(game.settings.get('simplemobile', 'autorotation') === false){move(0, -1);}
+
 				}
 			}
 			function down(){
 				if(game.settings.get('simplemobile', 'movementdirection') === "down"){
 					if(game.paused === false){
-						let tokens = canvas.tokens.controlled;
-						lasttoken = parseInt(game.settings.get('simplemobile', 'lasttoken'));
-						// TOKEN SELECTION END
-						console.log(lasttoken);
-						tokens[lasttoken].shiftPosition(0, 1);
-						let x = tokens[lasttoken].x;
-						let y = tokens[lasttoken].y + canvas.grid.h;
-						let twidth = tokens[lasttoken].w / 2;
-						let theight = tokens[lasttoken].h / 2;
-						let view = canvas.scene._viewPosition;
-						if(game.settings.get('simplemobile', 'autorotation')){rotate(0)}
-						canvas.animatePan({duration: 250, x: x+twidth, y: y+theight, scale: view.scale});
-						debug();
+						move(0, +1);
 					}
 					else{warn();}
 				}
 				else{
 					if(game.settings.get('simplemobile', 'autorotation')){rotate(0)}
 					newMovementDirection("down");
-					debug();
+					if(game.settings.get('simplemobile', 'autorotation') === false){move(0, +1);}
 				}
 			}
 			function left(){
 				if(game.settings.get('simplemobile', 'movementdirection') === "left"){
 					if(game.paused === false){
-						let tokens = canvas.tokens.controlled;
-						lasttoken = parseInt(game.settings.get('simplemobile', 'lasttoken'));
-						// TOKEN SELECTION END
-						console.log(lasttoken);
-						tokens[lasttoken].shiftPosition(-1, 0);
-						let x = tokens[lasttoken].x - canvas.grid.h;
-						let y = tokens[lasttoken].y;
-						let twidth = tokens[lasttoken].w / 2;
-						let theight = tokens[lasttoken].h / 2;
-						let view = canvas.scene._viewPosition;
-						if(game.settings.get('simplemobile', 'autorotation')){rotate(90)}
-						canvas.animatePan({duration: 250, x: x+twidth, y: y+theight, scale: view.scale});
-						debug();
+						move(-1, 0);
 					}
 					else{warn();}
 				}
 				else{
 					if(game.settings.get('simplemobile', 'autorotation')){rotate(90)}
 					newMovementDirection("left");
-					debug();
+					if(game.settings.get('simplemobile', 'autorotation') === false){move(-1, 0);}
 				}
 			}
 			function right(){
 				if(game.settings.get('simplemobile', 'movementdirection') === "right"){
 					if(game.paused === false){
-						let tokens = canvas.tokens.controlled;
-						lasttoken = parseInt(game.settings.get('simplemobile', 'lasttoken'));
-						// TOKEN SELECTION END
-						console.log(lasttoken);
-						tokens[lasttoken].shiftPosition(+1, 0);
-						let x = tokens[lasttoken].x + canvas.grid.h;
-						let y = tokens[lasttoken].y;
-						let twidth = tokens[lasttoken].w / 2;
-						let theight = tokens[lasttoken].h / 2;
-						let view = canvas.scene._viewPosition;
-						if(game.settings.get('simplemobile', 'autorotation')){rotate(-90)}
-						canvas.animatePan({duration: 250, x: x+twidth, y: y+theight, scale: view.scale});
-						debug();
+						move(+1, 0);
 					}
 					else{warn();}
 				}
 				else{
 					if(game.settings.get('simplemobile', 'autorotation')){rotate(-90)}
 					newMovementDirection("right");
-					debug();
+					if(game.settings.get('simplemobile', 'autorotation') === false){move(+1, 0);}
 				}
 			}
 			function zoomin(){
@@ -182,7 +167,7 @@
 			}
 			function debug(customvalue){
 				if(customvalue != undefined){
-					console.log(customvalue);
+					//console.log(customvalue);
 				}
 			}
 			function newMovementDirection(direction){

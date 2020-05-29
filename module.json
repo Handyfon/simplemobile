@@ -2,7 +2,7 @@
 	"name": "simplemobile",
 	"title": "Simple-Mobile",
 	"description": "Add (somewhat) support for mobile",
-	"version": "0.0.3.1",
+	"version": "0.0.4",
 	"author": "Handyfon#8390",
 	"esmodules": ["mobile.js"],
 	"styles": ["mobile.css"],
