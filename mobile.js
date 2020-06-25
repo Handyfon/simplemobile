@@ -32,13 +32,33 @@ Hooks.once('init', function() {
         config: true,
         default: true,
         type: Boolean,
+    });
+  	game.settings.register('simplemobile', 'performanceop', {
+        name: 'Performance Optimization',
+        hint: 'Limits the functionality of simple mobile to optimize it for slower devices',
+        scope: 'world',
+        config: true,
+        default: false,
+        type: Boolean,
     }); 
 
 });
-Hooks.on('preRenderActorSheet5eCharacter ', () => {
+Hooks.on('preRenderActorSheet5eCharacter', () => {
 	const container = document.querySelector('. container')
 	container.scrollTop
 	container.scrollLeft
+});
+Hooks.on('canvasInit', () => {
+	if(game.settings.get('simplemobile', 'performanceop')){
+		var node = document.getElementById("board");
+		if (node.parentNode) {
+		  node.parentNode.removeChild(node);
+		}
+	console.log("performance optimised");
+	let mi = document.querySelector("#mobile-container");
+
+
+	}
 });
 
 Hooks.on('canvasReady', function(){

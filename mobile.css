@@ -2,6 +2,7 @@ div#mobile-controls {
     display: none !important;
 }
 @media only screen and (max-width: 1000px) {
+	
 h4.entity-name {
     text-align: center;
 }
@@ -397,10 +398,6 @@ i.fas.fa-caret-down {
 .fa-caret-up:before {
     content: "\f0d8";
     margin: 2vh;
-}
-#sidebar > * {
-    background: #000000b8;
-    /* margin-top: -5px; */
 }
 .dice-tray {
     margin-bottom: 5vh;
