@@ -36,7 +36,7 @@ Hooks.once('init', function() {
   	game.settings.register('simplemobile', 'performanceop', {
         name: 'Performance Optimization',
         hint: 'Limits the functionality of simple mobile to optimize it for slower devices',
-        scope: 'world',
+        scope: 'client',
         config: true,
         default: false,
         type: Boolean,
@@ -49,7 +49,8 @@ Hooks.on('preRenderActorSheet5eCharacter', () => {
 	container.scrollLeft
 });
 Hooks.on('canvasInit', () => {
-	if(game.settings.get('simplemobile', 'performanceop')){
+	if(game.settings.get('simplemobile', 'performanceop') & window.screen.width < 1080){
+		
 		var node = document.getElementById("board");
 		if (node.parentNode) {
 		  node.parentNode.removeChild(node);
