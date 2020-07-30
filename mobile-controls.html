@@ -26,8 +26,24 @@
 				let newrotation = rotation + value;
 				if(game.settings.get('simplemobile', 'invertrotation')){
 					switch(newrotation) {
+					
 					  case -180:
 						newrotation = 0;
+						break;
+					  case -135:
+						newrotation = 45;
+						break;
+					  case 135:
+						newrotation = -45;
+						break;
+					  case -45:
+						newrotation = 135;
+						break;
+					  case 45:
+						newrotation = -135;
+						break;
+					  case -135:
+						newrotation = 45;
 						break;
 					  case 90:
 						newrotation = -90;
@@ -137,7 +153,7 @@
 					else{warn();}
 				}
 				else{
-					if(game.settings.get('simplemobile', 'autorotation')){rotate(-45)}
+					if(game.settings.get('simplemobile', 'autorotation')){rotate(135)}
 					newMovementDirection("upleft");
 					if(game.settings.get('simplemobile', 'autorotation') === false){move(-1, -1);}
 
@@ -151,35 +167,35 @@
 					else{warn();}
 				}
 				else{
-					if(game.settings.get('simplemobile', 'autorotation')){rotate(-135)}
+					if(game.settings.get('simplemobile', 'autorotation')){rotate(45)}
 					newMovementDirection("downleft");
 					if(game.settings.get('simplemobile', 'autorotation') === false){move(-1, 1);}
 				}
 			}
 			function upright(){
-				if(game.settings.get('simplemobile', 'movementdirection') === "upleft" && game.settings.get('simplemobile', 'autorotation')){
+				if(game.settings.get('simplemobile', 'movementdirection') === "upright" && game.settings.get('simplemobile', 'autorotation')){
 					if(game.paused === false){
 						move(+1, -1);
 					}
 					else{warn();}
 				}
 				else{
-					if(game.settings.get('simplemobile', 'autorotation')){rotate(45)}
-					newMovementDirection("upleft");
+					if(game.settings.get('simplemobile', 'autorotation')){rotate(-135)}
+					newMovementDirection("upright");
 					if(game.settings.get('simplemobile', 'autorotation') === false){move(+1, -1);}
 
 				}
 			}
 			function downright(){
-				if(game.settings.get('simplemobile', 'movementdirection') === "downleft" && game.settings.get('simplemobile', 'autorotation')){
+				if(game.settings.get('simplemobile', 'movementdirection') === "downright" && game.settings.get('simplemobile', 'autorotation')){
 					if(game.paused === false){
 						move(+1, 1);
 					}
 					else{warn();}
 				}
 				else{
-					if(game.settings.get('simplemobile', 'autorotation')){rotate(135)}
-					newMovementDirection("downleft");
+					if(game.settings.get('simplemobile', 'autorotation')){rotate(-45)}
+					newMovementDirection("downright");
 					if(game.settings.get('simplemobile', 'autorotation') === false){move(-1, 1);}
 				}
 			}

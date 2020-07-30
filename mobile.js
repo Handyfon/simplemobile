@@ -17,6 +17,14 @@ Hooks.once('init', function() {
         default: "",
         type: String,
     }); 
+	game.settings.register('simplemobile', 'cps', {
+        name: 'Camera Pan Speed',
+        hint: 'How many pixels the camera pans when tapping on the screen',
+        scope: 'world',
+        config: true,
+        default: "25",
+        type: String,
+    }); 
 	game.settings.register('simplemobile', 'autorotation', {
         name: 'Auto Rotate',
         hint: 'Automatically Rotate tokens based on where they are going',
@@ -35,12 +43,13 @@ Hooks.once('init', function() {
     });
   	game.settings.register('simplemobile', 'performanceop', {
         name: 'Performance Optimization',
-        hint: 'Limits the functionality of simple mobile to optimize it for slower devices',
+        hint: 'Limits the functionality of simple mobile to optimize it for slower devices, also disabled the canvas (where scenes are rendered on)',
         scope: 'client',
         config: true,
         default: false,
         type: Boolean,
     }); 
+	
 
 });
 Hooks.on('preRenderActorSheet5eCharacter', () => {
@@ -79,21 +88,21 @@ Hooks.on('canvasReady', function(){
   animationSpeed: 250,      // The total time in milliseconds for the animation to take
   panSpeed: 100             // The panning speed in pixels per second, only used if animationSpeed is not specified
   };
-
+  let tapcameraspeed = parseInt(game.settings.get('simplemobile', 'cps'));
   let view = canvas.scene._viewPosition;
-  if (x<= screen.width/2){
-  view.x -=20;
+  if (x<= screen.width/3){
+  view.x -= tapcameraspeed;
   }
-  else{
-  view.x += 20;
+  else if (x>= screen.width - screen.width/3){
+  view.x += tapcameraspeed;
   }
-  if (y<= screen.height/2){
-	view.y -=20  
+  if (y<= screen.height/4){
+	view.y -= tapcameraspeed  
   }
-  else{
-  view.y += 20;
+  else if (y>= screen.height - screen.height/4){
+  view.y += tapcameraspeed;
   }
-  canvas.animatePan({duration: 50, x: view.x, y: view.y, scale: view.scale});
+  canvas.animatePan({duration: 25, x: view.x, y: view.y, scale: view.scale});
   console.log("canvas moved");
 
 }
