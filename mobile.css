@@ -1,11 +1,89 @@
 div#mobile-controls {
     display: none !important;
 }
+i.fas.fa-mobile-alt {
+	color: #00ffa1;
+}
 @media only screen and (max-width: 1024px) {
+div#mobile-controls {
+    display: block !important;
+}
+/*General Improvements*/
+.rollable {
+    background: #bf4b00;
+    color: #f0f0e0 !important;
+    text-align: -webkit-center;
+    font-size: 15px !important;
+    border-radius: 4px;
+}
+.window-app .window-header .window-title {
+    margin: 0;
+    word-break: break-all;
+    max-width: 66vw;
+}
+li.directory-item.folder.flexcol.collapsed {
+    height: 40px !important;
+}
+input:focus {
+    transform: scale(1.3);
+    transition: 0.2s;
+}
+textarea:focus {
+    transform: scale(1.3);
+    transition: 0.2s;
+}
+button:focus {
+    outline: none;
+    box-shadow: 0 0 5px red;
+    background: #bf4b00;
+    transform: scale(1.1);
+    transition: 0.1s;
+}
 /*==========================*DND ONLY=====================================*/
+.item-name.flexrow.rollable {
+    font-size: unset !important;
+}
+.dnd5e.sheet.actor .counters .counter {
+    height: 29px;
+    line-height: 29px;
+    font-size: 15px;
+}
+.dnd5e.sheet.actor ul.skills-list li.skill .skill-ability {
+    margin-left: 20px;
+}
+.dnd5e.sheet.actor .counters .counter .counter-value {
+    margin-left: 50px;
+}
+.dnd5e.sheet.actor ul.skills-list li.skill .skill-proficiency {
+    margin-right: 20px;
+}
+section.header-details.flexrow {
+    margin-bottom: -30px;
+}
+.dnd5e.sheet .sheet-header .summary li:last-child {
+    border-right: none;
+    max-width: 140px;
+}
+.dnd5e.sheet .sheet-header h1 input {
+    transform: unset !important;
+}
 .dnd5e.sheet .sheet-navigation {
-    margin-top: -28px;
     border-top: 1px solid #b5b3a4;
+}
+.dnd5e.sheet .sheet-header {
+    flex: 0 0 100px;
+    border-bottom: 0;
+}
+.dnd5e.sheet .sheet-navigation .item.active {
+    border-bottom: 3px solid #ffffff;
+    background: #bf4b00;
+    padding-left: 15px;
+    padding-right: 15px;
+    transition: 0.2s;
+    color: #f0f0e0;
+}
+.dnd5e.sheet.actor .spellcasting-ability {
+    flex: 0; 
 }
 .dnd5e.sheet .filter-list {
     list-style: none;
@@ -37,15 +115,22 @@ div#mobile-controls {
 .dnd5e.sheet.actor .encumbrance {
     margin: unset;
 }
-.dnd5e.sheet .sheet-header .header-details {
-    margin-top: -13px;
+.dnd5e.sheet.actor .sheet-header h1.charname input {
+    height: 24px;
+	margin:0;
+}
+.dnd5e.sheet.actor .sheet-header .header-exp {
+    flex: 0 0 100px;
+    margin-right: 2px;
+    height: 75px;
+    justify-content: flex-end;
+    text-align: right;
+    flex-direction: column-reverse;
+    margin-right: 95px;
 }
 .dnd5e.sheet.actor .tab.attributes {
     overflow: hidden;
     overflow-y: scroll;
-}
-#sidebar > * {
-    background: #2b2a2adb;
 }
 h4.entity-name {
 	text-align: center;
@@ -70,7 +155,8 @@ footer.attribute-footer {
 .dnd5e.sheet.actor .sheet-header .attributes {
     flex: 0 0 100%;
     margin: 0;
-    margin-top: -40px;
+    margin-top: 11px;
+    margin-bottom: 42px;
 }
 .dnd5e.sheet.actor .spell-slots input, .dnd5e.sheet.actor .spell-slots span.sep {
     display: inline;
@@ -81,7 +167,7 @@ footer.attribute-footer {
 
 .dnd5e.sheet.actor.character ul.skills-list li.skill {
     padding: 2vw;
-    height: 3vh;
+    height: 4vh;
     border: 1px groove #b5b3a473;
     align-content: center;
 }
@@ -120,6 +206,9 @@ footer.attribute-footer {
 }
 .dnd5e.sheet.actor .inventory-list .item-controls {
     flex: unset;
+}
+.dnd5e.sheet .window-content {
+    max-width: 100vw;
 }
 /*==========================*DND END=====================================*/
 /*==========================*DARKSHEET ONLY=====================================*/
@@ -163,6 +252,24 @@ img#logo {
 img.profile {
 	display: none;
 }*/
+div#mobile-controls {
+    display: none !important;
+}
+div#mobile-container {
+    flex: 1;
+    width: 39%;
+    margin-left: 20px;
+}
+button.opencharsheet.controlbutton {
+    height: 45px !important;
+    width: 50px;
+    position: absolute;
+    left: 82%;
+}
+#sidebar > * {
+    background: #2b2a2adb;
+}
+
 #combat li.combatant.active {
     background: rgba(255, 100, 0, 0.61);
     box-shadow: 0 0 5px inset #040404;
@@ -170,12 +277,10 @@ img.profile {
     display: flex;
 }
 li.folder > .folder-header {
-    padding: 6px;
-    line-height: 24px;
     background: rgb(117 46 0 / 61%) !important;
     border-top: 1px solid #000;
     border-bottom: 1px solid #fff;
-    /* width: 60vw; */
+    width: 68vw;
 }
 #playlists li.playlist .playlist-header .playlist-name {
     background: unset !important;
@@ -220,14 +325,12 @@ li.combatant.actor.directory-item.flexrow {
     max-width: 180px;
 }
 #playlists li.playlist .playlist-header {
-    flex: 0 0 100%;
-    justify-content: space-between;
-    text-decoration: underline;
     margin-top: 10px;
+    flex-wrap: nowrap;
 }
 .sidebar-tab .directory-list .directory-item h3, .sidebar-tab .directory-list .directory-item h4 {
-    background: #752e00;
-    border: 3px solid #bf4b00;
+    /* background: #752e00; */
+    /* border: 3px solid #bf4b00; */
 }
 li.folder > .folder-header h3 {
     margin: 0;
@@ -255,13 +358,7 @@ img#logo {
 .dnd5e.sheet.actor.character .sheet-header .attributes a.rest {
     margin: unset;
 }
-img.profile {
-	display: none;
-}
-#combat li.combatant .token-image {
-    margin: 0;
-    display: none !important;
-}
+
 nav#navigation {
 	display: none;
 }
@@ -362,6 +459,10 @@ a#macro-directory {
     width: 56px !important;
     height: 408px !important;
 }
+i.fas.fa-caret-left {
+    transform: scale(1.5);
+    margin-top: 17px;
+}
 #chat-form {
     height: 200px;
     flex: 0 0 100px;
@@ -394,11 +495,12 @@ a#macro-directory {
 
 /*Mobile controls*/
 div#mobile-controls {
+	height: 13vh !important;
     position: fixed !important;
     top: unset !important;
-    bottom: 20vh !important;
-    left: 10vw !important;
-    width: 200px !important;
+    bottom: 4vh !important;
+    left: 6vw !important;
+    width: 83% !important;
     margin: 0 !important;
     padding: 0 !important;
     border: 1px solid #0000 !important;
@@ -469,6 +571,7 @@ button.goselect {
     background: #bf4b00;
     border: 1px solid red;
     border-radius: 5px;
+    max-width: 100vw;
 }
 #hotbar .macro.inactive {
     background: #2b2a2a9c;
@@ -555,12 +658,22 @@ div#mobile-controls > .window-header {
 } 
 div#mobile-controls > section.window-content {
     box-shadow: unset !important;
-    background: #2b2a2a9c;
+    background: #00000000;
 }
 
 div#mobile-s {
     display: flex;
     box-shadow: 0 0 20px #000;
+    height: 12vh;
+}
+button.goup.controlbutton {
+    height: 33%;
+}
+button.goselect.controlbutton {
+    height: 33%;
+}
+button.godown.controlbutton {
+    height: 33%;
 }
 @media only screen and (max-width: 600px) {/* UNDER 600 PIXEL*/
 .item-image {
@@ -568,6 +681,9 @@ div#mobile-s {
 }
 .dnd5e.sheet.actor.character ul.skills-list {
     flex: 66% !important;
+}
+.sheet-header .profile {
+    display: none;
 }
 .dnd5e.sheet.actor .inventory-filters .currency {
     list-style: none;
@@ -594,9 +710,4 @@ div#mobile-s {
     /* width: 20%; */
     max-height: 95vh;
     margin-top: 3vh;
-}
-#combat li.combatant .token-image {
-    margin: 0;
-    display: none !important;
-}
 }
