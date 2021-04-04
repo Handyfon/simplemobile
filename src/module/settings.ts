@@ -1,4 +1,4 @@
-export const MODULE_NAME = 'foundryvtt-simple-mobile';
+export const MODULE_NAME = 'simplemobile';
 
 export const registerSettings = function () {
 
@@ -49,5 +49,5 @@ export const registerSettings = function () {
         config: true,
         default: false,
         type: Boolean,
-    }); 
+    });
 }

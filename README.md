@@ -1,13 +1,15 @@
 
 # This project is still in progress
 
-if you want to contribute financially check out the 
-
-## [bounty on trello on league of extraordinary foundryvtt developers](https://trello.com/c/8J4ljdnW/238-uibounty-foundryvtt-simple-mobile)
-
-This is a tentative to make foundry more mobile friendly.
+The scope of this project is to upfrade the work done by [Handyfon](https://github.com/Handyfon), by separate the style based to system, module, components, ecc.
 
 The starting template of this project was inspired from the marvelous project ui [Ernie's Modern UI](https://github.com/ernieayala/ernies-modern-layout)
+
+## if you want to contribute financially check out the 
+
+### [bounty on trello on league of extraordinary foundryvtt developers](https://trello.com/c/8J4ljdnW/238-uibounty-foundryvtt-simple-mobile)
+
+## Description
 
 IOS is not and will not be supported because the IOS browsers are really bad.
 
@@ -30,7 +32,15 @@ To install this module manually:
 4.  Click 'Install' and wait for installation to complete
 5.  Don't forget to enable the module in game using the "Manage Module" button
 
-## Settings
+## How to build your css and contribute ?
+
+- Download the project
+- Launch from command console `npm install`
+- Manage the scs files, when you think you are ready launch `npm run-script build`
+- You should see a compiled css file under the folder "css"
+- Finally if you are sure is a valid version launch `npm run-script package`, you will find the zip module file under the "package" folder
+
+## Settings (TO DO)
 
 ## [Changelog](./changelog.md)
 
@@ -49,5 +59,6 @@ Mad props to the 'League of Extraordinary FoundryVTT Developers' community which
 
 Thanks to anyone who helps me with this code! I appreciate the user community's feedback on this project!
 
+- [simplemobile](https://github.com/Handyfon/simplemobile) ty to [Handyfon](https://github.com/Handyfon)
 - [Laptop Fix](https://github.com/wsaunders1014/laptop-fix) ty to [wsaunders1014](https://github.com/wsaunders1014)
 - [Touch VTT](https://github.com/Oromis/touch-vtt) ty to [Oromis](https://github.com/Oromis)

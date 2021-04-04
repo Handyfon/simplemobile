@@ -6,17 +6,17 @@
 		"vtt",
 		"foundry"
 	],
-	"name": "foundryvtt-simple-mobile",
+	"name": "simplemobile",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"start": "node-sass --watch src/scss -o css",
-		"build": "gulp build && gulp link && node-sass src/scss -o dist & postcss dist/simple-mobile.css -u autoprefixer --no-map -d dist/",
+		"build": "gulp build && gulp link && node-sass src/scss -o dist & postcss dist/mobile.css -u autoprefixer --no-map -d dist/",
 		"package": "gulp package",
 		"build:watch": "gulp watch",
 		"clean": "gulp clean && gulp link --clean",
 		"update": "npm install --save-dev gitlab:foundry-projects/foundry-pc/foundry-pc-types"
 	},
-	"version": "0.2.6",
+	"version": "0.2.0",
 	"devDependencies": {
 		"archiver": "5.3.0",
 		"autoprefixer": "^9.1.0",

@@ -1,3 +1,6 @@
+<div class="OpenCharSheet">
+	<button class="opencharsheet controlbutton" onclick="opencharacter()" style="height: 50%;"><i class="fas fa-user-alt"></i></button>
+</div>
 <div id="mobile-container">
 	<div id="mobile-s">
 		<div class="up">
@@ -20,7 +23,17 @@
 		<button class="zoomout controlbutton" onclick="zoomout()" style="height: 50%;"><i class="fas fa-search-minus"></i></i></button>
 		</div>
 		<script>
+			function opencharacter(){
+			game.user.character.sheet.render(true)
+			}
 			function rotate(value){
+			if(canvas.tokens.controlled.length == 0){
+				//Check if a notification is already on the display.
+				if(document.getElementsByClassName('notification info').length == 0)
+					ui.notifications.notify("You need to select a character");
+					
+				return;
+			}
 				let lasttoken = parseInt(game.settings.get('simplemobile', 'lasttoken'));
 				let rotation = canvas.tokens.controlled[lasttoken].rotation;
 				let newrotation = rotation + value;
