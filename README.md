@@ -41,8 +41,8 @@ To install this module manually:
 
 - Download the project
 - Launch from command console `npm install`
-- Manage the scs files, when you think you are ready launch `npm run-script build`
-- You should see a compiled css file under the folder "css"
+- Manage the scss and ts files, when you think you are ready launch `npm run-script build`
+- You should see a compiled css and js files under the folder "dist"
 - Finally if you are sure is a valid version launch `npm run-script package`, you will find the zip module file under the "package" folder
 
 ## Settings (TO DO)
