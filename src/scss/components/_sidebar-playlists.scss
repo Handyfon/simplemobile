@@ -1,62 +1,7 @@
 #sidebar,
 .sidebar-popout {
   #playlists {
-    li.playlist {
-      .playlist-header {
-        .playlist-name {
-          background: unset !important;
-          border: unset !important;
-        }
-      }
-    }
-    li.sound {
-      .sound-name {
-        margin: 0;
-        max-width: 150px;
-        background: unset !important;
-        border: unset !important;
-      }
-    }
-  }
-
-  .fa-play {
-    &:before {
-      content: "\f04b";
-      margin-left: 20px;
-      color: #38de38;
-    }
-  }
-  .playlist-name {
-    cursor: pointer;
-    max-width: 180px;
-  }
-  #playlists {
-    li.playlist {
-      .playlist-header {
-        flex: 0 0 100%;
-        justify-content: space-between;
-        text-decoration: underline;
-        margin-top: 10px;
-      }
-    }
-  }
-
-  .playlist-controls {
-    flex: 0 0 141px !important;
-    justify-content: flex-end;
-  }
-
-  #playlists .global-volume {
-    flex: 0 0 152px;
-    transform: scaleY(2.5);
-  }
-  #playlists li.sound {
-    margin: 13px 0 0;
-    padding: 0;
-  }
-  
-  li.directory-item.entity.playlist.flexrow.collapsed {
-    width: 100% !important;
+    
   }
 }
 
