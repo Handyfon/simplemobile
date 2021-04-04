@@ -1,0 +1,223 @@
+/*==========================*DND ONLY=====================================*/
+.dnd5e.sheet {
+	.sheet-navigation {
+		margin-top: -28px;
+		border-top: 1px solid #b5b3a4;
+		.item {
+			margin: 0;
+		}
+	}
+	.filter-list {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		line-height: 16px;
+		max-width: 100%;
+		flex: 0 0 144%;
+	}
+	.sheet-header {
+		.header-details {
+			margin-top: -13px;
+		}
+	}
+}
+.dnd5e.sheet.actor {
+	.spell-school {
+		flex: unset;
+	}
+	.spell-action {
+		flex: unset;
+	}
+	.spell-target {
+		flex: unset;
+	}
+	.inventory-list {
+		.item-detail {
+			flex: unset !important;
+		}
+		.item-controls {
+			a {
+				font-size: 12px;
+				text-align: center;
+				color: #7a7971;
+			}
+			flex: unset;
+		}
+		.item-detail.item-action {
+			flex: unset;
+		}
+	}
+	.encumbrance {
+		margin: unset;
+	}
+	.tab.attributes {
+		overflow: hidden;
+		overflow-y: scroll;
+	}
+	h4.box-title {
+		font-size: 13px;
+	}
+	.sheet-header {
+		.summary {
+			margin-top: -36px;
+			margin-bottom: -20px;
+		}
+		.attributes {
+			flex: 0 0 100%;
+			margin: 0;
+			margin-top: -40px;
+		}
+	}
+	.spell-slots {
+		input {
+			display: inline;
+			max-width: 20px;
+			text-align: center;
+			transform: scale(1.5);
+		}
+		span.sep {
+			display: inline;
+			max-width: 20px;
+			text-align: center;
+			transform: scale(1.5);
+		}
+	}
+	.counters {
+		.counter {
+			input[type="text"] {
+				height: 20px;
+				max-width: 20px;
+				margin: 0;
+				padding: 0;
+				text-align: center;
+			}
+		}
+	}
+	.center-pane {
+		overflow-y: initial;
+	}
+}
+.collapsed {
+	height: fit-content !important;
+}
+#sidebar {
+	>* {
+		background: #2b2a2adb;
+	}
+}
+h4.entity-name {
+	text-align: center;
+}
+.sidebar-tab {
+	.directory-header {
+		.header-search {
+			input {
+				background: RGBA(255, 255, 245, 0.8);
+				width: calc(100% - 26px);
+				margin: 0 2px;
+				width: 80%;
+			}
+		}
+	}
+}
+footer.attribute-footer {
+	display: inline-flex;
+	width: fit-content;
+}
+.dnd5e.sheet.actor.character {
+	ul.skills-list {
+		li.skill {
+			padding: 2vw;
+			height: 3vh;
+			border: 1px groove #b5b3a473;
+			align-content: center;
+		}
+		flex: 66% !important;
+		height: 100%;
+		height: fit-content;
+	}
+	.sheet-header {
+		img.profile {
+			flex: 0 0 10px;
+			max-width: 100%;
+			width: 10000px;
+		}
+	}
+	min-width: 100% !important;
+	min-height: 100%;
+	max-width: 100% !important;
+	max-height: 100% !important;
+	width: 100px !important;
+	top: 1px !important;
+}
+
+.section1 {
+	display: contents;
+}
+.checks {
+	display: contents;
+}
+.part4 {
+	margin-left: 0px !important;
+	width: 100%;
+}
+.window-resizable-handle {
+	display: none;
+}
+.settings {
+	margin-right: 20px;
+	margin-left: 25px;
+	margin-bottom: 20px;
+	height: fit-content;
+	padding: 20px;
+	text-align: center;
+	border: groove 2px #5e6069;
+	display: contents;
+}
+.sheet {
+	.sheet-header {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: flex-start;
+		flex: none;
+		display: contents;
+	}
+}
+
+.dnd5e.sheet.actor.character {
+	.sheet-header {
+		.attributes {
+			a.rest {
+				margin: unset;
+			}
+		}
+	}
+}
+
+.sheet .sheet-header > * {
+  flex: 1;
+  max-height: 201px;
+}
+.dnd5e.sheet.actor ul.attributes li.attribute .attribute-footer {
+  font-family: unset !important;
+}
+.dnd5e.sheet.actor .inventory-list .item .item-name {
+  overflow: unset !important;
+}
+
+.item-image {
+  width: 30vw;
+}
+.dnd5e.sheet.actor.character ul.skills-list {
+  flex: 66% !important;
+}
+.dnd5e.sheet.actor .inventory-filters .currency {
+  list-style: none;
+  margin: 4px 0 8px;
+  padding: 0;
+  font-size: 11px;
+  flex: 0 0 100%;
+  align-self: flex-end;
+}
+/*==========================*DND END=====================================*/

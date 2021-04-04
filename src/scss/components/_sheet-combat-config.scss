@@ -1,0 +1,17 @@
+#combat-config {
+
+}
+
+#combat {
+	li.combatant.active {
+	  background: RGBA(255, 100, 0, 0.61);
+	  box-shadow: 0 0 5px inset #040404;
+	  border: 1px solid #c04c01;
+	  display: flex;
+	}
+  }
+  
+  li.combatant.actor.directory-item.flexrow {
+	display: flex;
+  }
+  

@@ -1,0 +1,207 @@
+#sidebar,
+.sidebar-popout {
+	.sidebar-tab {
+		.directory-footer {
+			button.quest-log-btn {
+
+			}
+		}
+	}
+}
+
+#forien-quest-log,
+#forien-quest-log-form,
+.forien-quest-preview {
+	.window-content {
+
+	}
+
+	.window-header {
+
+	}
+
+	.log-tabs,
+	.quest-tabs {
+
+		.item {
+
+		}
+	}
+
+	.editor-edit {
+
+	}
+
+	form {
+
+	}
+}
+
+#forien-quest-log {
+	.window-content {
+
+	}
+
+	.quest-log {
+
+		.log-tabs {
+			&.bookmarks {
+
+				.item {
+
+				}
+			}
+		}
+
+		section.log-body {
+			&.bookmarks .tab {
+
+			}
+
+			.tab {
+
+
+				.table table {
+
+				}
+			}
+		}
+	}
+
+	.new-quest-btn {
+
+	}
+}
+
+#forien-quest-log-form {
+	.grid-container {
+
+
+	}
+}
+
+.forien-quest-preview {
+	.quest-body {
+
+	}
+
+	.details-tab,
+	.grid-container,
+	.tasks-gc,
+	.management {
+
+	}
+
+	.details {
+		.details-tab {
+
+		}
+
+		.details-header {
+
+
+		}
+
+		.grid-container {
+
+		}
+
+		.quest-giver-gc {
+
+		}
+
+		.description-gc {
+
+		}
+
+		.tasks-gc {
+
+			.tasks-box {
+
+			}
+
+			.task {
+
+			}
+		}
+
+		.rewards-gc {
+
+
+
+			.rewards-box {
+
+
+				.drop-info {
+
+				}
+
+				.reward {
+
+
+				}
+			}
+		}
+	}
+
+	.management {
+
+		.part {
+
+			&.personal-quest {
+
+				.quest-is-personal {
+
+				}
+
+				.user-column-container {
+
+				}
+			}
+
+			&.subquests {
+
+				.label {
+
+				}
+
+				.subquests-box {
+
+					.subquest {
+
+
+
+						.actions {
+
+						}
+					}
+				}
+
+				.add-subquest-btn {
+
+				}
+			}
+
+			&.quest-splash {
+
+				.label {
+
+				}
+
+				.splash-img {
+
+				}
+			}
+
+			&.other {
+
+			}
+		}
+	}
+
+	.gmnotes {
+		.editor-content {
+
+		}
+	}
+}

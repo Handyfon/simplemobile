@@ -1,0 +1,42 @@
+// %folder {
+
+// 	.folder-header {
+
+// 	}
+
+// 	.subdirectory {
+// 		@extend %reset-list;
+
+// 		.folder-header {
+
+// 		}
+
+// 		.subdirectory {
+// 			.folder-header {
+
+// 			}
+// 		}
+// 	}
+
+  li.folder {
+    >.folder-header {
+      padding: 6px;
+      line-height: 24px;
+      background: RGB(117 46 0 / 61%) !important;
+      border-top: 1px solid #000;
+      border-bottom: 1px solid #fff;
+      /* width: 60vw; */
+    }
+  }
+
+  li.folder {
+    >.folder-header {
+      h3 {
+        margin: 0;
+        color: #FFF;
+        background: unset !important;
+        border: unset !important;
+      }
+    }
+  }
+// }

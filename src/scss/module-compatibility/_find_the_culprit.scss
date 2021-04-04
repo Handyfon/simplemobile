@@ -1,0 +1,13 @@
+#module-management.culprit-fix {
+  min-height: 90vh !important;
+  max-height: calc(100vh - 16px);
+}
+#module-management.culprit-fix .package-list{
+  max-height: calc(100% - 104px);
+}
+#module-management.culprit-fix.tidyUI-fix .package-list {
+  max-height: calc(100vh - 236px);
+}
+#module-management.culprit-fix.mythicUI-fix .package-list {
+  max-height: calc(100vh - 276px);
+}

@@ -1,0 +1,20 @@
+#sidebar,
+.sidebar-popout {
+  #combat {
+    li.combatant {
+      .token-image {
+        margin: 0;
+        display: none !important;
+      }
+    }
+  }
+  #combat #combat-tracker {
+    height: calc(100% - 94px);
+    padding: 1px 0;
+  }
+
+  #combat li.combatant .token-image {
+    margin: 0;
+    display: none !important;
+  }
+}

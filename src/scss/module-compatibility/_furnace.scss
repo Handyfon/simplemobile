@@ -1,0 +1,57 @@
+#sidebar,
+.sidebar-popout {
+	#playlists {
+		.directory-list li.now-playing {
+
+			> .playlist-header {
+
+			}
+
+			> .playlist-sounds {
+				> .now-playing-item {
+
+				}
+			}
+		}
+
+		li.sound.sound-is-playing {
+
+		}
+	}
+
+	.sound-control-hidden {
+
+	}
+
+	#combat li.combatant.turn-done {
+
+	}
+}
+
+form .furnace-macro-run-as-gm.form-group {
+	label.form-group {
+
+	}
+
+	.tooltip {
+
+	}
+}
+
+.sheet.macro-sheet {
+	.form-group.furnace-macro-command {
+
+		&.fullscreen {
+    }
+
+	}
+
+	.furnace-macro-expand {
+
+	}
+
+	.sheet-footer,
+	.window-resizable-handle {
+
+	}
+}

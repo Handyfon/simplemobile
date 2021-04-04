@@ -1,0 +1,46 @@
+{
+  	"name": "foundryvtt-simple-mobile",
+	"title": "Simple-Mobile",
+	"description": "Add (somewhat) support for mobile",
+	"version": "0.1.2",
+	"author": "Handyfon#8390",
+	"styles": [
+    	"simple-mobile.css"
+  	],
+	"esmodules": [
+    	"simple-mobile.js"
+  	],
+	"socket": true,
+	"minimumCoreVersion": "0.5.5",
+	"compatibleCoreVersion": "0.7.9",
+	"authors": [
+		{
+			"name": "",
+			"email": "",
+			"url": ""
+		}
+	],
+	"languages": [
+		{
+			"lang": "en",
+			"name": "English",
+			"path": "lang/en.json"
+		}
+	],
+  "url": "https://github.com/p4535992/simplemobile/tree/master",
+  "manifest": "https://raw.githubusercontent.com/p4535992/simplemobile/master/src/module.json",
+  "download": "https://raw.githubusercontent.com/p4535992/simplemobile/master/package/foundryvtt-simple-mobile-v0.1.2.zip",
+	"license": "MIT",
+	"readme": "https://github.com/p4535992/simplemobile/tree/master",
+	"changelog": "https://raw.githubusercontent.com/p4535992/simplemobile/master/changelog.md",
+  "bugs": "https://github.com/p4535992/simplemobile/issues",
+  "allowBugReporter": true,
+  "dependencies": [
+    {
+      "name": "touch-vtt"
+    },
+    {
+      "name": "lib-wrapper"
+    }
+  ]
+}
