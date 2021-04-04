@@ -1,9 +1,14 @@
 
-# This project is still in progress
+# Simple Mobile for Foundry VTT
 
-The scope of this project is to upfrade the work done by [Handyfon](https://github.com/Handyfon), by separate the style based to system, module, components, ecc.
+The scope of this project is to "upgrade" the work done by [Handyfon](https://github.com/Handyfon), by separate the style based to system, module, components, ecc.
 
 The starting template of this project was inspired from the marvelous project ui [Ernie's Modern UI](https://github.com/ernieayala/ernies-modern-layout)
+
+# Developing (To Do list)
+
+- Integration with [Touch VTT](https://github.com/Oromis/touch-vtt)
+- Add a mobile style for some module (CUB, MidiQOL, Better Rolls)
 
 ## if you want to contribute financially check out the 
 
