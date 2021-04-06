@@ -1,0 +1,443 @@
+@import "base";
+
+body {
+
+  /*
+    ##Device = Desktops
+    ##Screen = 1281px to higher resolution desktops
+  */
+
+  @media (min-width: 1281px) {
+
+    /* CSS */
+
+  }
+
+  /*
+    ##Device = Laptops, Desktops
+    ##Screen = B/w 1025px to 1280px
+  */
+
+  @media (min-width: 1025px) and (max-width: 1280px) {
+
+
+  }
+
+  /*
+    ##Device = Tablets, Ipads (portrait)
+    ##Screen = B/w 768px to 1024px
+  */
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+
+    /* CSS */
+
+    // Base
+    @import "./mobile-phone.scss";
+
+    // Components
+    @import "./components/context-menu";
+    @import "./components/dialog";
+    @import "./components/hotbar";
+    @import "./components/loading-bar";
+    @import "./components/logo";
+    @import "./components/menu";
+    @import "./components/notes-hints";
+    @import "./components/notifications";
+    @import "./components/pause";
+    @import "./components/players-connected";
+    @import "./components/scene-controls";
+    @import "./components/scene-navigation";
+    @import "./components/window-app";
+
+    // Sidebar
+    @import "./components/sidebar";
+    @import "./components/sidebar-chat"; // 1
+    @import "./components/sidebar-combat";  // 2
+    @import "./components/sidebar-scenes"; // 3
+    @import "./components/sidebar-actors"; // 4
+    @import "./components/sidebar-items"; // 5
+    @import "./components/sidebar-journal"; // 6
+    @import "./components/sidebar-tables"; // 7
+    @import "./components/sidebar-playlists"; // 8
+    @import "./components/sidebar-compendium"; // 9
+    @import "./components/sidebar-settings"; // 10
+
+    // Sheets Bulk
+    @import "./components/sheet-actor-flags";
+    @import "./components/sheet-client-settings";
+    @import "./components/sheet-combat-config";
+    @import "./components/sheet-drawing-config";
+    @import "./components/sheet-filepicker";
+    @import "./components/sheet-folder-create";
+    @import "./components/sheet-folder-edit";
+    @import "./components/sheet-grid-config";
+    @import "./components/sheet-light-config";
+    @import "./components/sheet-macro";
+    @import "./components/sheet-module-management";
+    @import "./components/sheet-note-config";
+    @import "./components/sheet-permission";
+    @import "./components/sheet-player-config";
+    @import "./components/sheet-scene";
+    @import "./components/sheet-sheet-config";
+    @import "./components/sheet-short-rest-hd";
+    @import "./components/sheet-sound-config";
+    @import "./components/sheet-template-config";
+    @import "./components/sheet-tile-config";
+    @import "./components/sheet-token";
+    @import "./components/sheet-track-config";
+    @import "./components/sheet-trait-selector";
+    @import "./components/sheet-wall-config";
+
+    // Module Compatibility
+    @import "./module-compatibility/batch-folder-permissions";
+    @import "./module-compatibility/calendar-weather";
+    // @import "./module-compatibility/color-picker";
+    @import "./module-compatibility/combat-enhancements";
+    @import "./module-compatibility/combat-utility-belt";
+    // @import "./module-compatibility/compendium-folders"; // maybe someday
+    @import "./module-compatibility/custom-hotbar";
+    @import "./module-compatibility/dancing-lights";
+    @import "./module-compatibility/dice-tray";
+    @import "./module-compatibility/dungeondraft-importer";
+    @import "./module-compatibility/simple-mobile";
+    @import "./module-compatibility/foriens-quest-log";
+    @import "./module-compatibility/furnace";
+    @import "./module-compatibility/fx-master";
+    @import "./module-compatibility/lmrtfy";
+    @import "./module-compatibility/macro-editor";
+    @import "./module-compatibility/mess";
+    @import "./module-compatibility/midi-qol";
+    @import "./module-compatibility/narrator-tools";
+    @import "./module-compatibility/party-resources";
+    @import "./module-compatibility/permission-viewer";
+    @import "./module-compatibility/plutonium";
+    @import "./module-compatibility/polyglot";
+    @import "./module-compatibility/rolltable-button";
+    @import "./module-compatibility/response-time";
+    @import "./module-compatibility/simple-dice-roller";
+    @import "./module-compatibility/thanduls-toggle";
+    @import "./module-compatibility/tidy-ui-game-settings";
+    @import "./module-compatibility/token-action-hud";
+    @import "./module-compatibility/token-auras";
+    @import "./module-compatibility/token-mold";
+    @import "./module-compatibility/tweak-playlist";
+
+    // System Compatibility
+    @import "./system-compatibility/dnd5e";
+  }
+
+  /*
+    ##Device = Tablets, Ipads (landscape)
+    ##Screen = B/w 768px to 1024px
+  */
+
+  @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+
+    /* CSS */
+
+    // Base
+    @import "./mobile-phone.scss";
+
+    // Components
+    @import "./components/context-menu";
+    @import "./components/dialog";
+    @import "./components/hotbar";
+    @import "./components/loading-bar";
+    @import "./components/logo";
+    @import "./components/menu";
+    @import "./components/notes-hints";
+    @import "./components/notifications";
+    @import "./components/pause";
+    @import "./components/players-connected";
+    @import "./components/scene-controls";
+    @import "./components/scene-navigation";
+    @import "./components/window-app";
+
+    // Sidebar
+    @import "./components/sidebar";
+    @import "./components/sidebar-chat"; // 1
+    @import "./components/sidebar-combat";  // 2
+    @import "./components/sidebar-scenes"; // 3
+    @import "./components/sidebar-actors"; // 4
+    @import "./components/sidebar-items"; // 5
+    @import "./components/sidebar-journal"; // 6
+    @import "./components/sidebar-tables"; // 7
+    @import "./components/sidebar-playlists"; // 8
+    @import "./components/sidebar-compendium"; // 9
+    @import "./components/sidebar-settings"; // 10
+
+    // Sheets Bulk
+    @import "./components/sheet-actor-flags";
+    @import "./components/sheet-client-settings";
+    @import "./components/sheet-combat-config";
+    @import "./components/sheet-drawing-config";
+    @import "./components/sheet-filepicker";
+    @import "./components/sheet-folder-create";
+    @import "./components/sheet-folder-edit";
+    @import "./components/sheet-grid-config";
+    @import "./components/sheet-light-config";
+    @import "./components/sheet-macro";
+    @import "./components/sheet-module-management";
+    @import "./components/sheet-note-config";
+    @import "./components/sheet-permission";
+    @import "./components/sheet-player-config";
+    @import "./components/sheet-scene";
+    @import "./components/sheet-sheet-config";
+    @import "./components/sheet-short-rest-hd";
+    @import "./components/sheet-sound-config";
+    @import "./components/sheet-template-config";
+    @import "./components/sheet-tile-config";
+    @import "./components/sheet-token";
+    @import "./components/sheet-track-config";
+    @import "./components/sheet-trait-selector";
+    @import "./components/sheet-wall-config";
+
+    // Module Compatibility
+    @import "./module-compatibility/batch-folder-permissions";
+    @import "./module-compatibility/calendar-weather";
+    // @import "./module-compatibility/color-picker";
+    @import "./module-compatibility/combat-enhancements";
+    @import "./module-compatibility/combat-utility-belt";
+    // @import "./module-compatibility/compendium-folders"; // maybe someday
+    @import "./module-compatibility/custom-hotbar";
+    @import "./module-compatibility/dancing-lights";
+    @import "./module-compatibility/dice-tray";
+    @import "./module-compatibility/dungeondraft-importer";
+    @import "./module-compatibility/simple-mobile";
+    @import "./module-compatibility/foriens-quest-log";
+    @import "./module-compatibility/furnace";
+    @import "./module-compatibility/fx-master";
+    @import "./module-compatibility/lmrtfy";
+    @import "./module-compatibility/macro-editor";
+    @import "./module-compatibility/mess";
+    @import "./module-compatibility/midi-qol";
+    @import "./module-compatibility/narrator-tools";
+    @import "./module-compatibility/party-resources";
+    @import "./module-compatibility/permission-viewer";
+    @import "./module-compatibility/plutonium";
+    @import "./module-compatibility/polyglot";
+    @import "./module-compatibility/rolltable-button";
+    @import "./module-compatibility/response-time";
+    @import "./module-compatibility/simple-dice-roller";
+    @import "./module-compatibility/thanduls-toggle";
+    @import "./module-compatibility/tidy-ui-game-settings";
+    @import "./module-compatibility/token-action-hud";
+    @import "./module-compatibility/token-auras";
+    @import "./module-compatibility/token-mold";
+    @import "./module-compatibility/tweak-playlist";
+
+    // System Compatibility
+    @import "./system-compatibility/dnd5e";
+  }
+
+  /*
+    ##Device = Low Resolution Tablets, Mobiles (Landscape)
+    ##Screen = B/w 481px to 767px
+  */
+
+  @media (min-width: 481px) and (max-width: 767px) {
+
+    /* CSS */
+
+    // Base
+    @import "./mobile-phone.scss";
+
+    // Components
+    @import "./components/context-menu";
+    @import "./components/dialog";
+    @import "./components/hotbar";
+    @import "./components/loading-bar";
+    @import "./components/logo";
+    @import "./components/menu";
+    @import "./components/notes-hints";
+    @import "./components/notifications";
+    @import "./components/pause";
+    @import "./components/players-connected";
+    @import "./components/scene-controls";
+    @import "./components/scene-navigation";
+    @import "./components/window-app";
+
+    // Sidebar
+    @import "./components/sidebar";
+    @import "./components/sidebar-chat"; // 1
+    @import "./components/sidebar-combat";  // 2
+    @import "./components/sidebar-scenes"; // 3
+    @import "./components/sidebar-actors"; // 4
+    @import "./components/sidebar-items"; // 5
+    @import "./components/sidebar-journal"; // 6
+    @import "./components/sidebar-tables"; // 7
+    @import "./components/sidebar-playlists"; // 8
+    @import "./components/sidebar-compendium"; // 9
+    @import "./components/sidebar-settings"; // 10
+
+    // Sheets Bulk
+    @import "./components/sheet-actor-flags";
+    @import "./components/sheet-client-settings";
+    @import "./components/sheet-combat-config";
+    @import "./components/sheet-drawing-config";
+    @import "./components/sheet-filepicker";
+    @import "./components/sheet-folder-create";
+    @import "./components/sheet-folder-edit";
+    @import "./components/sheet-grid-config";
+    @import "./components/sheet-light-config";
+    @import "./components/sheet-macro";
+    @import "./components/sheet-module-management";
+    @import "./components/sheet-note-config";
+    @import "./components/sheet-permission";
+    @import "./components/sheet-player-config";
+    @import "./components/sheet-scene";
+    @import "./components/sheet-sheet-config";
+    @import "./components/sheet-short-rest-hd";
+    @import "./components/sheet-sound-config";
+    @import "./components/sheet-template-config";
+    @import "./components/sheet-tile-config";
+    @import "./components/sheet-token";
+    @import "./components/sheet-track-config";
+    @import "./components/sheet-trait-selector";
+    @import "./components/sheet-wall-config";
+
+    // Module Compatibility
+    @import "./module-compatibility/batch-folder-permissions";
+    @import "./module-compatibility/calendar-weather";
+    // @import "./module-compatibility/color-picker";
+    @import "./module-compatibility/combat-enhancements";
+    @import "./module-compatibility/combat-utility-belt";
+    // @import "./module-compatibility/compendium-folders"; // maybe someday
+    @import "./module-compatibility/custom-hotbar";
+    @import "./module-compatibility/dancing-lights";
+    @import "./module-compatibility/dice-tray";
+    @import "./module-compatibility/dungeondraft-importer";
+    @import "./module-compatibility/simple-mobile";
+    @import "./module-compatibility/foriens-quest-log";
+    @import "./module-compatibility/furnace";
+    @import "./module-compatibility/fx-master";
+    @import "./module-compatibility/lmrtfy";
+    @import "./module-compatibility/macro-editor";
+    @import "./module-compatibility/mess";
+    @import "./module-compatibility/midi-qol";
+    @import "./module-compatibility/narrator-tools";
+    @import "./module-compatibility/party-resources";
+    @import "./module-compatibility/permission-viewer";
+    @import "./module-compatibility/plutonium";
+    @import "./module-compatibility/polyglot";
+    @import "./module-compatibility/rolltable-button";
+    @import "./module-compatibility/response-time";
+    @import "./module-compatibility/simple-dice-roller";
+    @import "./module-compatibility/thanduls-toggle";
+    @import "./module-compatibility/tidy-ui-game-settings";
+    @import "./module-compatibility/token-action-hud";
+    @import "./module-compatibility/token-auras";
+    @import "./module-compatibility/token-mold";
+    @import "./module-compatibility/tweak-playlist";
+
+    // System Compatibility
+    @import "./system-compatibility/dnd5e";
+  }
+
+  /*
+    ##Device = Most of the Smartphones Mobiles (Portrait)
+    ##Screen = B/w 320px to 479px
+  */
+
+  @media (min-width: 320px) and (max-width: 480px) {
+
+    /* CSS */
+
+    // Base
+    @import "./mobile-phone.scss";
+    
+    // Components
+    @import "./components/context-menu";
+    @import "./components/dialog";
+    @import "./components/hotbar";
+    @import "./components/loading-bar";
+    @import "./components/logo";
+    @import "./components/menu";
+    @import "./components/notes-hints";
+    @import "./components/notifications";
+    @import "./components/pause";
+    @import "./components/players-connected";
+    @import "./components/scene-controls";
+    @import "./components/scene-navigation";
+    @import "./components/window-app";
+
+    // Sidebar
+    @import "./components/sidebar";
+    @import "./components/sidebar-chat"; // 1
+    @import "./components/sidebar-combat";  // 2
+    @import "./components/sidebar-scenes"; // 3
+    @import "./components/sidebar-actors"; // 4
+    @import "./components/sidebar-items"; // 5
+    @import "./components/sidebar-journal"; // 6
+    @import "./components/sidebar-tables"; // 7
+    @import "./components/sidebar-playlists"; // 8
+    @import "./components/sidebar-compendium"; // 9
+    @import "./components/sidebar-settings"; // 10
+
+    // Sheets Bulk
+    @import "./components/sheet-actor-flags";
+    @import "./components/sheet-client-settings";
+    @import "./components/sheet-combat-config";
+    @import "./components/sheet-drawing-config";
+    @import "./components/sheet-filepicker";
+    @import "./components/sheet-folder-create";
+    @import "./components/sheet-folder-edit";
+    @import "./components/sheet-grid-config";
+    @import "./components/sheet-light-config";
+    @import "./components/sheet-macro";
+    @import "./components/sheet-module-management";
+    @import "./components/sheet-note-config";
+    @import "./components/sheet-permission";
+    @import "./components/sheet-player-config";
+    @import "./components/sheet-scene";
+    @import "./components/sheet-sheet-config";
+    @import "./components/sheet-short-rest-hd";
+    @import "./components/sheet-sound-config";
+    @import "./components/sheet-template-config";
+    @import "./components/sheet-tile-config";
+    @import "./components/sheet-token";
+    @import "./components/sheet-track-config";
+    @import "./components/sheet-trait-selector";
+    @import "./components/sheet-wall-config";
+
+    // Module Compatibility
+    @import "./module-compatibility/batch-folder-permissions";
+    @import "./module-compatibility/calendar-weather";
+    // @import "./module-compatibility/color-picker";
+    @import "./module-compatibility/combat-enhancements";
+    @import "./module-compatibility/combat-utility-belt";
+    // @import "./module-compatibility/compendium-folders"; // maybe someday
+    @import "./module-compatibility/custom-hotbar";
+    @import "./module-compatibility/dancing-lights";
+    @import "./module-compatibility/dice-tray";
+    @import "./module-compatibility/dungeondraft-importer";
+    @import "./module-compatibility/simple-mobile";
+    @import "./module-compatibility/foriens-quest-log";
+    @import "./module-compatibility/furnace";
+    @import "./module-compatibility/fx-master";
+    @import "./module-compatibility/lmrtfy";
+    @import "./module-compatibility/macro-editor";
+    @import "./module-compatibility/mess";
+    @import "./module-compatibility/midi-qol";
+    @import "./module-compatibility/narrator-tools";
+    @import "./module-compatibility/party-resources";
+    @import "./module-compatibility/permission-viewer";
+    @import "./module-compatibility/plutonium";
+    @import "./module-compatibility/polyglot";
+    @import "./module-compatibility/rolltable-button";
+    @import "./module-compatibility/response-time";
+    @import "./module-compatibility/simple-dice-roller";
+    @import "./module-compatibility/thanduls-toggle";
+    @import "./module-compatibility/tidy-ui-game-settings";
+    @import "./module-compatibility/token-action-hud";
+    @import "./module-compatibility/token-auras";
+    @import "./module-compatibility/token-mold";
+    @import "./module-compatibility/tweak-playlist";
+
+    // System Compatibility
+    @import "./system-compatibility/dnd5e";
+  }
+
+
+}
