@@ -13,7 +13,16 @@ const git = require('gulp-git');
 
 const argv = require('yargs').argv;
 
-// sass.compiler = require('sass');
+// // sass.compiler = require('sass');
+// const buildTools = require("build-tools");
+
+// // Configuration
+// const options = {
+//   outDir: path.resolve("dist"),
+//   manifest: "./src/module.json",
+// };
+
+// const packageTool = new buildTools.PackageTool(options);
 
 function getConfig() {
 	const configPath = path.resolve(process.cwd(), 'foundryconfig.json');
@@ -209,6 +218,7 @@ function buildWatch() {
 		{ ignoreInitial: false },
 		copyFiles
 	);
+  // gulp.watch(options.manifest, { ignoreInitial: false }, packageTool.buildManifest);
 }
 
 /********************/
@@ -519,3 +529,4 @@ exports.publish = gulp.series(
 	packageBuild,
 	execGit
 );
+// exports.publish = gulp.series(clean, execBuild, packageTool.package);

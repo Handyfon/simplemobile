@@ -15,8 +15,13 @@
 	"compatibleCoreVersion": "0.7.9",
 	"authors": [
 		{
-			"name": "",
+			"name": "Handyfon#8390",
 			"email": "",
+			"url": "https://github.com/Handyfon"
+		},
+    {
+			"name": "sunspots",
+			"email": "https://gitlab.com/fvtt-modules-lab",
 			"url": ""
 		}
 	],

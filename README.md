@@ -9,6 +9,7 @@ The starting template of this project was inspired from the marvelous project ui
 
 - Integration with [Touch VTT](https://github.com/Oromis/touch-vtt)
 - Add a mobile style for some module (CUB, MidiQOL, Better Rolls)
+- Integration with [mobile-improvement](https://gitlab.com/fvtt-modules-lab/mobile-improvements)
 
 ## if you want to contribute financially check out the 
 
@@ -58,6 +59,8 @@ Any issues, bugs, or feature requests are always welcome to be reported directly
 
 Bootstrapped with Nick East's [create-foundry-project](https://gitlab.com/foundry-projects/foundry-pc/create-foundry-project).
 
+ ~~ Bootstrapped with Nick East's [create-foundry-project](https://gitlab.com/foundry-projects/foundry-pc/create-foundry-project). ~~
+
 Mad props to the 'League of Extraordinary FoundryVTT Developers' community which helped me figure out a lot.
 
 ## Credit
@@ -67,3 +70,4 @@ Thanks to anyone who helps me with this code! I appreciate the user community's 
 - [simplemobile](https://github.com/Handyfon/simplemobile) ty to [Handyfon](https://github.com/Handyfon)
 - [Laptop Fix](https://github.com/wsaunders1014/laptop-fix) ty to [wsaunders1014](https://github.com/wsaunders1014)
 - [Touch VTT](https://github.com/Oromis/touch-vtt) ty to [Oromis](https://github.com/Oromis)
+- [mobile-improvement](https://gitlab.com/fvtt-modules-lab/mobile-improvements) ty to [Sunspots FVTT Modules Lab](https://gitlab.com/fvtt-modules-lab)
