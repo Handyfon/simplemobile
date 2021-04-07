@@ -10,27 +10,26 @@ export class Controls extends Application {
         const templateData:any = { data: [] };
         templateData.title = "Controls";
         templateData.user = game.userId;
-        //@ts-ignore
-        templateData.charname = game.user.charname;  
+        templateData.charname = game.user.charname;
         const templatePath = `/modules/${MODULE_NAME}/templates/mobile-controls.html`;
         console.log(templateData);
-        //@ts-ignore
         this.appId = "mobile-controls";
         Controls.renderMenu(templatePath, templateData);
     }
     static renderMenu(path, data) {
         const dialogOptions = {
             width: 300,
-            //@ts-ignore
-            top: event.clientY - 80,
+            top: window.innerHeight -80, //event.clientY - 80,
             left: window.innerWidth - 510,
             classes: ['Controls-window'],
             id: 'mobile-controls'
         };
         renderTemplate(path, data).then(dlg => {
             new Dialog({
+                title: "Mobile Controls Dialog",
                 content: dlg,
-                buttons: {}
+                buttons: {},
+                default: null,
             }, dialogOptions).render(true);
         });
     }

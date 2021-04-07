@@ -2,6 +2,8 @@ import { warn } from "../mobile";
 import { Controls } from "./Controls";
 import { MODULE_NAME } from "./settings";
 
+export let controls;
+
 export let readyHooks = async () => {
 
   Hooks.on('preRenderActorSheet5eCharacter', () => {
@@ -30,12 +32,11 @@ export let readyHooks = async () => {
         }
       }
     }
-    
+
   });
 
   Hooks.on('canvasInit', () => {
-    //@ts-ignore
-    if(game.settings.get(MODULE_NAME, 'performanceop') & window.screen.width < 1080){
+    if(game.settings.get(MODULE_NAME, 'performanceop') && window.screen.width < 1080){
       var node = document.getElementById("board");
       if (node.parentNode) {
         node.parentNode.removeChild(node);
@@ -52,42 +53,37 @@ export let readyHooks = async () => {
       console.log("Desktop Mode");
     }
   });
-  
+
   Hooks.on('renderSidebarTab', function(){
       //Collapse Sidebar on load
       if(document.getElementById('sidebar').className == "app"){
-        //@ts-ignore
         ui.sidebar.collapse();
       }
       //Collapse MacroBar on load
       if(document.getElementById('action-bar').className == "flexrow "){
-        //@ts-ignore
         ui.hotbar.collapse();
       }
     });
 
     Hooks.on('canvasReady', function(){
       function opencontrols() {
-        //@ts-ignore
-        Controls = new Controls();
-        //@ts-ignore
-        Controls.openDialog();
+        controls = new Controls();
+        controls.openDialog();
     }
     opencontrols();
-    //@ts-ignore
     let charname = game.user.charname
     console.log("mobile initialised");
-    
+
     var src = document.getElementById("board");
     var clientX, clientY;
-    
+
     src.addEventListener('touchstart', function(e) {
       console.log("TouchStart");
       clientX = e.touches[0].clientX;
       clientY = e.touches[0].clientY;
       //console.log("TouchStart at: "+"X:"+ clientX + " Y:" + clientY);
     }, false);
-    
+
     src.addEventListener('touchmove', function(e) {
       var deltaX, deltaY;
       deltaX = e.changedTouches[0].clientX - clientX;
@@ -105,7 +101,7 @@ export let readyHooks = async () => {
     view.x += tapcameraspeed;
     }
     if (y<= screen.height/4){
-    view.y -= tapcameraspeed  
+    view.y -= tapcameraspeed
     }
     else if (y>= screen.height - screen.height/4){
     view.y += tapcameraspeed;
@@ -114,7 +110,7 @@ export let readyHooks = async () => {
     console.log("canvas moved");
     }*/
     canvas.tokens.ownedTokens.length
-    
+
     //SELECT CHARACTER
     if(canvas.tokens.ownedTokens.length > 0)
     {
@@ -140,7 +136,7 @@ export let readyHooks = async () => {
       let view = canvas.scene._viewPosition;
       canvas.animatePan({duration: 250, x: x+twidth, y: y+theight, scale: view.scale});
     }
-  });  
+  });
 
   // Hooks.on('renderSceneConfig',(object,html)=>{
   //   //console.log(object,html);
@@ -186,8 +182,7 @@ export let readyHooks = async () => {
 export let initHooks = () => {
   warn("Init Hooks processing");
   // lets makes make this specificity stupid
-  //@ts-ignore
-  Game.prototype._displayUsabilityErrors = function() {
+  Game.prototype.displayUsabilityErrors = function() {
     // Unsupported Chromium version
     const MIN_CHROMIUM_VERSION = 80;
     const chromium = navigator.userAgent.match(/Chrom(e|ium)\/([0-9]+)\./);
