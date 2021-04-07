@@ -2,7 +2,7 @@
 	"name": "simplemobile",
 	"title": "Simple-Mobile",
 	"description": "Adds mobile support",
-	"version": "0.2.0",
+	"version": "0.2.2",
 	"author": "Handyfon#8390",
 	"styles": [
     	"mobile.css"

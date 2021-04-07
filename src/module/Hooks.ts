@@ -1,6 +1,6 @@
 import { warn } from "../mobile";
 import { Controls } from "./Controls";
-import { MODULE_NAME } from "./settings";
+import { getCanvas, MODULE_NAME } from "./settings";
 
 export let controls;
 
@@ -56,12 +56,14 @@ export let readyHooks = async () => {
 
   Hooks.on('renderSidebarTab', function(){
       //Collapse Sidebar on load
-      if(document.getElementById('sidebar').className == "app"){
-        ui.sidebar.collapse();
-      }
-      //Collapse MacroBar on load
-      if(document.getElementById('action-bar').className == "flexrow "){
-        ui.hotbar.collapse();
+      if(screen.availWidth < 1000){
+        if(document.getElementById('sidebar').className == "app"){
+          ui.sidebar.collapse();
+        }
+        //Collapse MacroBar on load
+        if(document.getElementById('action-bar').className == "flexrow "){
+          ui.hotbar.collapse();
+        }
       }
     });
 
@@ -89,7 +91,7 @@ export let readyHooks = async () => {
       deltaX = e.changedTouches[0].clientX - clientX;
       deltaY = e.changedTouches[0].clientY - clientY;
       console.log("TouchEnd at: "+"X:"+ deltaX + " Y:" + deltaY);
-      canvas.animatePan({duration: 50, x: canvas.scene._viewPosition.x - deltaX, y: canvas.scene._viewPosition.y - deltaY})
+      getCanvas().animatePan({duration: 50, x: getCanvas().scene._viewPosition.x - deltaX, y: getCanvas().scene._viewPosition.y - deltaY})
       //console.log("X:"+ canvas.scene._viewPosition.x + " Y:" + canvas.scene._viewPosition.y);
     }, false);
     /*let tapcameraspeed = parseInt(game.settings.get(MODULE_NAME, 'cps'));
@@ -109,14 +111,14 @@ export let readyHooks = async () => {
     canvas.animatePan({duration: 25, x: view.x, y: view.y, scale: view.scale});
     console.log("canvas moved");
     }*/
-    canvas.tokens.ownedTokens.length
+    getCanvas().tokens.ownedTokens.length
 
     //SELECT CHARACTER
-    if(canvas.tokens.ownedTokens.length > 0)
+    if(getCanvas().tokens.ownedTokens.length > 0)
     {
-      canvas.tokens.ownedTokens.map(token => token.control({releaseOthers: false}));
-      let tokens = canvas.tokens.controlled;
-      let lasttoken = parseInt(game.settings.get(MODULE_NAME, 'lasttoken'));
+      getCanvas().tokens.ownedTokens.map(token => token.control({releaseOthers: false}));
+      let tokens = getCanvas().tokens.controlled;
+      let lasttoken = parseInt(<string>game.settings.get(MODULE_NAME, 'lasttoken'));
       if(tokens.length === 1){
       lasttoken = 0;
       }
@@ -133,8 +135,8 @@ export let readyHooks = async () => {
       document.getElementById("sidebar");
       let twidth = tokens[lasttoken].w / 2;
       let theight = tokens[lasttoken].h / 2;
-      let view = canvas.scene._viewPosition;
-      canvas.animatePan({duration: 250, x: x+twidth, y: y+theight, scale: view.scale});
+      let view = getCanvas().scene._viewPosition;
+      getCanvas().animatePan({duration: 250, x: x+twidth, y: y+theight, scale: view.scale});
     }
   });
 

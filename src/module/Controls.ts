@@ -13,7 +13,7 @@ export class Controls extends Application {
         templateData.charname = game.user.charname;
         const templatePath = `/modules/${MODULE_NAME}/templates/mobile-controls.html`;
         console.log(templateData);
-        this.appId = "mobile-controls";
+        //this.appId = "mobile-controls";
         Controls.renderMenu(templatePath, templateData);
     }
     static renderMenu(path, data) {

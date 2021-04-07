@@ -50,6 +50,210 @@ button:focus {
     transform: scale(1.1);
     transition: 0.1s;
 }
+/*PF2*/
+.crb-style .sheet-body .sheet-content .character .character-details .detail-sheet {
+    display: block;
+    max-width: 50vw;
+    margin-left: -8px;
+}
+.crb-style .sheet-body .sheet-content .character .character-details .alignment {
+    margin-left: -5px;
+}
+.crb-style .sheet-body .sheet-content .character .character-details .deity {
+    display: -webkit-inline-box;
+}
+.crb-style aside {
+    margin-left: -24px;
+}
+.crb-style aside .logo {
+    display: none;
+}
+.crb-style aside .sidebar {
+    margin-top: 0px;
+}
+.crb-style .sheet-body {
+    margin-top: 28px;
+}
+.crb-style .sheet-body .sheet-content .inventory .inventory-list, .crb-style .sheet-body .sheet-content .inventory .inventory .inventory-list, .crb-style .sheet-body .sheet-content .inventory>.tab:not(.inventory), .crb-style .sheet-body .sheet-content>.tab:not(.inventory) {
+    margin-left: -11vw;
+    width: 57vw;
+    margin-top: 30px;
+}
+.crb-style .sheet-body .sheet-content .inventory .inventory-header .item-quantity, .crb-style .sheet-body .sheet-content .inventory .inventory-header .item-sell-value, .crb-style .sheet-body .sheet-content .inventory .inventory-header .item-weight {
+    display: none;
+}
+.crb-style .sheet-body .sheet-content .spellbook .directory-list .item .action-header {
+    background: #450000;
+    text-align: left;
+}
+.tab.effects.actions-pane.active {
+    margin-top: 4vh;
+}
+.crb-style .sheet-body .sheet-content .effects .effects-list .item.action-header {
+    background: #590000;
+}
+.crb-style .sheet-body .sheet-content .inventory .currency, .crb-style .sheet-body .sheet-content .inventory .encumbrance, .crb-style .sheet-body .sheet-content .inventory .treasure-wealth, .crb-style .sheet-body .sheet-content .inventory .wealth {
+    margin-right: 23px;
+    margin-left: -46px;
+    margin-top: 19px;
+    flex-flow: wrap;
+}
+.crb-style .sheet-body .sheet-content .inventory .item-name h3, .crb-style .sheet-body .sheet-content .inventory .item-name h4 {
+    font-size: 10px;
+}
+.crb-style .sheet-body .sheet-content .inventory .wealth .wealth-label {
+    padding: 0;
+    display: table;
+}
+.crb-style .sheet-body .sheet-content .inventory .currency .denomination {
+    width: 55px;
+}
+.crb-style .sheet-body .sheet-content .inventory .item-name h3:hover, .crb-style .sheet-body .sheet-content .inventory .item-name h4:hover {
+    color: var(--primary);
+    width: 20px;
+    display: contents;
+    font-size: 13px;
+    color: #efece7;
+}
+.compendium-browser .tab.browser>div {
+    display: inline;
+}
+.crb-style .sheet-body .sheet-content .inventory .inventory-list .item-list .item {
+    display: table;
+}
+.crb-style .sheet-body .sheet-content .inventory .item-quantity .item-decrease-quantity, .crb-style .sheet-body .sheet-content .inventory .item-quantity .item-increase-quantity {
+    background: #602020;
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 28px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.crb-style .sheet-body .sheet-content, .crb-style .sheet-body .sheet-content .inventory {
+    width: 42vw;
+}
+.crb-style nav.sheet-navigation {
+    position: absolute;
+    right: 8px;
+    height: 31px;
+    background: #310000;
+    border-radius: 20px;
+}
+.crb-style header.char-header {
+    margin-left: -43px;
+    margin-top: 77px;
+    width: 45vw;
+}
+.crb-style header.char-header .char-details h1.char-name {
+    margin: -23px 0 4px;
+}
+.crb-style header.char-header .char-level {
+    display: flex;
+    justify-content: flex-start;
+    padding-bottom: 8px;
+    margin-top: -22px;
+    position: absolute;
+    top: 139px;
+    background: #610000;
+    margin-left: -3px;
+    width: 51vw;
+}
+.crb-style .dots span {
+    flex: none;
+    z-index: 20;
+}
+.crb-style header.char-header .char-level .exp-data .info {
+    display: none;
+}
+.crb-style header.char-header .char-level .exp-data {
+    width: 91px;
+    margin-left: -8px;
+}
+.crb-style .sheet-body .sheet-content .actions .actions-list .item.action-header {
+    width: 200px;
+}
+.crb-style .sheet-body .sheet-content .actions .actions-list .item.action-header {
+    width: 200px;
+    background: #410000;
+    height: 27px;
+}
+.crb-style .sheet-body .sheet-content .actions .actions-list .item.action-header .item-controls {
+    color: #ffffff;
+}
+.crb-style .sheet-body .sheet-content .actions .actions-list .item .button-group {
+    display: grid;
+    flex-wrap: nowrap;
+}
+.crb-style .sheet-body .sheet-content .actions .actions-container .actions-tabs-wrapper .actions-nav {
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: flex-start;
+    list-style: none;
+    padding: 0;
+    border-radius: 3px;
+    /* max-width: 45vw; */
+    margin: 10px;
+    margin-left: -18px;
+}
+.crb-style .sheet-body .sheet-content .actions .actions-list .item .item-name {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+    background: #602020 !important;
+    width: 47vw;
+}
+.crb-style .sheet-body .sheet-content .actions .actions-list .item .button-group button, .crb-style .sheet-body .sheet-content .actions .actions-list .item .button-group select {
+    width: 35vw;
+    height: 4vh;
+}
+.crb-style .sheet-body .sheet-content .character .ability-scores {
+
+    display: inline-block;
+}
+.crb-style .sheet-body .sheet-content .character .ability-scores .ability .ability-name {
+    grid-area: label;
+    margin: 0;
+    color: white;
+    background: #bf4b00;
+    padding: 6px;
+    font-size: 12px;
+}
+.crb-style .sheet-body .sheet-content .actions .actions-container .actions-tabs-wrapper {
+    margin-top: 21px;
+}
+.crb-style .sheet-body .sheet-content .actions .actions-list .item .button-group button:hover {
+    box-shadow: none !important;
+    text-shadow: 0 0 2px #fff;
+    margin-left: 5px;
+}
+.crb-style .sheet-body .sheet-content .actions .actions-list .item.expanded .item-summary {
+    max-width: 46vw;
+}
+.crb-style .sheet-body .sheet-content .actions .actions-container .actions-tabs-wrapper .actions-panels .actions-options {
+    max-width: 46vw;
+}
+h2.ability-id {
+    display: none;
+}
+.crb-style .sheet-body .sheet-content .character .ability-scores .ability {
+    display: grid;
+    grid:
+        " label label" auto
+        "score mod" 1fr/1fr;
+    column-gap: 3px;
+    align-items: center;
+}
+.crb-style .sheet-body .sheet-content .character .character-details .frame {
+    display: none;
+}
+.crb-style .sheet-body .sheet-content .character .character-details {
+    display: block;
+    margin-top: 4px;
+}
+.crb-style nav.sheet-navigation span {
+    display: none;
+}
 /*==========================*DND ONLY=====================================*/
 .item-name.flexrow.rollable {
     font-size: unset !important;
@@ -495,7 +699,8 @@ i.fas.fa-caret-left {
     z-index: 99;
     background-size: cover;
     background: 0;
-    max-height: 95vh;
+    /* width: 20%; */
+    max-height: 88vh;
     margin-top: 3vh;
 }
 
@@ -707,16 +912,5 @@ button.godown.controlbutton {
         height: 8vw;
         /* margin-top: -1vw; */
         margin-bottom: 3vh !important;
-    }
-    #sidebar {
-        border: 1px solid #000;
-        background: url(http://i.imgur.com/5Hoxo0s.png) 80%;
-        background-repeat: no-repeat;
-        z-index: 99;
-        background-size: cover;
-        background: 0;
-        /* width: 20%; */
-        max-height: 95vh;
-        margin-top: 3vh;
     }
 }

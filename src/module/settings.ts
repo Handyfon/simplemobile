@@ -1,5 +1,21 @@
 export const MODULE_NAME = 'simplemobile';
 
+/**
+ * Because typescript doesn’t know when in the lifecycle of foundry your code runs, we have to assume that the 
+ * canvas is potentially not yet initialized, so it’s typed as declare let canvas: Canvas | {ready: false}. 
+ * That’s why you get errors when you try to access properties on canvas other than ready.
+ * In order to get around that, you need to type guard canvas. 
+ * Also be aware that this will become even more important in 0.8.x because a „no canvas“ mode is being introduced there.
+ * So you will need to deal with the fact that there might not be an initialized canvas at any point in time.
+ * @returns 
+ */
+export function getCanvas(): Canvas {
+    if (!(canvas instanceof Canvas) || !canvas.ready) {
+        throw new Error("Canvas Is Not Initialized");
+    }
+    return canvas;
+}
+
 export const registerSettings = function () {
 
     game.settings.register(MODULE_NAME, 'lasttoken', {
@@ -51,98 +67,3 @@ export const registerSettings = function () {
         type: Boolean,
     });
 }
-
-
-// export enum settings {
-//   SIMPLE_MOBILE_LAST_TOKEN = 'lasttoken',
-//   SIMPLE_MOBILE_MOVEMENT_DIRECTION = 'movementdirection',
-//   SIMPLE_MOBILE_CPS = 'cps',
-//   SIMPLE_MOBILE_AUTO_ROTATION = 'autorotation',
-//   SIMPLE_MOBILE_INVERT_ROTATION = 'invertrotation',
-//   SIMPLE_MOBILE_PERFORMANCE_OP = 'performanceop',
-// }
-
-
-// interface Callbacks {
-//   [setting: string]: (value) => void;
-// }
-
-// const noop = (): void => {
-//   return;
-// };
-
-// const moduleSettings = [
-// // export const registerSettings = function () {
-//   {
-//     setting: settings.SIMPLE_MOBILE_LAST_TOKEN,
-//     name: 'Last Token',
-//     hint: 'This is the value where the last selected token will be saved',
-//     scope: 'client',
-//     default: "0",
-//    type: String,
-//   },
-//   {
-//     setting: settings.SIMPLE_MOBILE_MOVEMENT_DIRECTION,
-//     name: 'Movement Swich',
-//     hint: 'This is the value the movement values is saved',
-//     scope: 'client',
-//     default: "",
-//     type: String,
-//   },
-//   {
-//     setting: settings.SIMPLE_MOBILE_CPS,
-//     name: 'Camera Pan Speed',
-//     hint: 'How many pixels the camera pans when tapping on the screen',
-//     scope: 'world',
-//     default: "25",
-//     type: String,
-//   },
-//   {
-//     setting: settings.SIMPLE_MOBILE_AUTO_ROTATION,
-//     name: 'Auto Rotate',
-//     hint: 'Automatically Rotate tokens based on where they are going',
-//     scope: 'world',
-//     default: true,
-//     type: Boolean,
-//   },
-//   {
-//     setting: settings.SIMPLE_MOBILE_INVERT_ROTATION,
-//     name: 'Invert Rotation',
-//     hint: 'Inverts the rotation of the token',
-//     scope: 'client',
-//     default: true,
-//     type: Boolean,
-//   },
-//   {
-//     setting: settings.SIMPLE_MOBILE_PERFORMANCE_OP,
-//     name: 'Performance Optimization',
-//     hint: 'Limits the functionality of simple mobile to optimize it for slower devices, also disabled the canvas (where scenes are rendered on)',
-//     scope: 'client',
-//     default: false,
-//     type: Boolean,
-//   }
-// ]
-
-
-// function registerSetting(callbacks: Callbacks, { setting, ...options }): void {
-//   game.settings.register(MODULE_NAME, setting, {
-//     config: true,
-//     scope: "client",
-//     ...options,
-//     onChange: callbacks[setting] || noop,
-//   });
-// }
-
-// export function registerSettings(callbacks: Callbacks = {}): void {
-//   moduleSettings.forEach(item => {
-//     registerSetting(callbacks, item);
-//   });
-// }
-
-// export function getSetting(setting: settings): any {
-//   return game.settings.get(MODULE_NAME, setting as string);
-// }
-
-// export function setSetting(setting: settings, value): Promise<any> {
-//   return game.settings.set(MODULE_NAME, setting as string, value);
-// }
