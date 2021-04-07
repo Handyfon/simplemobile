@@ -10,6 +10,7 @@ The starting template of this project was inspired from the marvelous project ui
 - Integration with [Touch VTT](https://github.com/Oromis/touch-vtt)
 - Add a mobile style for some module (CUB, MidiQOL, Better Rolls)
 - Integration with [mobile-improvement](https://gitlab.com/fvtt-modules-lab/mobile-improvements)
+- Integration with [VTTExternalActorViewer](https://github.com/ardittristan/VTTExternalActorViewer) for load only the character sheet without anything else (suggestion Brent Rogers on trello)
 
 ## if you want to contribute financially check out the 
 
@@ -71,3 +72,4 @@ Thanks to anyone who helps me with this code! I appreciate the user community's 
 - [Laptop Fix](https://github.com/wsaunders1014/laptop-fix) ty to [wsaunders1014](https://github.com/wsaunders1014)
 - [Touch VTT](https://github.com/Oromis/touch-vtt) ty to [Oromis](https://github.com/Oromis)
 - [mobile-improvement](https://gitlab.com/fvtt-modules-lab/mobile-improvements) ty to [Sunspots FVTT Modules Lab](https://gitlab.com/fvtt-modules-lab)
+- [VTTExternalActorViewer](https://github.com/ardittristan/VTTExternalActorViewer) ty to [ardittristan](https://github.com/ardittristan)
