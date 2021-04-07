@@ -97,12 +97,14 @@ Hooks.on('canvasInit', () => {
 
 Hooks.on('renderSidebarTab', function(){
 	//Collapse Sidebar on load
-	if(document.getElementById('sidebar').className == "app"){
-		ui.sidebar.collapse();
-	}
-	//Collapse MacroBar on load
-	if(document.getElementById('action-bar').className == "flexrow "){
-		ui.hotbar.collapse();
+	if(screen.availWidth < 1000){
+		if(document.getElementById('sidebar').className == "app"){
+			ui.sidebar.collapse();
+		}
+		//Collapse MacroBar on load
+		if(document.getElementById('action-bar').className == "flexrow "){
+			ui.hotbar.collapse();
+		}
 	}
 })
 	Hooks.on('canvasReady', function(){
