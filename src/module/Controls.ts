@@ -11,7 +11,7 @@ export class Controls extends Application {
         templateData.title = "Controls";
         templateData.user = game.userId;
         templateData.charname = game.user.charname;
-        const templatePath = `/modules/${MODULE_NAME}/templates/mobile-controls.html`;
+        const templatePath = `/modules/${MODULE_NAME}/templates/base/mobile-controls.html`;
         console.log(templateData);
         //this.appId = "mobile-controls";
         Controls.renderMenu(templatePath, templateData);

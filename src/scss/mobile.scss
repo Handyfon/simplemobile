@@ -117,6 +117,7 @@ body {
     @import "./module-compatibility/response-time";
     @import "./module-compatibility/simple-dice-roller";
     @import "./module-compatibility/thanduls-toggle";
+    @import "./module-compatibility/tidy5e-sheet";
     @import "./module-compatibility/tidy-ui-game-settings";
     @import "./module-compatibility/token-action-hud";
     @import "./module-compatibility/token-auras";
@@ -221,6 +222,7 @@ body {
     @import "./module-compatibility/response-time";
     @import "./module-compatibility/simple-dice-roller";
     @import "./module-compatibility/thanduls-toggle";
+    @import "./module-compatibility/tidy5e-sheet";
     @import "./module-compatibility/tidy-ui-game-settings";
     @import "./module-compatibility/token-action-hud";
     @import "./module-compatibility/token-auras";
@@ -325,6 +327,7 @@ body {
     @import "./module-compatibility/response-time";
     @import "./module-compatibility/simple-dice-roller";
     @import "./module-compatibility/thanduls-toggle";
+    @import "./module-compatibility/tidy5e-sheet";
     @import "./module-compatibility/tidy-ui-game-settings";
     @import "./module-compatibility/token-action-hud";
     @import "./module-compatibility/token-auras";
@@ -346,7 +349,7 @@ body {
 
     // Base
     @import "./mobile-phone.scss";
-    
+
     // Components
     @import "./components/context-menu";
     @import "./components/dialog";
@@ -429,6 +432,7 @@ body {
     @import "./module-compatibility/response-time";
     @import "./module-compatibility/simple-dice-roller";
     @import "./module-compatibility/thanduls-toggle";
+    @import "./module-compatibility/tidy5e-sheet";
     @import "./module-compatibility/tidy-ui-game-settings";
     @import "./module-compatibility/token-action-hud";
     @import "./module-compatibility/token-auras";
