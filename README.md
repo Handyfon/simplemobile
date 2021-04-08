@@ -5,11 +5,17 @@ The scope of this project is to "upgrade" the work done by [Handyfon](https://gi
 
 The starting template of this project was inspired from the marvelous project ui [Ernie's Modern UI](https://github.com/ernieayala/ernies-modern-layout)
 
+This module is intended to make the UI more flexible for use with mobiles, tablets and other low-resolution devices.
+
+Current state: Useful for general UI interaction. Map interaction is working, but limited.
+
+**Simple Mobile is in a pre-release phase and may have breaking changes or change default settings without notice**
+
 # Developing (To Do list)
 
 - Integration with [Touch VTT](https://github.com/Oromis/touch-vtt)
 - Add a mobile style for some module (CUB, MidiQOL, Better Rolls)
-- Integration with [mobile-improvement](https://gitlab.com/fvtt-modules-lab/mobile-improvements)
+- [DONE updated to 2021-04-08] Integration with [mobile-improvement](https://gitlab.com/fvtt-modules-lab/mobile-improvements)
 - Integration with [VTTExternalActorViewer](https://github.com/ardittristan/VTTExternalActorViewer) for load only the character sheet without anything else (suggestion Brent Rogers on trello)
 
 ## if you want to contribute financially check out the 
@@ -39,6 +45,69 @@ To install this module manually:
 4.  Click 'Install' and wait for installation to complete
 5.  Don't forget to enable the module in game using the "Manage Module" button
 
+# Features
+
+Mobile Improvements comes in two major parts:
+
+1. Complete core UI overhaul
+2. Flexible character sheets
+
+## General features
+
+- Full-screen application windows
+- Full-screen sidebar
+- Window switching
+  - List and switch between open windows
+  - Minimizing windows hides them
+- Flexible-ish macro bar
+- Disable map toggle
+  - Disable rendering the game board, to increase performance
+
+# TODO
+
+- Ensure disabling of canvas is actually doing something to performance
+- Application window list view
+
+  - Full-view windows (ongoing)
+    - Better dialogs
+  - Window navigation improvements
+    - Performance
+      - don't do a full re-render on each window add/remove
+    - Minimize all
+    - Minimize button on app header
+    - Reorder the list?
+
+- Settings
+
+  - Individual settings for each feature (except for css)
+
+- Action bar improvements
+
+  - Spacing and distribution
+  - New list?
+
+- Some kind of toggle between app/scene views
+
+- Map interaction
+
+  - Selection
+  - Movement
+  - Manual map controls (maybe)
+    - Alternative to touch control; pan and zoom controls
+
+- System-specific
+
+  - Responsive sheets
+    - dnd5e
+    - Write an issue or pull request for other systems!
+
+- Others
+  - Combat tracking improvements?
+  - Build system improvements
+
+# Build
+
+
 ## How to build your css and contribute ?
 
 - Download the project
@@ -46,6 +115,56 @@ To install this module manually:
 - Manage the scss and ts files, when you think you are ready launch `npm run-script build`
 - You should see a compiled css and js files under the folder "dist"
 - Finally if you are sure is a valid version launch `npm run-script package`, you will find the zip module file under the "package" folder
+
+or 
+
+```bash
+npm install
+npm run build:watch
+```
+## npm build scripts
+
+### build
+
+`build` will build the code and copy all necessary assets into the dist folder.
+
+```bash
+npm run-script build
+```
+
+### build:install
+
+Make a symlink to install the result into your foundry data; create a
+`foundryconfig.json` file with your Foundry Data path.
+
+```json
+{
+  "dataPath": "~/.local/share/FoundryVTT/"
+}
+```
+
+`build:install` will build and set up a symlink between `dist` and your `dataPath`.
+
+```bash
+npm run build:install
+```
+
+### build:watch
+
+`build:watch` will build and watch for changes, rebuilding automatically.
+
+```bash
+npm run build:watch
+```
+
+### clean
+
+`clean` will remove all contents in the dist folder (but keeps the link from
+build:install).
+
+```bash
+npm run clean
+```
 
 ## Settings (TO DO)
 
@@ -58,12 +177,9 @@ Any issues, bugs, or feature requests are always welcome to be reported directly
 
 ## Acknowledgements
 
-Bootstrapped with Nick East's [create-foundry-project](https://gitlab.com/foundry-projects/foundry-pc/create-foundry-project).
-
- ~~ Bootstrapped with Nick East's [create-foundry-project](https://gitlab.com/foundry-projects/foundry-pc/create-foundry-project). ~~
+Bootstrapped with League of Extraordinary FoundryVTT Developers  [foundry-vtt-types](https://github.com/League-of-Foundry-Developers/foundry-vtt-types).
 
 Mad props to the 'League of Extraordinary FoundryVTT Developers' community which helped me figure out a lot.
-
 ## Credit
 
 Thanks to anyone who helps me with this code! I appreciate the user community's feedback on this project!
