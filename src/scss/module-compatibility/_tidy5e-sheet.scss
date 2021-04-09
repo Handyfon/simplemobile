@@ -4,35 +4,35 @@
 
 /* Header */
 @media screen and (max-width: 800px) {
-  .mobile-improvements .tidy5e.sheet.actor .header-attributes {
+  .simplemobile .tidy5e.sheet.actor .header-attributes {
     overflow-x: auto;
     overflow-y: hidden;
     justify-content: start;
   }
-  .mobile-improvements .tidy5e.sheet.actor .header-attribute {
+  .simplemobile .tidy5e.sheet.actor .header-attribute {
     /* flex: 1 1 60px; */
     overflow: hidden;
   }
 }
 
 @media screen and (max-width: 500px) {
-  .mobile-improvements .tidy5e.sheet.actor .tidy5e-header {
+  .simplemobile .tidy5e.sheet.actor .tidy5e-header {
     padding: 0.3rem;
     align-items: start;
   }
-  .mobile-improvements .tidy5e.sheet.actor.npc .tidy5e-header {
+  .simplemobile .tidy5e.sheet.actor.npc .tidy5e-header {
     padding: 0.3rem 0.3rem 1rem;
   }
-  .mobile-improvements .tidy5e.sheet.actor .character-details {
+  .simplemobile .tidy5e.sheet.actor .character-details {
     margin: 0 0.3rem;
   }
-  .mobile-improvements .tidy5e.sheet.actor .profile {
+  .simplemobile .tidy5e.sheet.actor .profile {
     width: 100px;
   }
-  .mobile-improvements .tidy5e.sheet.actor .origin-summary {
+  .simplemobile .tidy5e.sheet.actor .origin-summary {
     flex-wrap: wrap;
   }
-  .mobile-improvements .tidy5e.sheet.actor .char-name {
+  .simplemobile .tidy5e.sheet.actor .char-name {
     white-space: nowrap;
     overflow-x: hidden;
   }
@@ -42,16 +42,16 @@
   }
 }
 
-.mobile-improvements .tidy5e.sheet.actor .profile {
+.simplemobile .tidy5e.sheet.actor .profile {
   min-width: 100px;
 }
 
 /* Navigation */
 @media screen and (max-width: 500px) {
-  .mobile-improvements .tidy5e-navigation {
+  .simplemobile .tidy5e-navigation {
     flex-wrap: nowrap;
   }
-  .mobile-improvements .tidy5e-navigation .item {
+  .simplemobile .tidy5e-navigation .item {
     overflow: hidden;
     text-overflow: ellipsis;
     padding: 5px 0.25rem 0 0.25rem;
@@ -60,40 +60,40 @@
   }
 }
 /* SheetBody */
-.mobile-improvements .tidy5e.sheet.actor .sheet-body {
+.simplemobile .tidy5e.sheet.actor .sheet-body {
   padding: 1rem 0.25rem 1rem 0.25rem;
 }
 
-.mobile-improvements .tidy5e.sheet .window-content .tab.attributes,
-.mobile-improvements .tidy5e.sheet .window-content .tab.biography,
-.mobile-improvements .tidy5e.sheet .window-content .tab.journal {
+.simplemobile .tidy5e.sheet .window-content .tab.attributes,
+.simplemobile .tidy5e.sheet .window-content .tab.biography,
+.simplemobile .tidy5e.sheet .window-content .tab.journal {
   flex-wrap: wrap;
   padding-right: 0.25rem;
 }
 
 /* Attributes */
-.mobile-improvements .tidy5e.sheet.actor .left-pane {
+.simplemobile .tidy5e.sheet.actor .left-pane {
   flex: 1 1 300px;
   padding: 0 0.25rem;
 }
-.mobile-improvements .tidy5e.sheet.actor .center-pane {
+.simplemobile .tidy5e.sheet.actor .center-pane {
   flex-grow: 9999;
   min-width: 300px;
   margin: 0;
   padding: 0 0.25rem;
 }
 
-.mobile-improvements .tidy5e.dnd5e.sheet.actor ul.skills-list {
+.simplemobile .tidy5e.dnd5e.sheet.actor ul.skills-list {
   flex: 1;
 }
 
-.mobile-improvements .tidy5e.sheet.actor .character-details {
+.simplemobile .tidy5e.sheet.actor .character-details {
   max-width: calc(100% - 110px);
 }
 
 /* Inventory */
 
-.mobile-improvements
+.simplemobile
   .tidy5e.sheet.actor
   .inventory-list
   .item
@@ -103,21 +103,21 @@
 }
 
 @media screen and (max-width: 500px) {
-  .mobile-improvements
+  .simplemobile
     .tidy5e.sheet.actor
     .inventory-list
     .item-detail.item-action {
     flex: 0 0 75px;
   }
 
-  .mobile-improvements .tidy5e.sheet.actor .inventory-list .item-weight,
-  .mobile-improvements .tidy5e.sheet.actor .inventory-list .item-charges {
+  .simplemobile .tidy5e.sheet.actor .inventory-list .item-weight,
+  .simplemobile .tidy5e.sheet.actor .inventory-list .item-charges {
     flex: 0 0 50px;
   }
 }
 
 @media screen and (max-width: 450px) {
-  .mobile-improvements
+  .simplemobile
     .tidy5e.sheet.actor
     .inventory-list
     .item-name
@@ -135,12 +135,12 @@
   align-items: center;
 }
 
-.mobile-improvements .tidy5e.sheet.actor .inventory-currency .currency-item {
+.simplemobile .tidy5e.sheet.actor .inventory-currency .currency-item {
   flex-wrap: nowrap;
   line-height: 26px;
 }
 
-.mobile-improvements
+.simplemobile
   .tidy5e.sheet.actor
   .inventory-currency
   .currency-item
@@ -156,9 +156,9 @@
 
 /* Features */
 @media screen and (max-width: 500px) {
-  .mobile-improvements .tidy5e.sheet.actor .inventory-list .item-level,
-  .mobile-improvements .tidy5e.sheet.actor .inventory-list .item-action,
-  .mobile-improvements .tidy5e.sheet.actor .inventory-list .item-create {
+  .simplemobile .tidy5e.sheet.actor .inventory-list .item-level,
+  .simplemobile .tidy5e.sheet.actor .inventory-list .item-action,
+  .simplemobile .tidy5e.sheet.actor .inventory-list .item-create {
     flex: 0 0 75px;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -166,15 +166,15 @@
     white-space: nowrap;
   }
 
-  .mobile-improvements .tidy5e.sheet.actor.character .item-detail.player-class {
+  .simplemobile .tidy5e.sheet.actor.character .item-detail.player-class {
     flex: 0 0 100px;
   }
 }
 /* Spells */
 @media screen and (max-width: 600px) {
-  .mobile-improvements .tidy5e.sheet.actor .inventory-list .spell-school,
-  .mobile-improvements .tidy5e.sheet.actor .inventory-list .spell-action,
-  .mobile-improvements .tidy5e.sheet.actor .inventory-list .spell-target {
+  .simplemobile .tidy5e.sheet.actor .inventory-list .spell-school,
+  .simplemobile .tidy5e.sheet.actor .inventory-list .spell-action,
+  .simplemobile .tidy5e.sheet.actor .inventory-list .spell-target {
     flex: 0 0 75px;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -184,44 +184,44 @@
 }
 /* Biography & Journal */
 
-.mobile-improvements .tidy5e-sheet .left-notes,
-.mobile-improvements .tidy5e-sheet .right-notes {
+.simplemobile .tidy5e-sheet .left-notes,
+.simplemobile .tidy5e-sheet .right-notes {
   min-width: 275px;
   margin: 0 0.25rem 1rem 0.25rem;
 }
 
-.mobile-improvements .tidy5e-sheet .right-notes {
+.simplemobile .tidy5e-sheet .right-notes {
   margin-bottom: 0;
 }
 
 /* Tidy5E NPC */
 
-.mobile-improvements .tidy5e.sheet.actor.npc .npc-core-stats {
+.simplemobile .tidy5e.sheet.actor.npc .npc-core-stats {
   flex-wrap: wrap;
 }
-.mobile-improvements .tidy5e.sheet.actor.npc .ability-scores {
+.simplemobile .tidy5e.sheet.actor.npc .ability-scores {
   flex-grow: 999;
 }
-.mobile-improvements .tidy5e.sheet.actor.npc .header-attributes {
+.simplemobile .tidy5e.sheet.actor.npc .header-attributes {
   flex-grow: 1;
 }
-.mobile-improvements
+.simplemobile
   .tidy5e.sheet.actor.npc
   .header-attributes
   .header-attribute {
   flex-grow: 1;
 }
 
-.mobile-improvements .tidy5e.sheet.actor.npc .left-pane {
+.simplemobile .tidy5e.sheet.actor.npc .left-pane {
   flex: 1 1 220px;
   margin-bottom: 1em;
 }
 
-.mobile-improvements .tidy5e.sheet.actor.npc .traits {
+.simplemobile .tidy5e.sheet.actor.npc .traits {
   width: 100%;
 }
 
-.mobile-improvements
+.simplemobile
   .tidy5e.sheet.actor.npc
   .inventory-list
   .item
@@ -231,7 +231,7 @@
 }
 
 @media screen and (max-width: 500px) {
-  .mobile-improvements
+  .simplemobile
     .tidy5e.sheet.actor.npc
     .inventory-list
     .item

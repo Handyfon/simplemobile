@@ -12,7 +12,7 @@
 // Import JavaScript modules
 
 // Import TypeScript modules
-import * as THEME from './module/simplemobile-theme';
+import * as THEME from './module/emu/simplemobile-theme';
 import { registerSettings } from './module/settings';
 import { preloadTemplates } from './module/preloadTemplates';
 import { MODULE_NAME } from './module/settings';

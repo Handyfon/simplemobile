@@ -15,6 +15,7 @@ Current state: Useful for general UI interaction. Map interaction is working, bu
 
 - Integration with [Touch VTT](https://github.com/Oromis/touch-vtt)
 - Add a mobile style for some module (CUB, MidiQOL, Better Rolls)
+- [DONE updated to 2021-04-09 version 0.2.3] Integration with [simplemobile](https://github.com/Handyfon/simplemobile)
 - [DONE updated to 2021-04-08] Integration with [mobile-improvement](https://gitlab.com/fvtt-modules-lab/mobile-improvements)
 - Integration with [VTTExternalActorViewer](https://github.com/ardittristan/VTTExternalActorViewer) for load only the character sheet without anything else (suggestion Brent Rogers on trello)
 

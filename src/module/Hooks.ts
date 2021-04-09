@@ -1,5 +1,5 @@
 import { log, warn } from "../mobile";
-import { Controls } from "./Controls";
+import { Controls } from "./simplemobile/Controls";
 import { MobileImprovementsCore } from "./mobile-improvements/core";
 import { MobileMenu } from "./mobile-improvements/menu";
 import { MobileNavigation } from "./mobile-improvements/mobileNavigation";
@@ -194,7 +194,7 @@ export let readyHooks = async () => {
   MobileImprovementsCore.navigation.render(true);
   MobileImprovementsCore.menu.render(true);
 
-  $(document.body).addClass("mobile-improvements"); // TOD REPLACE CLASS WITH simplemobile
+  //$(document.body).addClass("mobile-improvements"); // REPLACE CLASS WITH simplemobile moved to settings file
 
   Hooks.once("renderPlayerList", (a, b: JQuery<HTMLElement>, c) => {
     b.addClass("collapsed");

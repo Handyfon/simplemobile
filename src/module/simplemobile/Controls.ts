@@ -1,4 +1,4 @@
-import { MODULE_NAME } from "./settings";
+import { MODULE_NAME } from "../settings";
 
 export class Controls extends Application {
     openDialog() {

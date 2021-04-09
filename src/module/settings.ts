@@ -16,6 +16,14 @@ export function getCanvas(): Canvas {
     return canvas;
 }
 
+export function isMobile(): boolean{
+  if (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
+    return true;
+  }else{
+    return false;
+  }
+}
+
 export const registerSettings = function () {
 
     game.settings.register(MODULE_NAME, 'lasttoken', {
@@ -67,6 +75,10 @@ export const registerSettings = function () {
         type: Boolean,
     });
 
+    // =====================================
+    // MOBILE IMPROVEMENTS
+    // =====================================
+
     game.settings.register(MODULE_NAME, settings.SIDEBAR_PAUSES_RENDER, {
       name: "Pause rendering in sidebar",
       hint: "Pauses rendering of the map while the sidebar is active",
@@ -76,6 +88,72 @@ export const registerSettings = function () {
       type: Boolean,
       //onChange: callbacks[setting] || noop,
     });
+
+    // ============================================
+    // EXPLICIT SETTINGS FOR CSS ON SPECIFIC SYSTEM
+    // ============================================
+
+    game.settings.register(MODULE_NAME, 'loadMobile', {
+      name: "Load Simple mobile",
+      hint: "Load Simple Mobile",
+      scope: 'client',
+      config: true,
+      default: isMobile(),
+      type: Boolean,
+      onChange: data => {
+        if(data === true){
+          $(document.body).addClass("simplemobile");
+        }else{
+          $(document.body).removeClass("simplemobile");
+        }
+      }
+    });
+
+    game.settings.register(MODULE_NAME, 'loadMobileSystemDnd5e', {
+      name: "Load System DND5e",
+      hint: "Load System DND5e",
+      scope: 'client',
+      config: true,
+      default: isMobile(),
+      type: Boolean,
+      onChange: (data) => {
+        if(data === true && document.getElementsByClassName('dnd5e').length >= 1){
+          for(var index=0; index < document.getElementsByClassName('dnd5e').length; index++){
+            if(!document.getElementsByClassName('dnd5e')[index].classList.contains('simplemobile')){
+              document.getElementsByClassName('dnd5e')[index].classList.add('simplemobile');
+            }
+          }
+        }else{
+          if(document.getElementsByClassName('dnd5e')[index].classList.contains('simplemobile')){
+            document.getElementsByClassName('dnd5e')[index].classList.remove('simplemobile');
+          }
+        }
+      }
+    });
+
+    // const loadMobileSystemDnd5e = game.settings.get(MODULE_NAME, 'loadMobileSystemDnd5e');
+
+    // (loadMobileSystemDnd5e && document.getElementsByClassName('dnd5e').length >= 1) ?
+    //   document.getElementsByClassName('dnd5e')[0].classList.add('simplemobile') :
+    //   document.getElementsByClassName('dnd5e')[0].classList.remove('simplemobile');
+
+    // TODO SETUP OTHER SYSTEMS
+
+    // game.settings.register(MODULE_NAME, 'loadMobileSystemPF2e', {
+    //   name: "Load System PF2e",
+    //   hint: "Load System PF2e",
+    //   scope: 'world',
+    //   config: true,
+    //   default: false,
+    //   type: Boolean,
+    //   onChange: data => {
+    //     (data === true && document.getElementsByClassName('dnd5e').length >= 1) ? document.getElementsByClassName('dnd5e')[0].classList.add('simplemobile') : document.getElementsByClassName('dnd5e')[0].classList.remove('simplemobile');
+    //   }
+    // });
+
+    // const loadMobileSystemPF2e = game.settings.get(MODULE_NAME, 'loadMobileSystemDnd5e');
+    // (loadMobileSystemPF2e && document.getElementsByClassName('dnd5e').length >= 1) ? document.getElementsByClassName('dnd5e')[0].classList.add('simplemobile') : document.getElementsByClassName('dnd5e')[0].classList.remove('simplemobile');
+
 }
 
 export enum settings {
