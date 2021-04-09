@@ -1,11 +1,6 @@
 import { log, warn } from "../mobile";
 import { Controls } from "./simplemobile/Controls";
-import { MobileImprovementsCore } from "./mobile-improvements/core";
-import { MobileMenu } from "./mobile-improvements/menu";
-import { MobileNavigation } from "./mobile-improvements/mobileNavigation";
-import { WindowSelector } from "./mobile-improvements/windowSelector";
 import { getCanvas, MODULE_NAME } from "./settings";
-import * as mgr from "./mobile-improvements/windowManager";
 
 export let controls;
 
@@ -184,67 +179,6 @@ export let readyHooks = async () => {
   //   }
   // });
 
-  // =====================================
-  // MOBILE IMPROVEMENTS
-  // =====================================
-
-  MobileImprovementsCore.navigation.render(true);
-
-  MobileImprovementsCore.windowSelector.render(true);
-  MobileImprovementsCore.navigation.render(true);
-  MobileImprovementsCore.menu.render(true);
-
-  //$(document.body).addClass("mobile-improvements"); // REPLACE CLASS WITH simplemobile moved to settings file
-
-  Hooks.once("renderPlayerList", (a, b: JQuery<HTMLElement>, c) => {
-    b.addClass("collapsed");
-    a._collapsed = true;
-  });
-
-  Hooks.on("renderPlayerList", (a, b: JQuery<HTMLElement>, c) => {
-    b.find(".fa-users").click(evt => {
-      evt.preventDefault();
-      evt.stopPropagation();
-      a._collapsed = !a._collapsed;
-      b.toggleClass("collapsed");
-    });
-  });
-
-  const notificationQueueProxy = {
-    get: function (target, key) {
-      if (key === "__isProxy") return true;
-
-      if (key === "push") {
-        return (...arg) => {
-          if (Hooks.call("queuedNotification", ...arg)) {
-            target.push(...arg);
-          }
-        };
-      }
-      return target[key];
-    },
-  };
-
-  Hooks.once("renderNotifications", app => {
-    if (!app.queue.__isProxy) {
-      app.queue = new Proxy(app.queue, notificationQueueProxy);
-    }
-  });
-
-  Hooks.on("queuedNotification", notif => {
-    if (typeof notif.message === "string") {
-      const regex = /\s.+px/g;
-      const message = notif.message?.replace(regex, "");
-      //@ts-ignore
-      const match = game.i18n.translations.ERROR.LowResolution.replace(regex, "");
-
-      if (message == match) {
-        console.log("notification suppressed", notif);
-        return false;
-      }
-    }
-  });
-
 }
 
 export let initHooks = () => {
@@ -260,22 +194,5 @@ export let initHooks = () => {
         minimum: MIN_CHROMIUM_VERSION
       }), {permanent: true});
     }
-  }
-
-  // =====================================
-  // MOBILE IMPROVEMENTS
-  // =====================================
-
-  log("Mobile Improvements | Initializing Mobile Improvements");
-  mgr.activate();
-  if (MobileImprovementsCore.windowSelector === undefined) {
-    MobileImprovementsCore.windowSelector = new WindowSelector();
-  }
-
-  if (MobileImprovementsCore.navigation === undefined) {
-    MobileImprovementsCore.navigation = new MobileNavigation();
-  }
-  if (MobileImprovementsCore.menu === undefined) {
-    MobileImprovementsCore.menu = new MobileMenu();
   }
 }

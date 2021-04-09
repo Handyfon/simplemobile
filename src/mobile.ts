@@ -17,8 +17,6 @@ import { registerSettings } from './module/settings';
 import { preloadTemplates } from './module/preloadTemplates';
 import { MODULE_NAME } from './module/settings';
 import { initHooks, readyHooks } from './module/Hooks';
-import { viewHeight } from './module/mobile-improvements/util';
-import * as mgr from "./module/mobile-improvements/windowManager";
 
 export let debugEnabled = 0;
 // 0 = none, warnings = 1, debug = 2, all = 3
@@ -79,10 +77,3 @@ Hooks.once('ready', () => {
 });
 
 // Add any additional hooks if necessary
-
-document.addEventListener("fullscreenchange", event =>
-  setTimeout(viewHeight, 100)
-);
-viewHeight();
-window.addEventListener("resize", viewHeight);
-window.addEventListener("scroll", viewHeight);

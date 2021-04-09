@@ -16,7 +16,6 @@ Current state: Useful for general UI interaction. Map interaction is working, bu
 - Integration with [Touch VTT](https://github.com/Oromis/touch-vtt)
 - Add a mobile style for some module (CUB, MidiQOL, Better Rolls)
 - [DONE updated to 2021-04-09 version 0.2.3] Integration with [simplemobile](https://github.com/Handyfon/simplemobile)
-- [DONE updated to 2021-04-08] Integration with [mobile-improvement](https://gitlab.com/fvtt-modules-lab/mobile-improvements)
 - Integration with [VTTExternalActorViewer](https://github.com/ardittristan/VTTExternalActorViewer) for load only the character sheet without anything else (suggestion Brent Rogers on trello)
 
 ## if you want to contribute financially check out the 
@@ -46,68 +45,13 @@ To install this module manually:
 4.  Click 'Install' and wait for installation to complete
 5.  Don't forget to enable the module in game using the "Manage Module" button
 
-# Features
+# Features (TO DO)
 
-Mobile Improvements comes in two major parts:
+# Personal Note
 
-1. Complete core UI overhaul
-2. Flexible character sheets
-
-## General features
-
-- Full-screen application windows
-- Full-screen sidebar
-- Window switching
-  - List and switch between open windows
-  - Minimizing windows hides them
-- Flexible-ish macro bar
-- Disable map toggle
-  - Disable rendering the game board, to increase performance
-
-# TODO
-
-- Ensure disabling of canvas is actually doing something to performance
-- Application window list view
-
-  - Full-view windows (ongoing)
-    - Better dialogs
-  - Window navigation improvements
-    - Performance
-      - don't do a full re-render on each window add/remove
-    - Minimize all
-    - Minimize button on app header
-    - Reorder the list?
-
-- Settings
-
-  - Individual settings for each feature (except for css)
-
-- Action bar improvements
-
-  - Spacing and distribution
-  - New list?
-
-- Some kind of toggle between app/scene views
-
-- Map interaction
-
-  - Selection
-  - Movement
-  - Manual map controls (maybe)
-    - Alternative to touch control; pan and zoom controls
-
-- System-specific
-
-  - Responsive sheets
-    - dnd5e
-    - Write an issue or pull request for other systems!
-
-- Others
-  - Combat tracking improvements?
-  - Build system improvements
+Another great module for mobile support is done here [mobile-improvement](https://gitlab.com/fvtt-modules-lab/mobile-improvements) ty to [Sunspots FVTT Modules Lab](https://gitlab.com/fvtt-modules-lab)
 
 # Build
-
 
 ## How to build your css and contribute ?
 
