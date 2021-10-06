@@ -1,18 +1,157 @@
+/*GENERAL CSS*/
+.tags .tag.edit-btn a svg {
+    height: 9px;
+    width: auto;
+    width: 30px;
+    height: 30px;
+}
+.crb-style .sheet-body .sheet-content .actions .actions-list .item.expanded h4 {
+    color: #ffffff;
+}
+.crb-style .sheet-body .sheet-content .inventory .item-name h3:hover, .crb-style .sheet-body .sheet-content .inventory .item-name h4:hover {
+    color: #ffffff;
+}
+.crb-style .sheet-body .sheet-content .inventory .item-name h3, .crb-style .sheet-body .sheet-content .inventory .item-name h4 {
+    min-width: 50px;
+}
+/*SCREEN WIDTH SPECIFIC*/
 @media only screen and (max-width: 1024px) {
-    .app.sheet.actor, .pf2e {
-        font-family: var(--sans-serif);
-        width: 100% !important;
-        height: 100% !important;
-    }
+.crb-style .sheet-body .sheet-content .inventory.tab[data-tab].active, .crb-style .sheet-body .sheet-content.tab[data-tab].active {
+    margin-left: -17px;
+}
+.crb-style .sheet-body .sheet-content .inventory .inventory-list, .crb-style .sheet-body .sheet-content .inventory .inventory .inventory-list, .crb-style .sheet-body .sheet-content .inventory>.tab:not(.inventory), .crb-style .sheet-body .sheet-content>.tab:not(.inventory) {
+    margin-left: -17px;
+}
+ol.inventory-list.directory-list.inventory-pane {
+    margin-left: 0px !important;
+}
+.crb-style .sheet-body .sheet-content .inventory .item-name {
+    height: 100%;
+}
+.crb-style .sheet-body .sheet-content .spell-list .item .spell-controls button {
+    height: 50px;
+}
+.crb-style .sheet-body .sheet-content .skills .skills-pane .combat-list .skill .skill-name, .crb-style .sheet-body .sheet-content .skills .skills-pane .lores-list .skill .skill-name, .crb-style .sheet-body .sheet-content .skills .skills-pane .skills-list .skill .skill-name {
+    background: unset;
+    color: black !important;
+}
+.app.sheet.actor, .pf2e {
+    width: 100% !important;
+    height: 100% !important;
 }
 span.proficiency-rank.pf-value {
     display: inline-grid;
 }
-
-@media only screen and (max-width: 650) {
+.crb-style .sheet-body .sheet-content .skills .skills-pane .core-title {
+    /* background: url(../assets/sheet/stroke3.svg) 0 100% no-repeat; */
+    background: #5a0000;
+}
+.crb-style .sheet-body .sheet-content .directory-list .action-header:first-child {
+    background: #5a0000;
+    height: 46px;
+}
+.crb-style .sheet-body .sheet-content .feats .item.feat-item .item-name h4 {
+    color: #8a8a8a;
+}
+@media only screen and (max-width: 690px) {
+.crb-style .sheet-body .sheet-content .skills .skills-pane .combat-list, .crb-style .sheet-body .sheet-content .skills .skills-pane .lores-list, .crb-style .sheet-body .sheet-content .skills .skills-pane .skills-list {
+    grid-template-rows: 0.5fr 0.5fr 0.5fr;
+    grid-template-columns: 0.5fr;
+}
+@media only screen and (max-width: 650px) {
 .crb-style .sheet-body .sheet-content .character .character-details {
     display: table-cell;
 }
 .crb-style .sheet-body .sheet-content .character .character-details .frame {
     display: none;
+}
+.crb-style .sheet-body .sheet-content .character .ability-scores {
+    justify-content: left;
+}
+.crb-style .sheet-body .sheet-content .character .ability-scores {
+    grid-template-rows: 0.5fr 0.5fr 0.5fr;
+    grid-template-columns: 0.5fr 0.5fr;
+}
+.crb-style .sheet-body .sheet-content .character .character-details .detail-sheet {
+    display: inline-grid;
+    grid-template-rows: 0.5fr 0.5fr 0.5fr;
+    grid-template-columns: 0.5fr 0.5fr;
+    margin: 0px;
+    padding: 0px;
+}
+.crb-style .sheet-body .sheet-content .character .character-background {
+    display: inline-grid;
+    grid-template-rows: 0.5fr 0.5fr 0.5fr;
+    grid-template-columns: 0.5fr 0.5fr;
+}
+.crb-style .sheet-body .sheet-content .character .character-traits {
+    display: flex;
+    flex-wrap: wrap;
+    display: inline-grid;
+    grid-template-rows: 0.5fr 0.5fr 0.5fr;
+    grid-template-columns: 0.5fr 0.5fr;
+}
+.crb-style .sheet-body .sheet-content .actions .actions-container .actions-tabs-wrapper {
+    justify-items: left;
+}
+.crb-style .sheet-body .sheet-content .actions .actions-container .actions-tabs-wrapper .actions-nav {
+	justify-content: left;
+    display: grid;
+}
+.crb-style .sheet-body .sheet-content .actions .actions-container .actions-tabs-wrapper .actions-panels {
+    width: 85%;
+}
+
+@media only screen and (max-width: 600px) {
+.crb-style .sheet-body .sheet-content .inventory .inventory-list, .crb-style .sheet-body .sheet-content .inventory .inventory .inventory-list, .crb-style .sheet-body .sheet-content .inventory>.tab:not(.inventory), .crb-style .sheet-body .sheet-content>.tab:not(.inventory) {
+    padding-right: 0px;
+}
+.crb-style .sheet-body .sheet-content .actions .actions-list .item .item-name {
+    display: inline-block;
+    text-align: -webkit-match-parent;
+	width: 145%;
+}
+.crb-style .sheet-body .sheet-content .actions .actions-list .item .button-group {
+    flex-wrap: nowrap;
+    display: block;
+}
+button {
+    height: 30px;
+}
+.crb-style .sheet-body .sheet-content .directory-list .action-header {
+    height: 19px;
+}
+.crb-style nav.sheet-navigation .item {
+    width: 30px;
+    height: 30px;
+    border-radius: 0px;
+}
+.crb-style nav.sheet-navigation .navigation-title {
+	display:none;
+}
+.crb-style nav.sheet-navigation {
+    height: 70px;
+    display: grid;
+    grid-template-rows: 0.1fr 0.1fr 0.1fr 0.1fr;
+    grid-template-columns: 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr;
+}
+.crb-style header.char-header {
+    display: -webkit-inline-box;
+    overflow: auto;
+}
+.crb-style .sheet-body .sheet-content .inventory .inventory-list, .crb-style .sheet-body .sheet-content .inventory .inventory .inventory-list, .crb-style .sheet-body .sheet-content .inventory>.tab:not(.inventory), .crb-style .sheet-body .sheet-content>.tab:not(.inventory) {
+    padding-right: 0px;
+}
+@media only screen and (max-width: 460px) {
+.crb-style .sheet-body .sheet-content .character .ability-scores {
+    grid-template-rows: 0.5fr 0.5fr;
+    grid-template-columns: 0.5fr;
+}
+.crb-style .sheet-body .sheet-content .character .character-traits {
+    grid-template-rows: 0.5fr 0.5fr 0.5fr;
+    grid-template-columns: 0.5fr;
+}
+.crb-style .sheet-body .sheet-content .character .character-traits .character-traits {
+    grid-template-rows: 0.5fr 0.5fr 0.5fr;
+    grid-template-columns: 0.5fr 0.5fr;
 }
