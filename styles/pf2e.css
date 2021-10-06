@@ -1,6 +1,7 @@
 @media only screen and (max-width: 1024px) {
     .app.sheet.actor, .pf2e {
         font-family: var(--sans-serif);
-        width: 97% !important;
+        width: 100% !important;
+        height: 100% !important;
     }
 }
