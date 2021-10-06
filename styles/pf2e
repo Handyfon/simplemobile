@@ -1,4 +1,0 @@
-.app.sheet.actor, .pf2e {
-    font-family: var(--sans-serif);
-    width: 97% !important;
-}
