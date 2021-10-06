@@ -48,6 +48,14 @@ Hooks.once('init', function() {
         default: false,
         type: Boolean,
     }); 
+	game.settings.register('simplemobile', 'loadlocalstyles', {
+        name: 'Load Local files instead',
+        hint: 'Loads local style files instead of getting them from github',
+        scope: 'world',
+        config: true,
+        default: false,
+        type: Boolean,
+	});
 });
 Hooks.on('preRenderActorSheet5eCharacter', () => {
 	const container = document.querySelector('. container')
@@ -106,6 +114,7 @@ Hooks.on('renderSidebarTab', function(){
 			ui.hotbar.collapse();
 		}
 	}
+	
 })
 	Hooks.on('canvasReady', function(){
     function opencontrols() {
@@ -114,7 +123,7 @@ Hooks.on('renderSidebarTab', function(){
 	}
   opencontrols();
   let charname = game.user.charname
-  console.log("mobile initialised");
+	console.log("[Simple Mobile] Initialized");
   
   var src = document.getElementById("board");
   var clientX, clientY;
@@ -130,27 +139,11 @@ Hooks.on('renderSidebarTab', function(){
 	  var deltaX, deltaY;
 	  deltaX = e.changedTouches[0].clientX - clientX;
 	  deltaY = e.changedTouches[0].clientY - clientY;
-	  console.log("TouchEnd at: "+"X:"+ deltaX + " Y:" + deltaY);
-	  canvas.animatePan({duration: 50, x: canvas.scene._viewPosition.x - deltaX, y: canvas.scene._viewPosition.y - deltaY})
+	  console.log("TouchMove at: "+"X:"+ deltaX + " Y:" + deltaY);
+	  canvas.animatePan({duration: 10, x: canvas.scene._viewPosition.x - deltaX, y: canvas.scene._viewPosition.y - deltaY})
 	  //console.log("X:"+ canvas.scene._viewPosition.x + " Y:" + canvas.scene._viewPosition.y);
   }, false);
-  /*let tapcameraspeed = parseInt(game.settings.get('simplemobile', 'cps'));
-  let view = canvas.scene._viewPosition;
-  if (x<= screen.width/3){
-  view.x -= tapcameraspeed;
-  }
-  else if (x>= screen.width - screen.width/3){
-  view.x += tapcameraspeed;
-  }
-  if (y<= screen.height/4){
-	view.y -= tapcameraspeed  
-  }
-  else if (y>= screen.height - screen.height/4){
-  view.y += tapcameraspeed;
-  }
-  canvas.animatePan({duration: 25, x: view.x, y: view.y, scale: view.scale});
-  console.log("canvas moved");
-  }*/
+
 	canvas.tokens.ownedTokens.length
 	
 	//SELECT CHARACTER
@@ -177,6 +170,43 @@ Hooks.on('renderSidebarTab', function(){
 		let theight = tokens[lasttoken].h / 2;
 		let view = canvas.scene._viewPosition;
 		canvas.animatePan({duration: 250, x: x+twidth, y: y+theight, scale: view.scale});
+	}
+	
+	//var sheet = document.createElement('style')
+	//sheet.innerHTML = "div {border: 20px solid red; background-color: blue;}";
+	//document.body.appendChild(sheet);
+	if(game.settings.get('simplemobile', 'loadlocalstyles')){
+		console.log("[Simple Mobile] loading local files...");
+		if (!document.getElementById(cssId))
+		{
+			var head  = document.getElementsByTagName('head')[0];
+			var link  = document.createElement('link');
+			link.id   = cssId;
+			link.rel  = 'stylesheet';
+			link.type = 'text/css';
+			link.href = '/modules/simplemobile/styles/' + game.system.id + '.css';
+			link.media = 'all';
+			head.appendChild(link);
+		}
+	}
+	else{
+		var cssId = 'myCss';  // you could encode the css path itself to generate id..
+		console.log("[Simple Mobile] Loading Specific style for the " + game.system.id + " system...");
+		var xhttp = new XMLHttpRequest();
+		xhttp.open("GET", "https://raw.githubusercontent.com/Handyfon/simplemobile/master/styles/" + game.system.id + ".css", true);
+		xhttp.onreadystatechange = function() {
+			if (xhttp.readyState === 4) {
+				if (xhttp.status === 200) {
+					var link = document.createElement('style');
+					link.innerHTML=xhttp.responseText;
+					document.getElementsByTagName('head')[0].appendChild(link);
+				}
+			}
+			if (xhttp.status === 404) {
+			console.log("[Simple Mobile] The " + game.system.id + " system is not yet supported...");
+			}
+		}
+		xhttp.send(null);
 	}
 });
 

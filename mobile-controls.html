@@ -1,6 +1,20 @@
 <div class="OpenCharSheet">
 	<button class="opencharsheet controlbutton" onclick="opencharacter()" style="height: 50%;"><i class="fas fa-user-alt"></i></button>
 </div>
+<style>
+	body.light-theme {
+	  color: black,
+	  div {
+		background-color: white;
+	  }
+	}
+	body.dark-theme {
+	  color: white,
+	  div {
+		background-color: black;
+	  }
+	}
+</style>
 <div id="mobile-container">
 	<div id="mobile-s">
 		<div class="up">
@@ -99,13 +113,14 @@
 				let view = canvas.scene._viewPosition;
 				canvas.animatePan({duration: 250, x: x+twidth, y: y+theight, scale: view.scale});
 			}
-			function move(x, y){
+			
+			async function move(x, y){
 						document.getElementById("sidebar");
 						let tokens = canvas.tokens.controlled;
 						lasttoken = parseInt(game.settings.get('simplemobile', 'lasttoken'));
 						// TOKEN SELECTION END
-						//console.log(lasttoken);
-						tokens[lasttoken].shiftPosition(x, y);
+						console.log(lasttoken);
+						//tokens[lasttoken].shiftPosition(x, y);
 						if(y === -1 & x === -1){//up left
 							x = tokens[lasttoken].x - canvas.grid.h;
 							y = tokens[lasttoken].y - canvas.grid.h;
@@ -142,6 +157,11 @@
 						let twidth = tokens[lasttoken].w / 2;
 						let theight = tokens[lasttoken].h / 2;
 						let view = canvas.scene._viewPosition;
+						let possiblemove = await tokens[lasttoken].checkCollision(x, y);
+						if(possiblemove){
+							await tokens[lasttoken].setPosition(x, y, false);
+							await tokens[lasttoken].document.update({x, y})
+						}
 						canvas.animatePan({duration: 250, x: x+twidth, y: y+theight, scale: view.scale});
 			}
 			function up(){

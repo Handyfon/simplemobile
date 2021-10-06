@@ -10,7 +10,7 @@ div#mobile-controls {
 }
 /*General Improvements*/
 .rollable {
-    background: #bf4b00;
+    background: #353535;
     color: #f0f0e0 !important;
     text-align: -webkit-center;
     font-size: 15px !important;
@@ -39,180 +39,16 @@ button:focus {
     transform: scale(1.1);
     transition: 0.1s;
 }
+.window-app .window-header a {
+    flex: none;
+    margin: 0 0 0 8px;
+    background: #630000;
+    padding-left: 20px;
+    padding-right: 20px;
+    right: 1px;
+}
 /*PF2*/
 
-/*==========================*DND ONLY=====================================*/
-.item-name.flexrow.rollable {
-    font-size: unset !important;
-}
-.dnd5e.sheet.actor .counters .counter {
-    height: 29px;
-    line-height: 29px;
-    font-size: 15px;
-}
-.dnd5e.sheet.actor ul.skills-list li.skill .skill-ability {
-    margin-left: 20px;
-}
-.dnd5e.sheet.actor .counters .counter .counter-value {
-    margin-left: 50px;
-}
-.dnd5e.sheet.actor ul.skills-list li.skill .skill-proficiency {
-    margin-right: 20px;
-}
-section.header-details.flexrow {
-    margin-bottom: -30px;
-}
-.dnd5e.sheet .sheet-header .summary li:last-child {
-    border-right: none;
-    max-width: 140px;
-}
-.dnd5e.sheet .sheet-header h1 input {
-    transform: unset !important;
-}
-.dnd5e.sheet .sheet-navigation {
-    border-top: 1px solid #b5b3a4;
-}
-.dnd5e.sheet .sheet-header {
-    flex: 0 0 100px;
-    border-bottom: 0;
-}
-.dnd5e.sheet .sheet-navigation .item.active {
-    border-bottom: 3px solid #ffffff;
-    background: #bf4b00;
-    padding-left: 15px;
-    padding-right: 15px;
-    transition: 0.2s;
-    color: #f0f0e0;
-}
-.dnd5e.sheet.actor .spellcasting-ability {
-    flex: 0; 
-}
-.dnd5e.sheet .filter-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    line-height: 16px;
-    /* margin-top: 29px; */
-    max-width: 100%;
-    flex: 0 0 144%;
-}
-.dnd5e.sheet.actor .spell-school, .dnd5e.sheet.actor .spell-action, .dnd5e.sheet.actor .spell-target {
-    flex: unset;
-}
-.dnd5e.sheet.actor .inventory-list .item-detail {
-    flex: unset !important;
-}
-.dnd5e.sheet.actor .inventory-list .item-controls a {
-    /* flex: 0 0 22px; */
-    font-size: 12px;
-    text-align: center;
-    color: #7a7971;
-}
-.dnd5e.sheet.actor .inventory-list .item-detail.item-action {
-	flex: unset;
-}
-.collapsed {
-    height: fit-content !important;
-}
-.dnd5e.sheet.actor .encumbrance {
-    margin: unset;
-}
-.dnd5e.sheet.actor .sheet-header h1.charname input {
-    height: 24px;
-	margin:0;
-}
-.dnd5e.sheet.actor .sheet-header .header-exp {
-    flex: 0 0 100px;
-    margin-right: 2px;
-    height: 75px;
-    justify-content: flex-end;
-    text-align: right;
-    flex-direction: column-reverse;
-    margin-right: 95px;
-}
-.dnd5e.sheet.actor .tab.attributes {
-    overflow: hidden;
-    overflow-y: scroll;
-}
-h4.entity-name {
-	text-align: center;
-}
-.dnd5e.sheet.actor h4.box-title {
-    font-size: 13px;
-}
-.sidebar-tab .directory-header .header-search input {
-    background: rgba(255, 255, 245, 0.8);
-    width: calc(100% - 26px);
-    margin: 0 2px;
-    width: 80%;
-}
-footer.attribute-footer {
-    display: inline-flex;
-	width: fit-content;
-}
-.dnd5e.sheet.actor .sheet-header .summary {
-	margin-top: -36px;
-    margin-bottom: -20px;
-}
-.dnd5e.sheet.actor .sheet-header .attributes {
-    flex: 0 0 100%;
-    margin: 0;
-    margin-top: 11px;
-    margin-bottom: 42px;
-}
-.dnd5e.sheet.actor .spell-slots input, .dnd5e.sheet.actor .spell-slots span.sep {
-    display: inline;
-    max-width: 20px;
-    text-align: center;
-    transform: scale(1.5);
-}
-
-.dnd5e.sheet.actor.character ul.skills-list li.skill {
-    padding: 2vw;
-    height: 4vh;
-    border: 1px groove #b5b3a473;
-    align-content: center;
-}
-.dnd5e.sheet.actor .counters .counter input[type="text"] {
-    height: 20px;
-    max-width: 20px;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-}
-.dnd5e.sheet .sheet-navigation .item {
-    margin: 0;
-}
-.dnd5e.sheet.actor.character .sheet-header img.profile {
-    flex: 0 0 10px;
-    max-width: 100%;
-    /* height: 50px; */
-    width: 10000px;
-    /* transform: scale(0.5); */
-}
-.dnd5e.sheet.actor .center-pane {
-    overflow-y: initial;
-}
-.dnd5e.sheet.actor.character {
-    min-width: 100% !important;
-    min-height: 100%;
-    max-width: 100% !important;
-    max-height: 100% !important;
-    width: 100px !important;
-    top: 1px !important;
-}
-.dnd5e.sheet.actor.character ul.skills-list {
-    flex: 66% !important;
-    height: 100%;
-    height: fit-content;
-}
-.dnd5e.sheet.actor .inventory-list .item-controls {
-    flex: unset;
-}
-.dnd5e.sheet .window-content {
-    max-width: 100vw;
-}
-/*==========================*DND END=====================================*/
 /*==========================*DARKSHEET ONLY=====================================*/
 .section1 {
     display: contents;
@@ -298,6 +134,9 @@ li.folder > .folder-header {
     line-height: 48px;
     display: contents;
 }
+.directory .directory-list {
+    overflow: hidden;
+}
 .sidebar-tab .directory-footer button {
     margin: 0 3px;
     background: rgb(117 46 0);
@@ -348,11 +187,28 @@ li.folder > .folder-header h3 {
     margin: 0 0.25em;
     border-bottom: 1px groove;
 }
-h3, .sidebar-tab .directory-list .directory-item h4 {
-    margin: 0;
-    white-space: nowrap;
+button.create-entity {
     overflow: hidden;
-    margin: 0 0.25em;
+}
+button.create-folder {
+	overflow: hidden;
+}
+nav.encounters.flexrow {
+    flex-direction: column;
+}
+#combat #combat-controls {
+    margin: 0;
+    border-top: 2px groove #444;
+    padding-top: 4px;
+    transform: scale(0.8);
+}
+
+.sidebar-tab .directory-header .header-search input {
+    background: rgba(255, 255, 245, 0.8);
+    width: calc(100% - 26px);
+    margin: 0 2px;
+    width: 80%;
+    height: 50px;
 }
 img#logo {
     display: none;
@@ -385,31 +241,26 @@ div#players {
 }
 #hotbar #macro-list {
     transform: scale(1.3);
-    flex: unset;
-    height: 100%;
-    list-style: none;
-    margin: 0 2px;
-    padding: 0;
-    border: 1px solid #000;
-    border-radius: 3px;
-    border: 0;
+    border: unset;
     left: 5%;
-    bottom: -17vh;
+    top: 100px;
     position: absolute;
     width: 200px;
+    display: grid;
+    grid: inherit;
+    grid-template-columns: 50px 50px 50px;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 5px;
 }
 .notification.error {
     background: rgba(105, 0, 8, 0.6);
     border: 1px solid #750003;
     display: none !important;
 }
-#hotbar #hotbar-directory-controls {
-    pointer-events: all;
-    width: 20vw;
-    height: 4vw;
-    /* margin-top: -1vw; */
-    margin-bottom: 3vh !important;
+#hotbar .bar-controls {
+    flex-direction: row;
 }
+
 #hotbar #action-bar {
     flex: 1;
     height: 52px;
@@ -417,43 +268,34 @@ div#players {
     position: absolute;
     display: contents;
 }
-#hotbar .bar-controls {
-    background: url(/ui/parchment.jpg) repeat;
-    /* color: black; */
-    filter: drop-shadow(2px 4px 6px black);
-    background: #bf4b00;
-    color: white;
+#hotbar .bar-controls span.page-number {
+    display: block;
+    font-size: 20px;
+    padding: 7px;
 }
-#sidebar-tabs > .item {
-    position: relative;
-    flex: 0 0 14vw;
-    line-height: 32px;
-    border: 1px solid transparent;
-    border-radius: 5px 5px 0 0;
+#chat-controls .roll-type-select {
+    width: 19vw;
+    height: 40px;
 }
 #sidebar-tabs > .collapse {
-    position: relative;
-    flex: 0 0 27px;
+    position: relative;;
     line-height: 32px;
     color: #ffffff;
-    /* font-size: 29px; */
     text-align: center;
-    background: #ff6400bf;
-    /* padding: 0 20vw 0 20vw !important; */
-    box-shadow: 0 0 6px inset #4b4a44;
-    /* max-width: 20px !important; */
+    background: #bf4b00;
     padding: 23px;
     padding-top: 0;
+    border-radius: 5px;
     padding-bottom: 0;
+    margin-top: 2px;
+    flex: 1;
 }
 #sidebar-tabs > .item.active {
-    color: #4b4a44;
-    border: 1px solid red;
-    border-bottom: none;
-    box-shadow: 0 0 6px inset #4b4a44;
+    color: #ffffff;
     background: #bf4b00 !important;
+    box-shadow: unset;
+    border: unset;
 }
-
 a#macro-directory {
     display: none !important;
 }
@@ -481,15 +323,14 @@ i.fas.fa-caret-left {
 
 #sidebar {
     border: 1px solid #000;
-    background: url(http://i.imgur.com/5Hoxo0s.png) 80%;
     background-repeat: no-repeat;
     z-index: 99;
     background-size: cover;
-    background: 0;
-    /* width: 20%; */
     max-height: 88vh;
     margin-top: 3vh;
+    height: fit-content !important;
 }
+
 ::before {
     font-size: 20px;
 }
@@ -520,6 +361,8 @@ div#mobile-controls {
     box-shadow: 0px 2px 0px 2px #4a4949;
     background-repeat: repeat;
     background-size: auto;
+    width: 100px !important;
+    height: 50px !important;
 }
 button.goselect {
     width: 100%;
@@ -564,16 +407,10 @@ button.goselect {
     padding: 1px 0;
 }
 .window-app .window-header {
-    flex: 0 0 30px;
-    overflow: hidden;
-    padding: 0 8px;
-    line-height: 30px;
     border-bottom: 1px solid #000;
-    /* box-shadow: 0 0 5px inset white; */
-    background: #bf4b00;
-    border: 1px solid red;
     border-radius: 5px;
-    max-width: 100vw;
+    box-shadow: unset;
+    border: unset;
 }
 #hotbar .macro.inactive {
     background: #2b2a2a9c;
@@ -588,27 +425,21 @@ button.goselect {
     background: #000000;
     box-shadow: 0 0 5px inset whitesmoke;
 }
-#hotbar .bar-controls {
-    background: url(/ui/parchment.jpg) repeat;
-    /* color: black; */
-    filter: drop-shadow(2px 4px 6px black);
-    background: #bf4b009c;
-}
+
 #sidebar-tabs {
     background: black;
 }
 #sidebar-tabs > .item {
+    background: #232323;
     position: relative;
-    flex: 0 0 14vw;
+    min-width: 40px;
+    flex: auto;
     max-width: 53px;
     line-height: 32px;
     border: 1px solid transparent;
     border-radius: 5px 5px 0 0;
-    background: #383737 !important;
     margin: 1px;
-    box-shadow: 0 0 6px inset #000000;
 }
-
 i.fas.fa-caret-down {
     margin: 2vh;
 }
@@ -647,8 +478,6 @@ li.directory-item.entity.playlist.flexrow.collapsed {
 div#mobile-controls {
 display:none;
 }
-
-
 .up {
     height: unset !important;
 }
@@ -678,27 +507,17 @@ button.godown.controlbutton {
     height: 33%;
 }
 @media only screen and (max-width: 600px) {/* UNDER 600 PIXEL*/
-.item-image {
-    width: 30vw;
-}
-.dnd5e.sheet.actor.character ul.skills-list {
-    flex: 66% !important;
-}
-.sheet-header .profile {
-    display: none;
-}
-.dnd5e.sheet.actor .inventory-filters .currency {
-    list-style: none;
-    margin: 4px 0 8px;
-    padding: 0;
-    font-size: 11px;
-    flex: 0 0 100%;
-    align-self: flex-end;
-}
+
 #hotbar #hotbar-directory-controls {
     pointer-events: all;
-    width: 20vw;
     height: 8vw;
-    /* margin-top: -1vw; */
+    width: 100px;
     margin-bottom: 3vh !important;
+}
+div#hotbar-page-controls {
+    position: absolute;
+    top: 42px;
+    width: 100px;
+    height: 45px !important;
+    align-items: center;
 }
