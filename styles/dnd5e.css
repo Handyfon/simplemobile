@@ -142,6 +142,7 @@ footer.attribute-footer {
     padding: 2vw;
     border: 1px groove #b5b3a473;
     align-content: center;
+    height: 3vh;
 }
 .dnd5e.sheet.actor .counters .counter input[type="text"] {
     height: 20px;
