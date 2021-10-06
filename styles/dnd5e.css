@@ -187,7 +187,6 @@ footer.attribute-footer {
     position: absolute;
 }
 /*==========================*DND END=====================================*/
-}
 @media only screen and (max-width: 600px) {/* UNDER 600 PIXEL*/
 	.item-image {
 	    width: 30vw;
@@ -206,4 +205,3 @@ footer.attribute-footer {
 	    flex: 0 0 100%;
 	    align-self: flex-end;
 	}
-}
