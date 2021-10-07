@@ -1,4 +1,6 @@
+<h2><b>Important:</h2>
 IOS is not and will not be supported because the IOS browsers are really bad.
+Some images above 4096x4096px wont be displayed in chromium-based browsers.</b>
 
 **Manifest:**https://github.com/Handyfon/simplemobile</br>
 
