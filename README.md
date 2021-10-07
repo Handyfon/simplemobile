@@ -1,7 +1,7 @@
 <h2><b>Important:</h2>
 IOS is not and will not be supported because the IOS browsers are really bad.
 Some images above <u>4096x4096px</u> wont be displayed in chromium-based browsers.
-I Highly recommend you to optimize image, filesizes and to use webp instead.
+I Highly recommend you to optimize image, filesizes and to use webp instead.</br>
 Always try out high resolution backgrounds or those with huge filesizes before a session!</b>
 </br></br>
 **Manifest:**https://github.com/Handyfon/simplemobile</br>
