@@ -329,6 +329,7 @@ i.fas.fa-caret-left {
     max-height: 88vh;
     margin-top: 3vh;
     height: fit-content !important;
+    overflow: auto;
 }
 
 ::before {

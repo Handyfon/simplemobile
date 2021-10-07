@@ -145,7 +145,7 @@
 						if(!token.checkCollision(newPointCenter)){
 							token.document.update(newPoint);
 						}
-						canvas.animatePan({duration: 250, newPoint, scale: view.scale});
+						canvas.animatePan({duration: 250, x:newPoint.x+token.w/2, y:newPoint.y+token.h/2, scale: view.scale});
 			}
 			function up(){
 				if(!game.paused)

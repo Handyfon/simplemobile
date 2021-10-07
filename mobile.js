@@ -137,12 +137,22 @@ Hooks.on('renderSidebarTab', function(){
   
   src.addEventListener('touchmove', function(e) {
 	  var deltaX, deltaY;
-	  deltaX = e.changedTouches[0].clientX - clientX;
-	  deltaY = e.changedTouches[0].clientY - clientY;
+	  deltaX = (e.changedTouches[0].clientX - clientX) * 0.1 ;
+	  deltaY = (e.changedTouches[0].clientY - clientY) * 0.1;
+	  if(deltaX < 0.05 && deltaX > -0.05) return;
+	  if(deltaY < 0.05 && deltaY > -0.05) return;
 	  console.log("TouchMove at: "+"X:"+ deltaX + " Y:" + deltaY);
-	  canvas.animatePan({duration: 10, x: canvas.scene._viewPosition.x - deltaX, y: canvas.scene._viewPosition.y - deltaY})
+	  canvas.animatePan({duration: 0, x: canvas.scene._viewPosition.x - deltaX, y: canvas.scene._viewPosition.y - deltaY})
 	  //console.log("X:"+ canvas.scene._viewPosition.x + " Y:" + canvas.scene._viewPosition.y);
   }, false);
+  /*src.addEventListener('touchend', function(e) {
+	  var deltaX, deltaY;
+	  deltaX = (e.changedTouches[0].clientX - clientX) * 0.2;
+	  deltaY = (e.changedTouches[0].clientY - clientY) * 0.2;
+	  console.log("TouchMove at: "+"X:"+ deltaX + " Y:" + deltaY);
+	  canvas.animatePan({duration: 100, x: canvas.scene._viewPosition.x - deltaX, y: canvas.scene._viewPosition.y - deltaY})
+	  //console.log("X:"+ canvas.scene._viewPosition.x + " Y:" + canvas.scene._viewPosition.y);
+  }, false);*/
 
 	canvas.tokens.ownedTokens.length
 	
