@@ -1,4 +1,6 @@
-<b>SUPPORT: https://discord.gg/gs5hAgxBx3</b>
+<b>SUPPORT: https://discord.gg/gs5hAgxBx3</b></br>
+<b>My Modules: http://handyfon.net/foundry-modules/</b>
+
 <h2><b>Important:</h2>
 IOS is not and will not be supported because the IOS browsers are really bad.
 Some images above <u>4096x4096px</u> wont be displayed in chromium-based browsers.
