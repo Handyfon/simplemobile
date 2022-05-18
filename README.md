@@ -1,5 +1,5 @@
 # Simple Mobile
-Every wanted to use FoundryVTT on mobile? Now you (somewhat) can.
+Ever wanted to use FoundryVTT on mobile? Now you (somewhat) can.
 
 **SUPPORT: https://discord.gg/gs5hAgxBx3**<br>
 **My Modules: http://handyfon.net/foundry-modules/**
