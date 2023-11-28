@@ -154,33 +154,33 @@ Hooks.on('canvasReady', function(){
 	  //console.log("X:"+ canvas.scene._viewPosition.x + " Y:" + canvas.scene._viewPosition.y);
   }, false);*/
 
-	canvas.tokens.ownedTokens.length
+	// canvas.tokens.ownedTokens.length
 	
-	//SELECT CHARACTER
-	if(canvas.tokens.ownedTokens.length > 0)
-	{
-		canvas.tokens.ownedTokens.map(token => token.control({releaseOthers: false}));
-		let tokens = canvas.tokens.controlled;
-		let lasttoken = parseInt(game.settings.get('simplemobile', 'lasttoken'));
-		if(tokens.length === 1){
-		lasttoken = 0;
-		}
-		else if( tokens.length -1 <= lasttoken){
-		lasttoken = 0;
-		}
-		else{
-		lasttoken += 1;
-		}
-		game.settings.set('simplemobile', 'lasttoken', lasttoken);
-		//console.log(lasttoken);
-		let x = tokens[lasttoken].x;
-		let y = tokens[lasttoken].y;
-		document.getElementById("sidebar");
-		let twidth = tokens[lasttoken].w / 2;
-		let theight = tokens[lasttoken].h / 2;
-		let view = canvas.scene._viewPosition;
-		canvas.animatePan({duration: 250, x: x+twidth, y: y+theight, scale: view.scale});
-	}
+	// //SELECT CHARACTER
+	// if(canvas.tokens.ownedTokens.length > 0)
+	// {
+	// 	canvas.tokens.ownedTokens.map(token => token.control({releaseOthers: false}));
+	// 	let tokens = canvas.tokens.controlled;
+	// 	let lasttoken = parseInt(game.settings.get('simplemobile', 'lasttoken'));
+	// 	if(tokens.length === 1){
+	// 	lasttoken = 0;
+	// 	}
+	// 	else if( tokens.length -1 <= lasttoken){
+	// 	lasttoken = 0;
+	// 	}
+	// 	else{
+	// 	lasttoken += 1;
+	// 	}
+	// 	game.settings.set('simplemobile', 'lasttoken', lasttoken);
+	// 	//console.log(lasttoken);
+	// 	let x = tokens[lasttoken].x;
+	// 	let y = tokens[lasttoken].y;
+	// 	document.getElementById("sidebar");
+	// 	let twidth = tokens[lasttoken].w / 2;
+	// 	let theight = tokens[lasttoken].h / 2;
+	// 	let view = canvas.scene._viewPosition;
+	// 	canvas.animatePan({duration: 250, x: x+twidth, y: y+theight, scale: view.scale});
+	// }
 	
 	//var sheet = document.createElement('style')
 	//sheet.innerHTML = "div {border: 20px solid red; background-color: blue;}";
