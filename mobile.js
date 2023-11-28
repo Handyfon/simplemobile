@@ -117,16 +117,6 @@ Hooks.on('canvasReady', function(){
 
 });
 	Hooks.on('canvasReady', function(){
-		//Collapse Sidebar when canvas is loaded
-	if(screen.availWidth < 1000){
-		if(document.getElementById('sidebar').className == "app"){
-			ui.sidebar.collapse();
-		}
-		//Collapse MacroBar when canvas is loaded
-		if(document.getElementById('action-bar').className == "flexrow "){
-			ui.hotbar.collapse();
-		}
-	}
     function opencontrols() {
         Controls = new Controls();
         Controls.openDialog();
