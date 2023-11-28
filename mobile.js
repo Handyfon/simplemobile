@@ -116,19 +116,6 @@ Hooks.on('canvasReady', function(){
 	}
 
 });
-Hooks.on('sceneChange', function(){
-	//Collapse Sidebar on load
-	if(screen.availWidth < 1000){
-		if(document.getElementById('sidebar').className == "app"){
-			ui.sidebar.collapse();
-		}
-		//Collapse MacroBar on load
-		if(document.getElementById('action-bar').className == "flexrow "){
-			ui.hotbar.collapse();
-		}
-	}
-
-});
 	Hooks.on('canvasReady', function(){
     function opencontrols() {
         Controls = new Controls();
