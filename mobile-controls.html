@@ -3,13 +3,13 @@
 </div>
 <style>
 	body.light-theme {
-	  color: black,
+	  color: black;
 	  div {
 		background-color: white;
 	  }
 	}
 	body.dark-theme {
-	  color: white,
+	  color: white;
 	  div {
 		background-color: black;
 	  }
@@ -38,12 +38,7 @@
 		</div>
 		<script>
 			function opencharacter(){
-			let tokens = canvas.tokens.controlled;
-			lasttoken = parseInt(game.settings.get('simplemobile', 'lasttoken'));
-			if(tokens.length != 0)
-			tokens[lasttoken].document._actor.sheet.render(true);
-			else
-			game.user.character.sheet.render(true)
+			game.toggleCharacterSheet();
 			}
 			function rotate(value){
 			if(game.paused){warn(); return;}
