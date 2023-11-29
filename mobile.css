@@ -596,7 +596,7 @@ div#hotbar-page-controls {
             text-align: left !important;
     }
 #weather-control-container #date-display h2 {
-text-align: left;
+text-align: left !important;
 }
 .calendar-header {
 transform: translate(-80px, 0);
