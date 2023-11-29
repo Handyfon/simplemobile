@@ -95,6 +95,34 @@ Hooks.on('canvasInit', () => {
 	}
 	if(screen.availWidth < 1000){
 		game.user.setFlag("world", "simpleMobile", true);
+		//add fullscreen button to sidebar on load if mobile
+		let sidebarNav = document.getElementById("sidebar-tabs");
+		let fullscreenItem = document.createElement("a");
+		let fullscreenIcon = document.createElement("i");
+		let docElem = document.documentElement;
+		fullscreenItem.classList.add("item");
+		fullscreenItem.onclick = function(){
+			if(document.fullscreenElement){
+				if (document.exitFullscreen) {
+					document.exitFullscreen();
+				} else if (document.webkitExitFullscreen) { /* Safari */
+					document.webkitExitFullscreen();
+				} else if (document.msExitFullscreen) { /* IE11 */
+					document.msExitFullscreen();
+				}
+			} else {
+				if (docElem.requestFullscreen) {
+					docElem.requestFullscreen();
+				} else if (docElem.webkitRequestFullscreen) { /* Safari */
+					docElem.webkitRequestFullscreen();
+				} else if (docElem.msRequestFullscreen) { /* IE11 */
+					docElem.msRequestFullscreen();
+				}
+			}
+		}
+		fullscreenIcon.classList.add("fas", "fa-expand");
+		fullscreenItem.prepend(fullscreenIcon);
+		sidebarNav.appendChild(fullscreenItem);
 		console.log("Mobile Mode");
 	}
 	else{
