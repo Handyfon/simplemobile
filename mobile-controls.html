@@ -93,7 +93,12 @@
 			
 			function select(){
 				canvas.tokens.ownedTokens.map(token => token.control({releaseOthers: false}));
-				let tokens = canvas.tokens.controlled;
+				//sort array to ensure consistant ordering
+				let tokens = canvas.tokens.controlled.sort(function(a,b) {
+					let textA = a.document.name.toUpperCase();
+					let textB = b.document.name.toUpperCase();
+					return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
+				});
 				lasttoken = parseInt(game.settings.get('simplemobile', 'lasttoken'));
 				if(tokens.length === 1){
 				lasttoken = 0;
