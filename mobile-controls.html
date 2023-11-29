@@ -105,6 +105,7 @@
 				lasttoken += 1;
 				}
 				game.settings.set('simplemobile', 'lasttoken', lasttoken);
+				tokens[lasttoken].control({releaseOthers: true});
 				//console.log(lasttoken);
 				let x = tokens[lasttoken].x;
 				let y = tokens[lasttoken].y;
