@@ -82,7 +82,7 @@ button:focus {
     display: contents;
 }
 /*==========================*DARKSHEET END=====================================*/
-//*ACTOR SHEETS*/
+/*ACTOR SHEETS*/
 /*
 img#logo {
     display: none;
@@ -522,3 +522,101 @@ div#hotbar-page-controls {
     height: 45px !important;
     align-items: center;
 }
+}
+/* v1 css for simplemobileV11 */
+@media only screen and (max-width: 600px){
+		
+    #players, a.header-button.control.dae-config-actorsheet, a.header-button.control.configure-sheet, .popout-module-button, a.pin {
+    display: none
+    }
+    #token-action-hud {
+        position: fixed;
+        left: 0;
+        top: 25px;
+        width: calc(100dvw - 30px);
+        /*transform: rotate(-90deg) translate(-450px, -100px) !important;*/
+         
+    }
+    #tah-groups {
+        flex-wrap: wrap;
+        -webkit-flex-wrap: wrap;
+    }
+    .tah-tab-groups {
+        user-select: auto;
+    }
+    .expand-down {
+        position: fixed;
+        left: 0;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        height: 68dvh;
+        z-index: 100;
+    }
+    .tah-groups-container::-webkit-scrollbar {
+          display: none;
+    }
+    .tah-groups-container {
+          -ms-overflow-style: none;  /* IE and Edge */
+          scrollbar-width: none;  /* Firefox */
+    }
+    .configure-token, .open-item-ddb-importer, .dae-dimeditor, .dae-config-itemsheet {
+        display: none;
+    }
+    .main-controls:not(.main-controls:last-child), .control-tool:not(:last-child) {
+        display: none !important;
+    }
+    .control-tool {
+        position: fixed;
+        right: 8px;
+        top: 2px;
+        scale: 100%;
+    }
+    #combat-dock {
+        display: none !important;
+    }
+    #sidebar-tabs>a:not(#sidebar-tabs>a:nth-child(1), #sidebar-tabs>a:nth-child(2), #sidebar-tabs>a:nth-child(3), #sidebar-tabs>a:nth-child(10), #sidebar-tabs>a:last-child){
+        display: none;
+    }
+    #sidebar {
+        transform: translate(0, 20px);
+    }
+    #tah-collapse-expand, #tah-buttons {
+        display: none !important;
+    }
+    
+}
+
+@media only screen and (max-width: 1024px) {
+
+#weather-control-container {
+            position: absolute !important;
+            top: calc(100dvh - 70px) !important;
+            left: calc(100dvw - 101px) !important;
+            width: 100px !important;
+            text-align: left !important;
+    }
+#weather-control-container #date-display h2 {
+text-align: left;
+}
+.calendar-header {
+transform: translate(-80px, 0);
+}
+section.clock {
+transform: translate(-80px, 0);
+}
+
+}
+
+#mobile-controls {
+transform: translate(-8vw, -4vw) !important;
+scale: 150%;
+}
+
+.OpenCharSheet {
+position: absolute;
+left: calc(100dvw - 46dvw);
+bottom: 92px;
+
+}
+
+/*still need to fix character sheet styling, manual rolls not showing up (DF Manual Rolls), and token action hud toggle (Token Action HUD Core) */
