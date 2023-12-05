@@ -342,10 +342,10 @@ i.fas.fa-caret-left {
 
 /*Mobile controls*/
 div#mobile-controls {
-	height: 13vh !important;
+    height: 13vh !important;
     /* position: fixed !important; */
     top: unset !important;
-    bottom: 4vh !important;
+    /* bottom: 4vh !important; */
     left: 6vw !important;
     width: 83% !important;
     margin: 0 !important;
@@ -354,9 +354,9 @@ div#mobile-controls {
     display: block !important;
     background: unset !important;
     box-shadow: unset !important;
-    z-index: 30 !important;
-    transform: scale(1.2);
-    bottom: 10vh !important;
+    /* z-index: 30 !important; */
+    /* transform: scale(1.2); */
+    bottom: 9dvh !important;
 }
 
 /*Style*/
@@ -392,7 +392,7 @@ button.goselect {
     color: white;
 }
 .controlbutton {
-    width: 100%;
+    width: 101%;
     margin: 0 1px;
     background: rgba(39, 39, 39, 0.62);
     /* border: 1px solid #b5b3a4; */
@@ -508,8 +508,8 @@ button.goup.controlbutton {
 button.goselect.controlbutton {
     height: 33%;
 }
-button.godown.controlbutton {
-    height: 33%;
+button.godown.controlbutton, button.goleft.controlbutton, button.goright.controlbutton {
+    height: 34%;
 }
 @media only screen and (max-width: 600px) {/* UNDER 600 PIXEL*/
 
@@ -616,7 +616,7 @@ div#hotbar-page-controls {
         min-width: 0px !important;
     }
 #weather-control-container #date-display h2 {
-text-align: left !important;
+/* text-align: left !important; */
 }
 .calendar-header {
 /* transform: translate(-80px, 0); */
@@ -625,10 +625,10 @@ text-align: left !important;
     display: none !important;
 }
 #weather-control-container #window-move-handle {
-    flex: 0 !important;
+    /* flex: 0 !important; */
 }
 section.clock {
-transform: translate(-80px, 0);
+/* transform: translate(-80px, 0); */
 }
 
 }
