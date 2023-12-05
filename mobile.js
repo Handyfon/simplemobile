@@ -1,3 +1,6 @@
+import NoSleep from "./NoSleep";
+let noSleep = new NoSleep();
+
 Hooks.once('init', function() {
 
 	game.settings.register('simplemobile', 'lasttoken', {
@@ -161,6 +164,11 @@ Hooks.on('canvasReady', function(){
 	  clientX = e.touches[0].clientX;
 	  clientY = e.touches[0].clientY;
 	  //console.log("TouchStart at: "+"X:"+ clientX + " Y:" + clientY);
+  }, false);
+
+  src.addEventListener('click', function enableNoSleep() {
+	src.removeEventListener('click', enableNoSleep, false);
+	noSleep.enable();
   }, false);
   
   src.addEventListener('touchmove', function(e) {
