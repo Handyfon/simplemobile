@@ -1,190 +1,194 @@
 @media only screen and (max-width: 1024px) {
 
 /*==========================*DND ONLY=====================================*/
-.dnd5e.sheet.actor ul.skills-list li.skill {
-    height: 24px;
-    padding: 3px 2px;
-    overflow: hidden;
-}
-.dnd5e.sheet.actor ul.skills-list li.skill h4 {
-    flex: 1px;
-    margin: 0;
-    line-height: 18px;
-    max-width: 80px;
-    font-size: 10px !important;
-}
-.item-name.flexrow.rollable {
-    font-size: unset !important;
-}
-.dnd5e.sheet.actor .counters .counter {
-    height: 29px;
-    line-height: 29px;
-    font-size: 15px;
-}
-.dnd5e.sheet.actor ul.skills-list li.skill .skill-ability {
-    margin-left: 20px;
-}
-.dnd5e.sheet.actor .counters .counter .counter-value {
-    margin-left: 50px;
-}
-.dnd5e.sheet.actor ul.skills-list li.skill .skill-proficiency {
-    margin-right: 5px;
-}
+    .dnd5e.sheet.actor ul.skills-list li.skill {
+        height: 24px;
+        padding: 3px 2px;
+        overflow: hidden;
+    }
+    .dnd5e.sheet.actor ul.skills-list li.skill h4 {
+        flex: 1px;
+        margin: 0;
+        line-height: 18px;
+        max-width: 80px;
+        font-size: 10px !important;
+    }
+    .item-name.flexrow.rollable {
+        font-size: unset !important;
+    }
+    .dnd5e.sheet.actor .counters .counter {
+        height: 29px;
+        line-height: 29px;
+        font-size: 15px;
+    }
+    .dnd5e.sheet.actor ul.skills-list li.skill .skill-ability {
+        margin-left: 20px;
+    }
+    .dnd5e.sheet.actor .counters .counter .counter-value {
+        margin-left: 50px;
+    }
+    .dnd5e.sheet.actor ul.skills-list li.skill .skill-proficiency {
+        margin-right: 5px;
+    }
 
-section.header-details.flexrow {
-    margin-bottom: -30px;
-}
-.dnd5e.sheet .sheet-header .summary li:last-child {
-    border-right: none;
-    max-width: 140px;
-}
-.dnd5e.sheet .sheet-header h1 input {
-    transform: unset !important;
-}
-.dnd5e.sheet .sheet-navigation {
-    border-top: 1px solid #b5b3a4;
-}
-.dnd5e.sheet .sheet-header {
-    flex: 0 0 100px;
-    border-bottom: 0;
-}
-.dnd5e.sheet .sheet-navigation .item.active {
-    border-bottom: 3px solid #ffffff;
-    background: #bf4b00;
-    padding-left: 15px;
-    padding-right: 15px;
-    transition: 0.2s;
-    color: #f0f0e0;
-}
-.dnd5e.sheet.actor .spellcasting-ability {
-    flex: 0; 
-}
-.dnd5e.sheet .filter-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    line-height: 16px;
-    /* margin-top: 29px; */
-    max-width: 100%;
-    flex: 0 0 144%;
-}
-.dnd5e.sheet.actor .spell-school, .dnd5e.sheet.actor .spell-action, .dnd5e.sheet.actor .spell-target {
-    flex: unset;
-}
-.dnd5e.sheet.actor .inventory-list .item-detail {
-    flex: unset !important;
-}
-.dnd5e.sheet.actor .inventory-list .item-controls a {
-    /* flex: 0 0 22px; */
-    font-size: 12px;
-    text-align: center;
-    color: #7a7971;
-}
-.dnd5e.sheet.actor .inventory-list .item-detail.item-action {
-	flex: unset;
-}
-.collapsed {
-    height: fit-content !important;
-}
-.dnd5e.sheet.actor .encumbrance {
-    margin: unset;
-}
-.dnd5e.sheet.actor .sheet-header h1.charname input {
-    height: 24px;
-	margin:0;
-}
-.dnd5e.sheet.actor .sheet-header .header-exp {
-    flex: 0 0 100px;
-    margin-right: 2px;
-    height: 75px;
-    justify-content: flex-end;
-    text-align: right;
-    flex-direction: column-reverse;
-    margin-right: 109px;
-}
-.dnd5e.sheet.actor .tab.attributes {
-    overflow: hidden;
-    overflow-y: scroll;
-}
-h4.entity-name {
-	text-align: center;
-}
-.dnd5e.sheet.actor h4.box-title {
-    font-size: 13px;
-}
-.sidebar-tab .directory-header .header-search input {
-    background: rgba(255, 255, 245, 0.8);
-    width: calc(100% - 26px);
-    margin: 0 2px;
-    width: 80%;
-}
-footer.attribute-footer {
-    display: inline-flex;
-	width: fit-content;
-}
-.dnd5e.sheet.actor .sheet-header .summary {
-	margin-top: -36px;
-    margin-bottom: -20px;
-}
-.dnd5e.sheet.actor .sheet-header .attributes {
-    flex: 0 0 100%;
-    margin: 0;
-    margin-top: 11px;
-    margin-bottom: 42px;
-}
-.dnd5e.sheet.actor .spell-slots input, .dnd5e.sheet.actor .spell-slots span.sep {
-    display: inline;
-    max-width: 20px;
-    text-align: center;
-    transform: scale(1.5);
-}
-.dnd5e.sheet.actor.character ul.skills-list li.skill {
-    padding: 2vw;
-    border: 1px groove #b5b3a473;
-    align-content: center;
-    height: 3vh;
-}
-.dnd5e.sheet.actor .counters .counter input[type="text"] {
-    height: 20px;
-    max-width: 20px;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-}
-.dnd5e.sheet .sheet-navigation .item {
-    margin: 0;
-}
-.dnd5e.sheet.actor.character .sheet-header img.profile {
-    flex: 0 0 10px;
-    max-width: 100%;
-    /* height: 50px; */
-    width: 10000px;
-    /* transform: scale(0.5); */
-}
-.dnd5e.sheet.actor .center-pane {
-    overflow-y: initial;
-}
-.dnd5e.sheet.actor.character {
-    min-width: 100% !important;
-    min-height: 100%;
-    max-width: 100% !important;
-    max-height: 100% !important;
-    width: 100px !important;
-    top: 1px !important;
-}
-.dnd5e.sheet.actor.character ul.skills-list {
-    height: 100%;
-    height: fit-content;
-}
-.dnd5e.sheet.actor .inventory-list .item-controls {
-    flex: unset;
-}
-.dnd5e.sheet .window-content {
-    max-width: 100vw;
-}
-.dnd5e.sheet.actor.character .sheet-header .charlevel {
-    right: 1px;
-    position: absolute;
+    section.header-details.flexrow {
+        margin-bottom: -30px;
+    }
+    .dnd5e.sheet .sheet-header .summary li:last-child {
+        border-right: none;
+        max-width: 140px;
+    }
+    .dnd5e.sheet .sheet-header h1 input {
+        transform: unset !important;
+    }
+    .dnd5e.sheet .sheet-navigation {
+        border-top: 1px solid #b5b3a4;
+        .sheet-navigation>a.item {
+            display: contents;
+        }
+    }
+    .dnd5e.sheet .sheet-header {
+        flex: 0 0 100px;
+        border-bottom: 0;
+    }
+    .dnd5e.sheet .sheet-navigation .item.active {
+        border-bottom: 3px solid #ffffff;
+        background: #bf4b00;
+        padding-left: 15px;
+        padding-right: 15px;
+        transition: 0.2s;
+        color: #f0f0e0;
+    }
+    .dnd5e.sheet.actor .spellcasting-ability {
+        flex: 0; 
+    }
+    .dnd5e.sheet .filter-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        line-height: 16px;
+        /* margin-top: 29px; */
+        max-width: 100%;
+        flex: 0 0 144%;
+    }
+    .dnd5e.sheet.actor .spell-school, .dnd5e.sheet.actor .spell-action, .dnd5e.sheet.actor .spell-target {
+        flex: unset;
+    }
+    .dnd5e.sheet.actor .inventory-list .item-detail {
+        flex: unset !important;
+    }
+    .dnd5e.sheet.actor .inventory-list .item-controls a {
+        /* flex: 0 0 22px; */
+        font-size: 12px;
+        text-align: center;
+        color: #7a7971;
+    }
+    .dnd5e.sheet.actor .inventory-list .item-detail.item-action {
+        flex: unset;
+    }
+    .collapsed {
+        height: fit-content !important;
+    }
+    .dnd5e.sheet.actor .encumbrance {
+        margin: unset;
+    }
+    .dnd5e.sheet.actor .sheet-header h1.charname input {
+        height: 24px;
+        margin:0;
+    }
+    .dnd5e.sheet.actor .sheet-header .header-exp {
+        flex: 0 0 100px;
+        margin-right: 2px;
+        height: 75px;
+        justify-content: flex-end;
+        text-align: right;
+        flex-direction: column-reverse;
+        margin-right: 109px;
+    }
+    .dnd5e.sheet.actor .tab.attributes {
+        overflow: hidden;
+        overflow-y: scroll;
+    }
+    h4.entity-name {
+        text-align: center;
+    }
+    .dnd5e.sheet.actor h4.box-title {
+        font-size: 13px;
+    }
+    .sidebar-tab .directory-header .header-search input {
+        background: rgba(255, 255, 245, 0.8);
+        width: calc(100% - 26px);
+        margin: 0 2px;
+        width: 80%;
+    }
+    footer.attribute-footer {
+        display: inline-flex;
+        width: fit-content;
+    }
+    .dnd5e.sheet.actor .sheet-header .summary {
+        margin-top: -36px;
+        margin-bottom: -20px;
+    }
+    .dnd5e.sheet.actor .sheet-header .attributes {
+        flex: 0 0 100%;
+        margin: 0;
+        margin-top: 11px;
+        margin-bottom: 42px;
+    }
+    .dnd5e.sheet.actor .spell-slots input, .dnd5e.sheet.actor .spell-slots span.sep {
+        display: inline;
+        max-width: 20px;
+        text-align: center;
+        transform: scale(1.5);
+    }
+    .dnd5e.sheet.actor.character ul.skills-list li.skill {
+        padding: 2vw;
+        border: 1px groove #b5b3a473;
+        align-content: center;
+        height: 3vh;
+    }
+    .dnd5e.sheet.actor .counters .counter input[type="text"] {
+        height: 20px;
+        max-width: 20px;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+    .dnd5e.sheet .sheet-navigation .item {
+        margin: 0;
+    }
+    .dnd5e.sheet.actor.character .sheet-header img.profile {
+        flex: 0 0 10px;
+        max-width: 100%;
+        /* height: 50px; */
+        width: 10000px;
+        /* transform: scale(0.5); */
+    }
+    .dnd5e.sheet.actor .center-pane {
+        overflow-y: initial;
+    }
+    .dnd5e.sheet.actor.character {
+        min-width: 100% !important;
+        min-height: 100%;
+        max-width: 100% !important;
+        max-height: 100% !important;
+        width: 100px !important;
+        top: 1px !important;
+    }
+    .dnd5e.sheet.actor.character ul.skills-list {
+        height: 100%;
+        height: fit-content;
+    }
+    .dnd5e.sheet.actor .inventory-list .item-controls {
+        flex: unset;
+    }
+    .dnd5e.sheet .window-content {
+        max-width: 100vw;
+    }
+    .dnd5e.sheet.actor.character .sheet-header .charlevel {
+        right: 1px;
+        position: absolute;
+    }
 }
 /*==========================*DND END=====================================*/
 @media only screen and (max-width: 600px) {/* UNDER 600 PIXEL*/
@@ -205,7 +209,9 @@ footer.attribute-footer {
 	    flex: 0 0 100%;
 	    align-self: flex-end;
 	}
-@media only screen and (max-width: 600px) {/* UNDER 600 PIXEL*/
-.dnd5e.sheet.actor ul.skills-list li.skill .skill-passive {
-    display: none;
+}
+    @media only screen and (max-width: 600px) {/* UNDER 600 PIXEL*/
+    .dnd5e.sheet.actor ul.skills-list li.skill .skill-passive {
+        display: none;
+    }
 }
