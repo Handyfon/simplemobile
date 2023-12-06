@@ -123,6 +123,41 @@ Hooks.on('canvasInit', () => {
 		fullscreenIcon.classList.add("fas", "fa-expand");
 		fullscreenItem.prepend(fullscreenIcon);
 		sidebarNav.appendChild(fullscreenItem);
+		//if exists add manual roll button to sidebar on load if mobile
+		let manualRoll = document.querySelectorAll("[data-tool='manualRoll']")[0];
+		if (manualRoll){
+			function changeTag (node, tag) {
+				const clone = createElement(tag)
+				for (const attr of node.attributes) {
+				clone.setAttributeNS(null, attr.name, attr.value)
+				}
+				while (node.firstChild) {
+				clone.appendChild(node.firstChild)
+				}
+				node.replaceWith(clone)
+				return clone
+			}
+			
+			function createElement (tag) {
+			if (tag === 'svg') {
+				return document.createElementNS('http://www.w3.org/2000/svg', 'svg')
+			} else {
+				return document.createElementNS('http://www.w3.org/1999/xhtml', tag)
+			}
+			}
+			changeTag(manualRoll, 'a');
+			manualRoll.classList.add('item');
+			manualRoll.onclick = function() {
+				manualRoll.classList.toggle('active');
+				let toggled = game.settings.get('df-manual-rolls', 'toggled');
+				if (!toggled) {
+					game.settings.set('df-manual-rolls', 'toggled', true);
+				} else {
+					game.settings.set('df-manual-rolls', 'toggled', false);
+				}
+			}
+			sidebarNav.appendChild(manualRoll);
+		}
 		console.log("Mobile Mode");
 	}
 	else{

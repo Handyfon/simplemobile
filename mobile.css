@@ -1,6 +1,6 @@
 @media only screen and (min-width: 1024px) {
     div#mobile-controls {
-        display: none;
+        display: none !important;
     }
 }
 i.fas.fa-mobile-alt {
@@ -36,10 +36,13 @@ textarea:focus {
 }
 button:focus {
     outline: none;
-    box-shadow: 0 0 5px red;
+    box-shadow: none;
     background: #bf4b00;
-    transform: scale(1.1);
+    /* transform: scale(1.1); */
     transition: 0.1s;
+}
+.dark-mode button:hover, .dark-mode button:focus {
+    box-shadow: none;
 }
 .window-app .window-header a {
     flex: none;
@@ -111,7 +114,7 @@ div#mobile-container {
     left: 82%;
 } */
 #sidebar > * {
-    background: #2b2a2adb;
+    /* background: #2b2a2adb; */
 }
 
 #combat li.combatant.active {
@@ -298,7 +301,7 @@ div#players {
 }
 #sidebar-tabs > .item.active {
     color: #ffffff;
-    background: #bf4b00 !important;
+    /* background: #bf4b00 !important; */
     box-shadow: unset;
     border: unset;
 }
@@ -333,7 +336,7 @@ i.fas.fa-caret-left {
     z-index: 99;
     background-size: cover;
     max-height: 88vh;
-    margin-top: 3vh;
+    margin-top: 23px;
     height: fit-content !important;
     overflow: auto;
 }
@@ -583,23 +586,49 @@ div#hotbar-page-controls {
     .configure-token, .open-item-ddb-importer, .dae-dimeditor, .dae-config-itemsheet {
         display: none;
     }
-    .main-controls:not(.main-controls:last-child), .control-tool:not(:last-child) {
+    .main-controls, .control-tool {
         display: none !important;
     }
+    a.item.control-tool.toggle {
+        display: revert !important;
+    }
     .control-tool {
-        position: fixed;
-        right: 8px;
-        top: 2px;
-        scale: 100%;
+        /* position: fixed; */
+        /* right: 8px; */
+        /* top: 2px;
+        scale: 100%; */
     }
     #combat-dock {
         display: none !important;
     }
-    #sidebar-tabs>a:not(#sidebar-tabs>a:nth-child(1), #sidebar-tabs>a:nth-child(2), #sidebar-tabs>a:nth-child(3), #sidebar-tabs>a:nth-child(10), #sidebar-tabs>a:last-child){
+    #sidebar-tabs>a:not(#sidebar-tabs>a:nth-child(1), #sidebar-tabs>a:nth-child(2), #sidebar-tabs>a:nth-child(3), #sidebar-tabs>a:nth-child(10), #sidebar-tabs>a:nth-last-child(2), #sidebar-tabs>a:last-child){
         display: none;
     }
     #sidebar {
-        transform: translate(0, 20px);
+        /* transform: translate(0, 20px); */
+    }
+    .dark-mode .tabs .item.active {
+        text-shadow: unset !important;
+    }
+    .dark-mode a:hover, .dark-mode .filepicker li:hover {
+        color: revert;
+        text-shadow: unset !important;
+    }
+    .dark-mode #sidebar.collapsed #sidebar-tabs > .item.active {
+        border-bottom: unset !important;
+    }
+    #sidebar.collapsed #sidebar-tabs > .item.active {
+        border-bottom: unset !important;
+        border-radius: unset !important;
+    }
+    .dark-mode #sidebar-tabs > .item.active {
+        border: unset !important;
+        box-shadow: unset !important;
+        color: revert !important;
+    }
+    .dark-mode .tabs .item.active {
+        text-shadow: unset !important;
+        color: revert !important;
     }
     #tah-collapse-expand, #tah-buttons {
         display: none !important;
