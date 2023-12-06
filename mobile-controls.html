@@ -1,266 +1,278 @@
 <style>
 	body.light-theme {
 		color: black;
-	  div {
-		  background-color: white;
+
+		div {
+			background-color: white;
 		}
 	}
+
 	body.dark-theme {
-	  color: white;
-	  div {
-		background-color: black;
+		color: white;
+
+		div {
+			background-color: black;
+		}
 	}
-}
 </style>
 <div id="mobile-container">
 	<div id="mobile-s">
 		<div class="up">
-			<button class="goleft controlbutton" onclick="upleft()" style="height: 33%;"><i style="transform: rotate(45deg);text-align-last: left;" class="fas fa-arrow-left"></i></button>
-			<button class="goleft controlbutton" onclick="left()" style="height: 33%;"><i class="fas fa-arrow-left"></i></button>
-			<button class="goleft controlbutton" onclick="downleft()" style="height: 34%;"><i style="transform: rotate(-45deg);text-align-last: left;" class="fas fa-arrow-left"></i></button>
+			<button class="goleft controlbutton" onclick="upleft()" style="height: 33%;"><i
+					style="transform: rotate(45deg);text-align-last: left;" class="fas fa-arrow-left"></i></button>
+			<button class="goleft controlbutton" onclick="left()" style="height: 33%;"><i
+					class="fas fa-arrow-left"></i></button>
+			<button class="goleft controlbutton" onclick="downleft()" style="height: 34%;"><i
+					style="transform: rotate(-45deg);text-align-last: left;" class="fas fa-arrow-left"></i></button>
 		</div>
 		<div class="middle">
 			<button class="goup controlbutton" onclick="up()"><i class="fas fa-arrow-up"></i></button>
-			<button class="goselect controlbutton" onclick="select()" ><i class="far fa-object-ungroup"></i></button>
-		<button class="godown controlbutton" onclick="down()"><i class="fas fa-arrow-down"></i></button>
-	</div>
-	<div class="down">
-		<button class="goright controlbutton" onclick="upright()" style="height: 33%;"><i style="transform: rotate(135deg);text-align-last: left;" class="fas fa-arrow-left"></i></button>
-		<button class="goright controlbutton" onclick="right()" style="height: 33%;"><i class="fas fa-arrow-right"></i></button>
-		<button class="goright controlbutton" onclick="downright()" style="height: 34%;"><i style="transform: rotate(-135deg);text-align-last: left;" class="fas fa-arrow-left"></i></button>
-	</div>
-	<div class="zoom">
-		<button class="zoomin controlbutton" onclick="zoomin()" style="height: 50%;"><i class="fas fa-search-plus"></i></i></button>
-		<button class="zoomout controlbutton" onclick="zoomout()" style="height: 50%;"><i class="fas fa-search-minus"></i></i></button>
-	</div>
-	<div class="OpenCharSheet">
-		<button class="opencharsheet controlbutton" onclick="opencharacter()" style="height: 50%;"><i class="fas fa-user-alt"></i></button>
-	</div>
-	<script>
-		function opencharacter(){
-		game.toggleCharacterSheet();
-		}
-		function rotate(value){
-		if(game.paused){warn(); return;}
-		if(canvas.tokens.controlled.length == 0){
-			//Check if a notification is already on the display.
-			if(document.getElementsByClassName('notification info').length == 0)
-				ui.notifications.notify("You need to select a character");
-				
-			return;
-		}
-			let lasttoken = parseInt(game.settings.get('simplemobile', 'lasttoken'));
-			let rotation = canvas.tokens.controlled[lasttoken].rotation;
-			let newrotation = rotation + value;
-			if(game.settings.get('simplemobile', 'invertrotation')){
-				switch(newrotation) {
-				
-					case -180:
-					newrotation = 0;
-					break;
-					case -135:
-					newrotation = 45;
-					break;
-					case 135:
-					newrotation = -45;
-					break;
-					case -45:
-					newrotation = 135;
-					break;
-					case 45:
-					newrotation = -135;
-					break;
-					case -135:
-					newrotation = 45;
-					break;
-					case 90:
-					newrotation = -90;
-					break;
-					case -90:
-					newrotation = 90;
-					break;
-					case 0:
-					newrotation = -180;
-					break;
-					default:
-					// code block
+			<button class="goselect controlbutton" onclick="select()"><i class="far fa-object-ungroup"></i></button>
+			<button class="godown controlbutton" onclick="down()"><i class="fas fa-arrow-down"></i></button>
+		</div>
+		<div class="down">
+			<button class="goright controlbutton" onclick="upright()" style="height: 33%;"><i
+					style="transform: rotate(135deg);text-align-last: left;" class="fas fa-arrow-left"></i></button>
+			<button class="goright controlbutton" onclick="right()" style="height: 33%;"><i
+					class="fas fa-arrow-right"></i></button>
+			<button class="goright controlbutton" onclick="downright()" style="height: 34%;"><i
+					style="transform: rotate(-135deg);text-align-last: left;" class="fas fa-arrow-left"></i></button>
+		</div>
+		<div class="zoom">
+			<button class="zoomin controlbutton" onclick="zoomin()" style="height: 50%;"><i
+					class="fas fa-search-plus"></i></i></button>
+			<button class="zoomout controlbutton" onclick="zoomout()" style="height: 50%;"><i
+					class="fas fa-search-minus"></i></i></button>
+		</div>
+		<div class="OpenCharSheet">
+			<button class="opencharsheet controlbutton" onclick="opencharacter()" style="height: 50%;"><i
+					class="fas fa-user-alt"></i></button>
+		</div>
+		<script>
+			function opencharacter() {
+				game.toggleCharacterSheet();
+			}
+			function rotate(value) {
+				if (game.paused) { warn(); return; }
+				if (canvas.tokens.controlled.length == 0) {
+					//Check if a notification is already on the display.
+					if (document.getElementsByClassName('notification info').length == 0)
+						ui.notifications.notify("You need to select a character");
+
+					return;
 				}
-				
-		}
-		
-		canvas.tokens.controlled[lasttoken].rotate(newrotation);
-		}
-		
-		function select(){
-			canvas.tokens.ownedTokens.map(token => token.control({releaseOthers: false}));
-			//sort array to ensure consistant ordering
-			let tokens = canvas.tokens.controlled.sort(function(a,b) {
-				let textA = a.document.name.toUpperCase();
-				let textB = b.document.name.toUpperCase();
-				return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
-			});
-			lasttoken = parseInt(game.settings.get('simplemobile', 'lasttoken'));
-			if(tokens.length === 1){
-			lasttoken = 0;
-			}
-			else if( tokens.length -1 <= lasttoken){
-			lasttoken = 0;
-			}
-			else{
-			lasttoken += 1;
-			}
-			game.settings.set('simplemobile', 'lasttoken', lasttoken);
-			tokens[lasttoken].control({releaseOthers: true});
-			//console.log(lasttoken);
-			let x = tokens[lasttoken].x;
-			let y = tokens[lasttoken].y;
-			document.getElementById("sidebar");
-			let twidth = tokens[lasttoken].w / 2;
-			let theight = tokens[lasttoken].h / 2;
-			let view = canvas.scene._viewPosition;
-			canvas.animatePan({duration: 250, x: x+twidth, y: y+theight, scale: view.scale});
-		}
-		async function move(x, y){
-					let tokens = canvas.tokens.controlled;
-					lasttoken = parseInt(game.settings.get('simplemobile', 'lasttoken'));
-					let token = tokens[lasttoken];
-					// TOKEN SELECTION END
-					
-					let newX = token.x + token.w * x;
-					let newY = token.y + token.h * y;
-					
-					const newPoint = canvas.grid.getSnappedPosition(newX, newY);
-					let newPointCenter= {'x':canvas.grid.getCenter(newX, newY)[0],'y':canvas.grid.getCenter(newX, newY)[1]};
-					
-					let twidth = token.w / 2;
-					let theight = token.h / 2;
-					
-					const newPoint2 = {'x':canvas.grid.getCenter(newX, newY)[0],'y':canvas.grid.getCenter(newX, newY)[1]};
-					
-					//DEBUG
-					//console.log("Wall:" + token.checkCollision(newPointCenter) + "|" + token.checkCollision(newPoint2));
-					//console.log(newPointCenter);
-					//console.log(newPoint2);
-					
-					let view = canvas.scene._viewPosition;
-					if(!token.checkCollision(newPointCenter)){
-						token.document.update(newPoint);
+				let lasttoken = parseInt(game.settings.get('simplemobile', 'lasttoken'));
+				let rotation = canvas.tokens.controlled[lasttoken].rotation;
+				let newrotation = rotation + value;
+				if (game.settings.get('simplemobile', 'invertrotation')) {
+					switch (newrotation) {
+
+						case -180:
+							newrotation = 0;
+							break;
+						case -135:
+							newrotation = 45;
+							break;
+						case 135:
+							newrotation = -45;
+							break;
+						case -45:
+							newrotation = 135;
+							break;
+						case 45:
+							newrotation = -135;
+							break;
+						case -135:
+							newrotation = 45;
+							break;
+						case 90:
+							newrotation = -90;
+							break;
+						case -90:
+							newrotation = 90;
+							break;
+						case 0:
+							newrotation = -180;
+							break;
+						default:
+						// code block
 					}
-					canvas.animatePan({duration: 250, x:newPoint.x+token.w/2, y:newPoint.y+token.h/2, scale: view.scale});
-		}
-		function up(){
-			if(!game.paused)
-			if(game.settings.get('simplemobile', 'movementdirection') === "up" && game.settings.get('simplemobile', 'autorotation')){
-				move(0, -1);
-			}
-			else{
-				if(game.settings.get('simplemobile', 'autorotation')){rotate(-180)}
-				newMovementDirection("up");
-				if(game.settings.get('simplemobile', 'autorotation') === false){move(0, -1);}
 
-			}
-		}
-		function upleft(){
-			if(game.paused){warn(); return;}
-			if(game.settings.get('simplemobile', 'movementdirection') === "upleft" && game.settings.get('simplemobile', 'autorotation')){
-				move(-1, -1);
-			}
-			else{
-				if(game.settings.get('simplemobile', 'autorotation')){rotate(135)}
-				newMovementDirection("upleft");
-				if(game.settings.get('simplemobile', 'autorotation') === false){move(-1, -1);}
+				}
 
+				canvas.tokens.controlled[lasttoken].rotate(newrotation);
 			}
-		}
-		function downleft(){
-			if(game.paused){warn(); return;}
-			if(game.settings.get('simplemobile', 'movementdirection') === "downleft" && game.settings.get('simplemobile', 'autorotation')){
-				move(-1, 1);
-			}
-			else{
-				if(game.settings.get('simplemobile', 'autorotation')){rotate(45)}
-				newMovementDirection("downleft");
-				if(game.settings.get('simplemobile', 'autorotation') === false){move(-1, 1);}
-			}
-		}
-		function upright(){
-			if(game.paused){warn(); return;}
-			if(game.settings.get('simplemobile', 'movementdirection') === "upright" && game.settings.get('simplemobile', 'autorotation')){
-				move(+1, -1);
-			}
-			else{
-				if(game.settings.get('simplemobile', 'autorotation')){rotate(-135)}
-				newMovementDirection("upright");
-				if(game.settings.get('simplemobile', 'autorotation') === false){move(+1, -1);}
 
+			function select() {
+				canvas.tokens.ownedTokens.map(token => token.control({ releaseOthers: false }));
+				//sort array to ensure consistant ordering
+				let tokens = canvas.tokens.controlled.sort(function (a, b) {
+					let textA = a.document.name.toUpperCase();
+					let textB = b.document.name.toUpperCase();
+					return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
+				});
+				lasttoken = parseInt(game.settings.get('simplemobile', 'lasttoken'));
+				if (tokens.length === 1) {
+					lasttoken = 0;
+				}
+				else if (tokens.length - 1 <= lasttoken) {
+					lasttoken = 0;
+				}
+				else {
+					lasttoken += 1;
+				}
+				game.settings.set('simplemobile', 'lasttoken', lasttoken);
+				tokens[lasttoken].control({ releaseOthers: true });
+				//console.log(lasttoken);
+				let x = tokens[lasttoken].x;
+				let y = tokens[lasttoken].y;
+				document.getElementById("sidebar");
+				let twidth = tokens[lasttoken].w / 2;
+				let theight = tokens[lasttoken].h / 2;
+				let view = canvas.scene._viewPosition;
+				canvas.animatePan({ duration: 250, x: x + twidth, y: y + theight, scale: view.scale });
 			}
-		}
-		function downright(){
-			if(game.paused){warn(); return;}
-			if(game.settings.get('simplemobile', 'movementdirection') === "downright" && game.settings.get('simplemobile', 'autorotation')){
-				move(+1, 1);
+			async function move(x, y) {
+				let tokens = canvas.tokens.controlled;
+				lasttoken = parseInt(game.settings.get('simplemobile', 'lasttoken'));
+				let token = tokens[lasttoken];
+				// TOKEN SELECTION END
+
+				let newX = token.x + token.w * x;
+				let newY = token.y + token.h * y;
+
+				const newPoint = canvas.grid.getSnappedPosition(newX, newY);
+				let newPointCenter = { 'x': canvas.grid.getCenter(newX, newY)[0], 'y': canvas.grid.getCenter(newX, newY)[1] };
+
+				let twidth = token.w / 2;
+				let theight = token.h / 2;
+
+				const newPoint2 = { 'x': canvas.grid.getCenter(newX, newY)[0], 'y': canvas.grid.getCenter(newX, newY)[1] };
+
+				//DEBUG
+				//console.log("Wall:" + token.checkCollision(newPointCenter) + "|" + token.checkCollision(newPoint2));
+				//console.log(newPointCenter);
+				//console.log(newPoint2);
+
+				let view = canvas.scene._viewPosition;
+				if (!token.checkCollision(newPointCenter)) {
+					token.document.update(newPoint);
+				}
+				canvas.animatePan({ duration: 250, x: newPoint.x + token.w / 2, y: newPoint.y + token.h / 2, scale: view.scale });
 			}
-			else{
-				if(game.settings.get('simplemobile', 'autorotation')){rotate(-45)}
-				newMovementDirection("downright");
-				if(game.settings.get('simplemobile', 'autorotation') === false){move(+1, 1);}
+			function up() {
+				if (!game.paused)
+					if (game.settings.get('simplemobile', 'movementdirection') === "up" && game.settings.get('simplemobile', 'autorotation')) {
+						move(0, -1);
+					}
+					else {
+						if (game.settings.get('simplemobile', 'autorotation')) { rotate(-180) }
+						newMovementDirection("up");
+						if (game.settings.get('simplemobile', 'autorotation') === false) { move(0, -1); }
+
+					}
 			}
-		}
-		function down(){
-			if(game.paused){warn(); return;}
-			if(game.settings.get('simplemobile', 'movementdirection') === "down"){
-				move(0, +1);
+			function upleft() {
+				if (game.paused) { warn(); return; }
+				if (game.settings.get('simplemobile', 'movementdirection') === "upleft" && game.settings.get('simplemobile', 'autorotation')) {
+					move(-1, -1);
+				}
+				else {
+					if (game.settings.get('simplemobile', 'autorotation')) { rotate(135) }
+					newMovementDirection("upleft");
+					if (game.settings.get('simplemobile', 'autorotation') === false) { move(-1, -1); }
+
+				}
 			}
-			else{
-				if(game.settings.get('simplemobile', 'autorotation')){rotate(0)}
-				newMovementDirection("down");
-				if(game.settings.get('simplemobile', 'autorotation') === false){move(0, +1);}
+			function downleft() {
+				if (game.paused) { warn(); return; }
+				if (game.settings.get('simplemobile', 'movementdirection') === "downleft" && game.settings.get('simplemobile', 'autorotation')) {
+					move(-1, 1);
+				}
+				else {
+					if (game.settings.get('simplemobile', 'autorotation')) { rotate(45) }
+					newMovementDirection("downleft");
+					if (game.settings.get('simplemobile', 'autorotation') === false) { move(-1, 1); }
+				}
 			}
-		}
-		function left(){
-			if(game.paused){warn(); return;}
-			if(game.settings.get('simplemobile', 'movementdirection') === "left"){
-				move(-1, 0);
+			function upright() {
+				if (game.paused) { warn(); return; }
+				if (game.settings.get('simplemobile', 'movementdirection') === "upright" && game.settings.get('simplemobile', 'autorotation')) {
+					move(+1, -1);
+				}
+				else {
+					if (game.settings.get('simplemobile', 'autorotation')) { rotate(-135) }
+					newMovementDirection("upright");
+					if (game.settings.get('simplemobile', 'autorotation') === false) { move(+1, -1); }
+
+				}
 			}
-			else{
-				if(game.settings.get('simplemobile', 'autorotation')){rotate(90)}
-				newMovementDirection("left");
-				if(game.settings.get('simplemobile', 'autorotation') === false){move(-1, 0);}
+			function downright() {
+				if (game.paused) { warn(); return; }
+				if (game.settings.get('simplemobile', 'movementdirection') === "downright" && game.settings.get('simplemobile', 'autorotation')) {
+					move(+1, 1);
+				}
+				else {
+					if (game.settings.get('simplemobile', 'autorotation')) { rotate(-45) }
+					newMovementDirection("downright");
+					if (game.settings.get('simplemobile', 'autorotation') === false) { move(+1, 1); }
+				}
 			}
-		}
-		function right(){
-			if(game.paused){warn(); return;}
-			if(game.settings.get('simplemobile', 'movementdirection') === "right"){
-				move(+1, 0);
+			function down() {
+				if (game.paused) { warn(); return; }
+				if (game.settings.get('simplemobile', 'movementdirection') === "down") {
+					move(0, +1);
+				}
+				else {
+					if (game.settings.get('simplemobile', 'autorotation')) { rotate(0) }
+					newMovementDirection("down");
+					if (game.settings.get('simplemobile', 'autorotation') === false) { move(0, +1); }
+				}
 			}
-			else{
-				if(game.settings.get('simplemobile', 'autorotation')){rotate(-90)}
-				newMovementDirection("right");
-				if(game.settings.get('simplemobile', 'autorotation') === false){move(+1, 0);}
+			function left() {
+				if (game.paused) { warn(); return; }
+				if (game.settings.get('simplemobile', 'movementdirection') === "left") {
+					move(-1, 0);
+				}
+				else {
+					if (game.settings.get('simplemobile', 'autorotation')) { rotate(90) }
+					newMovementDirection("left");
+					if (game.settings.get('simplemobile', 'autorotation') === false) { move(-1, 0); }
+				}
 			}
-		}
-		function zoomin(){
-		let view = canvas.scene._viewPosition;
-		view.scale += 0.25;
-		canvas.animatePan({duration: 250, x: view.x, y: view.y, scale: view.scale});
-		}
-		function zoomout(){
-		let view = canvas.scene._viewPosition;
-		view.scale -= 0.25;
-		canvas.animatePan({duration: 250, x: view.x, y: view.y, scale: view.scale});
-		}
-		function warn(){
-		ui.notifications.warn("Game Paused");
-		}
-		function debug(customvalue){
-			if(customvalue != undefined){
-				//console.log(customvalue);
+			function right() {
+				if (game.paused) { warn(); return; }
+				if (game.settings.get('simplemobile', 'movementdirection') === "right") {
+					move(+1, 0);
+				}
+				else {
+					if (game.settings.get('simplemobile', 'autorotation')) { rotate(-90) }
+					newMovementDirection("right");
+					if (game.settings.get('simplemobile', 'autorotation') === false) { move(+1, 0); }
+				}
 			}
-		}
-		function newMovementDirection(direction){
-			game.settings.set('simplemobile','movementdirection', direction);
-			debug("New Direction is: " + direction);
-		}
-	</script>
+			function zoomin() {
+				let view = canvas.scene._viewPosition;
+				view.scale += 0.25;
+				canvas.animatePan({ duration: 250, x: view.x, y: view.y, scale: view.scale });
+			}
+			function zoomout() {
+				let view = canvas.scene._viewPosition;
+				view.scale -= 0.25;
+				canvas.animatePan({ duration: 250, x: view.x, y: view.y, scale: view.scale });
+			}
+			function warn() {
+				ui.notifications.warn("Game Paused");
+			}
+			function debug(customvalue) {
+				if (customvalue != undefined) {
+					//console.log(customvalue);
+				}
+			}
+			function newMovementDirection(direction) {
+				game.settings.set('simplemobile', 'movementdirection', direction);
+				debug("New Direction is: " + direction);
+			}
+		</script>
 	</div>
 </div>
