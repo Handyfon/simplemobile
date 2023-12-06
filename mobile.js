@@ -145,7 +145,7 @@ Hooks.on('canvasInit', () => {
 				return document.createElementNS('http://www.w3.org/1999/xhtml', tag)
 			}
 			}
-			changeTag(manualRoll, 'a');
+			manualRoll = changeTag(manualRoll, 'a');
 			manualRoll.classList.add('item');
 			manualRoll.onclick = function() {
 				manualRoll.classList.toggle('active');

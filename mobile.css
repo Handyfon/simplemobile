@@ -47,7 +47,7 @@ button:focus {
 .window-app .window-header a {
     flex: none;
     margin: 0 0 0 8px;
-    background: #630000;
+    /* background: #630000; */
     padding-left: 20px;
     padding-right: 20px;
     right: 1px;
@@ -607,6 +607,7 @@ div#hotbar-page-controls {
     #sidebar {
         /* transform: translate(0, 20px); */
     }
+    /* revoming active and hover effects */
     .dark-mode .tabs .item.active {
         text-shadow: unset !important;
     }
@@ -646,7 +647,7 @@ div#hotbar-page-controls {
         font-size: min(3vh, 4vw);
     }
 
-    secion.date-display, section.clock {
+    #date-display, #clock {
         height: 35%;
     }
 
@@ -670,7 +671,12 @@ div#hotbar-page-controls {
     }
     #weather-control-container #date-display h2 {
         /* text-align: left !important; */
-        padding: 0 !important;
+        padding: 4px 0px 0px 0px !important;
+    }
+    .content:has(#date-display) {
+        display: flex;
+        flex-direction: column;
+        height: 75%;
     }
 .calendar-header {
 /* transform: translate(-80px, 0); */
@@ -701,6 +707,42 @@ scale: 150%; */
 
 section.window-content {
     padding: unset !important;
+}
+
+/* character sheet */
+.dnd5e.sheet .sheet-navigation {
+    display: inline !important;
+}
+ul.attributes.flexrow {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+.dnd5e.sheet.actor .sheet-header .attributes .attribute {
+    height: 80px;
+    margin: 0;
+    border: none;
+    border-right: unset;
+    border-radius: 0;
+}
+.dnd5e.sheet.actor .sheet-header .summary {
+    overflow: hidden !important;
+    margin-top: -36px;
+    /* margin-bottom: -20px; */
+}
+h1.charname {
+    display: none;
+}
+aside.header-exp.flexcol {
+    transform: translate(calc(100dvw - 143px), 0px);
+    margin: 10px 0;
+}
+.dnd5e.sheet.actor.character .sheet-header .charlevel {
+    right: -84px;
+    top: 10px;
+    position: absolute;
 }
 
 /*still need to fix character sheet styling, manual rolls not showing up (DF Manual Rolls), and token action hud toggle (Token Action HUD Core) */
