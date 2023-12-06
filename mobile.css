@@ -1,13 +1,15 @@
-div#mobile-controls {
-    display: none !important;
+@media only screen and (min-width: 1024px) {
+    div#mobile-controls {
+        display: none;
+    }
 }
 i.fas.fa-mobile-alt {
 	color: #00ffa1;
 }
 @media only screen and (max-width: 1024px) {
-div#mobile-controls {
+/* div#mobile-controls {
     display: block !important;
-}
+} */
 /*General Improvements*/
 .rollable {
     background: #353535;
@@ -90,16 +92,17 @@ img#logo {
 img.profile {
 	display: none;
 }*/
-div#mobile-controls {
+/* div#mobile-controls {
     display: none !important;
-}
+} */
 div#mobile-container {
-    flex: 1;
+    /* flex: 1; */
     /* width: 39%; */
     /* margin-left: 0px; */
+    height: 24dvh;
 }
-div#mobile-s>div {
-    width: 12dvw;
+.up, .middle, .down, .zoom {
+    width: 17dvw;
 }
 /* button.opencharsheet.controlbutton {
     height: 45px !important;
@@ -342,21 +345,23 @@ i.fas.fa-caret-left {
 
 /*Mobile controls*/
 div#mobile-controls {
-    height: 13vh !important;
+    /* height: 13vh !important; */
     /* position: fixed !important; */
     top: unset !important;
+    bottom: 0;
+    height: auto !important;
     /* bottom: 4vh !important; */
-    left: 6vw !important;
-    width: 83% !important;
+    /* left: -1dvw !important; */
+    width: 100% !important;
     margin: 0 !important;
     padding: 0 !important;
-    border: 1px solid #0000 !important;
+    /* border: 1px solid #0000 !important; */
     display: block !important;
     background: unset !important;
     box-shadow: unset !important;
     /* z-index: 30 !important; */
     /* transform: scale(1.2); */
-    bottom: 9dvh !important;
+    /* bottom: 9dvh !important;
 }
 
 /*Style*/
@@ -393,7 +398,7 @@ button.goselect {
 }
 .controlbutton {
     width: 101%;
-    margin: 0 1px;
+    margin: 0;
     background: rgba(39, 39, 39, 0.62);
     /* border: 1px solid #b5b3a4; */
     border-radius: 3px;
@@ -480,9 +485,9 @@ li.directory-item.entity.playlist.flexrow.collapsed {
 
 
 }/*PHONE END*/
-div#mobile-controls {
+/* div#mobile-controls {
 display:none;
-}
+} */
 .up {
     height: unset !important;
 }
@@ -500,7 +505,7 @@ div#mobile-controls > section.window-content {
 div#mobile-s {
     display: flex;
     box-shadow: 0 0 20px #000;
-    height: 17vh;
+    height: 100%;
 }
 button.goup.controlbutton {
     height: 33%;
@@ -529,13 +534,13 @@ div#hotbar-page-controls {
 }
 /* v1 css for simplemobileV11 */
 @media only screen and (max-width: 600px){
-	.window-app {
+	/* .window-app {
 		width: 100dvw !important;
 		height: 100dvh !important;
 		position: fixed !important;
 		left: 0px !important;
 		top: -3px !important;
-	}
+	} */
 	ul {
 		overflow: auto !important;
 	}
@@ -604,20 +609,40 @@ div#hotbar-page-controls {
 
 @media only screen and (max-width: 1024px) {
 
+    #weather-control-container .calendar-header {
+        height: auto !important;
+    }
+
+    #calendar-time, #date-num, #date, #weekday {
+        font-size: min(3vh, 4vw);
+    }
+
+    secion.date-display, section.clock {
+        height: 35%;
+    }
+
+    #weather-control-container.content{
+        /* display: flex;
+        flex-direction: column; */
+        height: 100%;
+    }
+
     #weather-control-container {
         position: absolute !important;
         top: calc(100dvh - 12dvh) !important;
         bottom: 0px !important;
-        left: calc(100dvw - 31dvw) !important;
-        width: calc(100dvw - 68.8dvw) !important;
+        left: calc(100dvw - 32dvw) !important;
+        width: calc(100dvw - 68dvw) !important;
     }
     #weather-control-container #calendar {
         flex: 1 0 0px !important;
         min-width: 0px !important;
+        height: 100%;
     }
-#weather-control-container #date-display h2 {
-/* text-align: left !important; */
-}
+    #weather-control-container #date-display h2 {
+        /* text-align: left !important; */
+        padding: 0 !important;
+    }
 .calendar-header {
 /* transform: translate(-80px, 0); */
 }
@@ -634,15 +659,20 @@ section.clock {
 }
 
 #mobile-controls {
-transform: translate(-8vw, -4vw) !important;
-scale: 150%;
+/* transform: translate(-8vw, -4vw) !important;
+scale: 150%; */
 }
 
 .OpenCharSheet {
-    position: absolute;
-    left: calc(100dvw - 50.5dvw);
-    width: calc(100dvw - 79dvw);
-    height: 134%;
+    /* position: absolute;
+    left: calc(100dvw - 50.5dvw); */
+    width: 32dvw;
+    /* height: 134%; */
+}
+
+section.window-content {
+    padding: unset !important;
 }
 
 /*still need to fix character sheet styling, manual rolls not showing up (DF Manual Rolls), and token action hud toggle (Token Action HUD Core) */
+}
