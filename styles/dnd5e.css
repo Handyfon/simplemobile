@@ -65,15 +65,12 @@
 
     .dnd5e.sheet .sheet-navigation .item.active {
         border-bottom: 3px solid #ffffff;
-        background: #bf4b00;
-        padding-left: 15px;
-        padding-right: 15px;
         transition: 0.2s;
         color: #f0f0e0;
     }
 
     .dnd5e.sheet.actor .spellcasting-ability {
-        flex: 0;
+        flex: auto;
     }
 
     .dnd5e.sheet .filter-list {
@@ -179,7 +176,6 @@
         padding: 2vw;
         border: 1px groove #b5b3a473;
         align-content: center;
-        height: 3vh;
     }
 
     .dnd5e.sheet.actor .counters .counter input[type="text"] {
@@ -232,6 +228,17 @@
         right: 1px;
         position: absolute;
     }
+    .sheet-header .profile {
+        display: none;
+    }
+
+    .dnd5e.sheet.actor .ability-scores {
+        overflow: hidden !important;
+    }
+    
+    .dnd5e h3 {
+        order: 1;
+    }
 }
 
 /*==========================*DND END=====================================*/
@@ -243,12 +250,9 @@
     }
 
     .dnd5e.sheet.actor.character ul.skills-list {
-        flex: 66% !important;
+        flex: 64% !important;
     }
 
-    .sheet-header .profile {
-        display: none;
-    }
 
     .dnd5e.sheet.actor .inventory-filters .currency {
         list-style: none;
@@ -262,4 +266,5 @@
     .dnd5e.sheet.actor ul.skills-list li.skill .skill-passive {
         display: none;
     }
+
 }

@@ -736,14 +736,17 @@ scale: 150%; */
     }
 
     .dnd5e.sheet.actor.character .sheet-header .charlevel {
-        right: -84px;
+        /* right: -84px;
         top: 10px;
-        position: absolute;
+        position: absolute; */
+    }
+    .dnd5e.sheet.actor.character .sheet-header .charlevel {
+        position: revert !important;
     }
 
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1024px) {
     /* UNDER 600 PIXEL*/
 
     #hotbar #hotbar-directory-controls {
@@ -885,6 +888,22 @@ scale: 150%; */
         display: none !important;
     }
 
+    .dnd5e.sheet.actor .sheet-header .attributes {
+        height: 83px;
+    }
+
+    .dnd5e.sheet.actor.character .sheet-header .charlevel {
+        transform: translate(-150px, -21px);
+    }
+
+    .dnd5e.sheet.actor .inventory-list .item .item-name {
+        width: 100dvw;
+        /* color: var(--5edark-rgb-text-white); */
+    }
+
+    .dark-mode .dnd5e.sheet.actor .inventory-list .item .item-price, .dark-mode .dnd5e.sheet.actor .inventory-list .item .item-quantity {
+        width: 40px;
+    }
 
 }
 

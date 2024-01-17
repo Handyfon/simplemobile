@@ -63,7 +63,7 @@ Hooks.on('preRenderActorSheet5eCharacter', () => {
 	container.scrollLeft
 })
 Hooks.on('renderPlayerList', () => {
-	if (screen.availWidth < 1000) {
+	if (screen.availWidth < 1024) {
 		game.user.setFlag("world", "simpleMobile", true);
 		console.log("Mobile Mode");
 	}
@@ -93,7 +93,7 @@ Hooks.on('canvasInit', () => {
 		console.log("performance optimised");
 		let mi = document.querySelector("#mobile-container");
 	}
-	if (screen.availWidth < 1000) {
+	if (screen.availWidth < 1024) {
 		game.user.setFlag("world", "simpleMobile", true);
 		//add fullscreen button to sidebar on load if mobile
 		let sidebarNav = document.getElementById("sidebar-tabs");
@@ -168,7 +168,7 @@ Hooks.on('canvasInit', () => {
 
 Hooks.on('canvasReady', function () {
 	//Collapse Sidebar on load
-	if (screen.availWidth < 1000) {
+	if (screen.availWidth < 1024) {
 		if (document.getElementById('sidebar').className == "app") {
 			ui.sidebar.collapse();
 		}
